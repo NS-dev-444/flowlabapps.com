@@ -1,18 +1,86 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Support — Flowlab Apps</title>
+  <title>Support — PulseFast</title>
+  <meta name="description" content="Support and contact for PulseFast by Flowlab Apps." />
+  <style>
+    :root{--bg:#0b1020;--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.7);--line:rgba(255,255,255,.14);--r:16px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,system-ui,sans-serif;color:var(--text);background:var(--bg)}
+    .wrap{max-width:920px;margin:0 auto;padding:28px 18px 60px}
+    .card{border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.05);padding:18px}
+    a{color:inherit}
+    h1{margin:0 0 10px}
+    p{color:var(--muted);line-height:1.6}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 820px){.row{grid-template-columns:1fr}}
+    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.04);color:var(--muted);font-size:13px;margin:6px 8px 0 0}
+    .top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}
+    .nav a{margin-left:10px;color:var(--muted);text-decoration:none}
+    .nav a:hover{color:var(--text);text-decoration:underline}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--muted);line-height:1.7}
+    code{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px}
+  </style>
 </head>
-<body style="font-family: -apple-system, system-ui, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 16px;">
-  <h1>Support</h1>
-  <p>Need help with PulseFast? Contact us:</p>
-  <ul>
-    <li>Email: <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a></li>
-    <li>Website: <a href="https://flowlabapps.com">flowlabapps.com</a></li>
-  </ul>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div><b>Flowlab Apps</b></div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </div>
 
-  <p><a href="/privacy/">Privacy Policy</a></p>
+    <div class="card">
+      <h1>PulseFast Support</h1>
+      <p>PulseFast is your intelligent fasting companion: one-tap fasting/eating windows, live goal tracking, hydration & recovery cues, and auto insights so you actually act on your data.</p>
+
+      <div>
+        <span class="pill">One-tap start/stop</span>
+        <span class="pill">Live progress ring</span>
+        <span class="pill">Hydration + recovery nudges</span>
+        <span class="pill">Notes + insight cards</span>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="row">
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Contact</h2>
+        <p>Email us and include screenshots if possible.</p>
+        <ul>
+          <li>Email: <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a></li>
+          <li>Website: <a href="https://flowlabapps.com">flowlabapps.com</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">For Testers</h2>
+        <p>When reporting an issue, please include:</p>
+        <ul>
+          <li>Device model + Android version</li>
+          <li>What you expected vs. what happened</li>
+          <li>Steps to reproduce</li>
+          <li>Time it happened (approx.)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="height:14px"></div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;">Common questions</h2>
+      <ul>
+        <li><b>Does PulseFast support presets?</b> Yes—14:10, 18:6, 20:4 and custom 10–24h.</li>
+        <li><b>Where is my data stored?</b> Designed to stay on-device unless cloud features are enabled in the future.</li>
+        <li><b>iOS support?</b> Planned, but Android is the current focus.</li>
+      </ul>
+      <p style="margin-top:12px;">Privacy policy: <a href="/privacy/">flowlabapps.com/privacy/</a></p>
+    </div>
+  </div>
 </body>
 </html>
