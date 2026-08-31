@@ -1,0 +1,4 @@
+Contact: mailto:dev@flowlabapps.com
+Preferred-Languages: en
+Canonical: https://flowlabapps.com/security.txt
+Policy: https://flowlabapps.com/security/

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Security — Flowlab Apps</title>
+<meta name="description" content="Security and vulnerability disclosure policy for Flowlab Apps: how to report an issue, what is in scope, and our safe harbour commitment." />
+<meta name="theme-color" content="#07080c" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://flowlabapps.com/security/" />
+<meta property="og:url" content="https://flowlabapps.com/security/" />
+<meta property="og:title" content="Security — Flowlab Apps" />
+<meta property="og:description" content="Security and vulnerability disclosure policy for Flowlab Apps: how to report an issue, what is in scope, and our safe harbour commitment." />
+<meta property="og:site_name" content="Flowlab Apps" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>:root{--a1:#7a63ff;--a2:#00d1ff}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="../#apps">Apps</a>
+    <a href="../support/">Support</a>
+    <a href="../privacy/">Privacy</a>
+  </nav>
+</header>
+<main id="main">
+<section class="card legal">
+  <div class="kicker">Flowlab Apps</div>
+  <h1>Security</h1>
+  <p class="meta-line">Last updated: August 30, 2026 · Vulnerability disclosure policy</p>
+
+  <div class="note">
+    <p><b>Reporting a vulnerability.</b> Email <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a> with
+    &ldquo;Security&rdquo; in the subject. We aim to acknowledge within three business days.
+    Please give us a reasonable chance to fix an issue before publishing it.</p>
+  </div>
+
+  <div class="toc">
+    <a href="#model">Our security model</a>
+    <a href="#report">How to report</a>
+    <a href="#scope">Scope</a>
+    <a href="#safe-harbour">Safe harbour</a>
+    <a href="#bounty">Rewards</a>
+  </div>
+
+<h2 id="model">1. Our security model</h2>
+<p>We run no servers holding user data, so the usual breach story — an exposed database, a
+leaked credential dump — does not apply to us. There is no user database anywhere. What matters
+instead is the security of the code on your own device, and of the small number of places where
+an app touches a network at all.</p>
+<ul>
+  <li>Keybound derives its key with Argon2id and encrypts its vault with XChaCha20-Poly1305,
+  with all cryptography implemented in Rust and the master key never handed to the interface
+  layer.</li>
+  <li>Keyclave encrypts each document under its own key, wrapped by a master key derived from
+  your password, with key material held in the device Keychain marked <em>when unlocked, this
+  device only</em>.</li>
+  <li>Neither master password can be recovered by us. That is deliberate, and it is what makes
+  the encryption meaningful rather than decorative.</li>
+  <li>Several apps ship without any networking entitlement, so the operating system blocks a
+  connection whether or not the code attempts one.</li>
+</ul>
+
+<h2 id="report">2. How to report</h2>
+<p>Email <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a>. A useful report usually includes:</p>
+<ul>
+  <li>Which app or which page, and the version or the date you tested.</li>
+  <li>The device and operating system version.</li>
+  <li>What the issue allows an attacker to do, and what access they need first.</li>
+  <li>Steps to reproduce, and a proof of concept if you have one.</li>
+</ul>
+<p>Please do not include real personal data, a real password, a recovery key or the contents of
+a real vault in your report. Use test data.</p>
+<p>We aim to acknowledge within three business days, to tell you our assessment within ten, and
+to keep you updated until it is resolved. If you would like credit in the release notes, say so
+and we will include the name or handle you prefer.</p>
+
+<h2 id="scope">3. Scope</h2>
+<p><b>In scope:</b> the Flowlab Apps apps listed on this site, and this website.</p>
+<p><b>Out of scope:</b> denial of service and volumetric testing; social engineering of us or
+of our users; physical attacks; spam and mail-configuration reports without a demonstrated
+impact; findings that require a jailbroken, rooted or already-compromised device; automated
+scanner output with no demonstrated exploit; and issues in Apple's, Google's or Cloudflare's
+own infrastructure, which should go to them.</p>
+
+<h2 id="safe-harbour">4. Safe harbour</h2>
+<p>If you research in good faith under this policy, we will not pursue or support legal action
+against you. Good faith means: you avoid privacy violations, data destruction and service
+degradation; you only ever access data belonging to your own test accounts and devices; you
+stop as soon as you have demonstrated the issue; and you give us a reasonable period —
+ordinarily 90 days — to publish a fix before you disclose publicly.</p>
+<p>If a third party brings action against you for work that genuinely followed this policy, we
+will make it clear that your research was authorised.</p>
+
+<h2 id="bounty">5. Rewards</h2>
+<p>We are a very small independent developer and we do not operate a paid bug bounty. We can
+offer prompt attention, honest credit in the release notes if you want it, and a real
+conversation with the person who wrote the code. We would rather say that plainly than imply a
+payment that is not coming.</p>
+
+<h2 id="contact">6. Contact</h2>
+<ul>
+  <li>Email: <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a></li>
+  <li>Machine-readable policy: <a href="../security.txt">flowlabapps.com/security.txt</a></li>
+</ul>
+</section>
+</main>
+<footer>
+  <div class="footgrid">
+    <div class="footbrand">
+      <a class="brand" href="../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+      <p>Focused apps and games for iPhone, iPad, Android and Mac. No accounts, no analytics,
+      no ads — your data stays on your device.</p>
+    </div>
+    <div>
+      <div class="footlabel">Apps</div>
+      <div class="footlinks">
+        <a href="../apps/pulsefast/">PulseFast</a>
+        <a href="../apps/lucidframe/">LucidFrame</a>
+        <a href="../apps/syntaxpad/">SyntaxPad</a>
+        <a href="../apps/black-hole-rush/">Black Hole Rush</a>
+        <a href="../apps/twister-rush/">Twister Rush</a>
+        <a href="../apps/city-rush/">City Rush</a>
+        <a href="../apps/dream-home-adventures/">Dream Home Adventures</a>
+        <a href="../apps/keyclave/">Keyclave</a>
+        <a href="../apps/keybound/">Keybound</a>
+        <a href="../apps/universal-remote/">Universal Remote</a>
+      </div>
+    </div>
+    <div>
+      <div class="footlabel">Company</div>
+      <div class="footlinks">
+        <a href="../support/">Support</a>
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Use</a>
+        <a href="../data-deletion/">Data &amp; Account Deletion</a>
+        <a href="../kids/">Children's Privacy</a>
+        <a href="../accessibility/">Accessibility</a>
+        <a href="../security/">Security</a>
+        <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">© 2026 Flowlab Apps. All rights reserved.
+  Apple, App Store, iPhone, iPad, macOS and Apple Health are trademarks of Apple Inc.
+  Google Play and Android are trademarks of Google LLC.</div>
+</footer>
+</div>
+</body>
+</html>

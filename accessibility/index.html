@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Accessibility — Flowlab Apps</title>
+<meta name="description" content="Accessibility statement for the Flowlab Apps website and apps: WCAG 2.2 AA as the target, platform accessibility features in the apps, and how to report a barrier." />
+<meta name="theme-color" content="#07080c" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://flowlabapps.com/accessibility/" />
+<meta property="og:url" content="https://flowlabapps.com/accessibility/" />
+<meta property="og:title" content="Accessibility — Flowlab Apps" />
+<meta property="og:description" content="Accessibility statement for the Flowlab Apps website and apps: WCAG 2.2 AA as the target, platform accessibility features in the apps, and how to report a barrier." />
+<meta property="og:site_name" content="Flowlab Apps" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>:root{--a1:#7a63ff;--a2:#00d1ff}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="../#apps">Apps</a>
+    <a href="../support/">Support</a>
+    <a href="../privacy/">Privacy</a>
+  </nav>
+</header>
+<main id="main">
+<section class="card legal">
+  <div class="kicker">Flowlab Apps</div>
+  <h1>Accessibility</h1>
+  <p class="meta-line">Last updated: August 30, 2026 · This website and our apps</p>
+
+  <div class="note">
+    <p><b>The short version.</b> We aim at WCAG 2.2 Level AA for this website and at the
+    platform accessibility features on each device for our apps. We are not claiming a
+    completed audit — where something falls short, we would like to hear about it and fix it.</p>
+  </div>
+
+  <div class="toc">
+    <a href="#site">This website</a>
+    <a href="#apps">Our apps</a>
+    <a href="#known">Known gaps</a>
+    <a href="#feedback">Feedback</a>
+  </div>
+
+<h2 id="site">1. This website</h2>
+<p>The site is plain HTML and CSS with no framework, which makes most of this straightforward:</p>
+<ul>
+  <li>Semantic landmarks, one <code>h1</code> per page and a heading order that does not skip
+  levels.</li>
+  <li>A <b>Skip to content</b> link as the first focusable element on every page.</li>
+  <li>Visible focus outlines on every interactive element, never removed.</li>
+  <li>Body text and interface text meet the 4.5:1 contrast minimum against their background;
+  large headings meet 3:1.</li>
+  <li>Text is set in relative units and reflows without loss of content down to a 320&nbsp;pixel
+  viewport and up to 200% zoom.</li>
+  <li>Every control is reachable and operable by keyboard alone. The one piece of scripting on
+  the site — the app-type filter on the home page — is a set of real buttons with
+  <code>aria-pressed</code> state, and every app remains visible if scripting is unavailable.</li>
+  <li><code>prefers-reduced-motion</code> is honoured: all transitions and hover movement are
+  disabled when you have asked your system for reduced motion.</li>
+  <li>Decorative icons are marked <code>aria-hidden</code> so a screen reader announces the app
+  name rather than describing a shape.</li>
+</ul>
+
+<h2 id="apps">2. Our apps</h2>
+<p>Our apps are built with the native interface toolkit on each platform — SwiftUI and AppKit on
+Apple platforms — which means system accessibility features apply rather than being
+re-implemented badly: VoiceOver and TalkBack, Dynamic Type and font scaling, Increase Contrast,
+Reduce Motion, and full keyboard control on Mac.</p>
+<p>Black Hole Rush additionally ships its own in-game accessibility settings: reduced motion,
+high contrast, adjustable text size, handedness, camera-shake control, and separate music,
+effects and haptics levels. Where a game is built in a cross-platform engine rather than a
+native toolkit, we treat that as a reason to provide these controls ourselves.</p>
+
+<h2 id="known">3. Known gaps</h2>
+<p>Stating this honestly is more useful than a blanket conformance claim:</p>
+<ul>
+  <li>We have not commissioned an independent accessibility audit of the website or of any app.</li>
+  <li>Our games are visual and time-pressured by design. Colour is not the only signal used to
+  convey state, but a fast arcade game will not suit everyone, and no amount of settings
+  changes that.</li>
+  <li>Screen-reader support in the games is limited to menus and results screens rather than
+  live gameplay.</li>
+</ul>
+
+<h2 id="feedback">4. Feedback</h2>
+<p>If any part of this site or of an app is difficult or impossible for you to use, tell us at
+<a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a>. Please include the page or the app, your device and
+operating system, and any assistive technology you use. We aim to reply within a few business
+days, and accessibility fixes go to the front of the queue.</p>
+</section>
+</main>
+<footer>
+  <div class="footgrid">
+    <div class="footbrand">
+      <a class="brand" href="../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+      <p>Focused apps and games for iPhone, iPad, Android and Mac. No accounts, no analytics,
+      no ads — your data stays on your device.</p>
+    </div>
+    <div>
+      <div class="footlabel">Apps</div>
+      <div class="footlinks">
+        <a href="../apps/pulsefast/">PulseFast</a>
+        <a href="../apps/lucidframe/">LucidFrame</a>
+        <a href="../apps/syntaxpad/">SyntaxPad</a>
+        <a href="../apps/black-hole-rush/">Black Hole Rush</a>
+        <a href="../apps/twister-rush/">Twister Rush</a>
+        <a href="../apps/city-rush/">City Rush</a>
+        <a href="../apps/dream-home-adventures/">Dream Home Adventures</a>
+        <a href="../apps/keyclave/">Keyclave</a>
+        <a href="../apps/keybound/">Keybound</a>
+        <a href="../apps/universal-remote/">Universal Remote</a>
+      </div>
+    </div>
+    <div>
+      <div class="footlabel">Company</div>
+      <div class="footlinks">
+        <a href="../support/">Support</a>
+        <a href="../privacy/">Privacy Policy</a>
+        <a href="../terms/">Terms of Use</a>
+        <a href="../data-deletion/">Data &amp; Account Deletion</a>
+        <a href="../kids/">Children's Privacy</a>
+        <a href="../accessibility/">Accessibility</a>
+        <a href="../security/">Security</a>
+        <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">© 2026 Flowlab Apps. All rights reserved.
+  Apple, App Store, iPhone, iPad, macOS and Apple Health are trademarks of Apple Inc.
+  Google Play and Android are trademarks of Google LLC.</div>
+</footer>
+</div>
+</body>
+</html>

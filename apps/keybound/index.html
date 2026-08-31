@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Keybound — A password manager with no account and no server.</title>
+<meta name="description" content="A local-first password manager for macOS, iOS and Android. There is no account, no server and no sync service. Your vault is a single encrypted file on your device, and the only thing that opens it is your master password." />
+<meta name="theme-color" content="#07080c" />
+<meta name="color-scheme" content="dark" />
+<link rel="canonical" href="https://flowlabapps.com/apps/keybound/" />
+<meta property="og:url" content="https://flowlabapps.com/apps/keybound/" />
+<meta property="og:title" content="Keybound — A password manager with no account and no server." />
+<meta property="og:description" content="A local-first password manager for macOS, iOS and Android. There is no account, no server and no sync service. Your vault is a single encrypted file on your device, and the only thing that opens it is your master password." />
+<meta property="og:site_name" content="Flowlab Apps" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+<link rel="stylesheet" href="../../assets/site.css" />
+<style>:root{--a1:#60a5fa;--a2:#818cf8}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="../../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+  <nav class="navlinks" aria-label="Main">
+    <a href="../../#apps">Apps</a>
+    <a href="../../support/">Support</a>
+    <a href="../../privacy/">Privacy</a>
+  </nav>
+</header>
+<main id="main">
+<a class="backlink" href="../../#apps"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 8H3M7 4 3 8l4 4"/></svg> All apps</a>
+<div class="appbar">
+  <div class="appbar-id">
+    <span class="icon icon-sm has-art" style="--c1:#60a5fa;--c2:#818cf8" aria-hidden="true"><img src="../../assets/icons/keybound.png" alt="" width="256" height="256" loading="lazy" decoding="async" /></span>
+    <div>
+      <div class="crumb"><a href="../../apps/keybound/">Keybound</a></div>
+      <div class="appbar-tag">A password manager with no account and no server.</div>
+    </div>
+  </div>
+  <div class="appbar-links">
+    <a href="../../apps/keybound/" aria-current="page">Overview</a>
+    <a href="../../apps/keybound/support/">Support</a>
+    <a href="../../apps/keybound/privacy/">Privacy</a>
+  </div>
+</div>
+
+<section class="card apphero">
+  <span class="icon icon-xl has-art" style="--c1:#60a5fa;--c2:#818cf8" aria-hidden="true"><img src="../../assets/icons/keybound.png" alt="" width="256" height="256" loading="eager" decoding="async" /></span>
+  <div>
+    <div class="kicker">Utilities · iOS · Android · macOS</div>
+    <h1>Keybound</h1>
+    <p class="lede">A local-first password manager for macOS, iOS and Android. There is no account, no server and no sync service. Your vault is a single encrypted file on your device, and the only thing that opens it is your master password.</p>
+    <div style="margin-top:18px"><span class="pill">iOS</span><span class="pill">Android</span><span class="pill">macOS</span> <span class="badge badge-dev">In development</span></div>
+    <div class="cta">
+      <a class="btn primary" href="../../apps/keybound/support/">Support <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+      <a class="btn" href="../../apps/keybound/privacy/">Privacy policy</a>
+      <a class="btn" href="mailto:dev@flowlabapps.com?subject=Keybound">Email us</a>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="kicker">Overview</div>
+  <h2>A password manager with no account and no server.</h2>
+  <p>Argon2id at 64 MiB and t=3 derives your key; XChaCha20-Poly1305 encrypts the vault. Envelope encryption means a random vault master key encrypts the body, and each unlock method — password, recovery key, biometric — stores its own wrapped copy, so adding a recovery key never weakens the password path.</p>
+  <p>All cryptography lives in Rust. The interface receives decrypted entries only when it needs them, and never the master key, TOTP seeds or passkey private keys.</p>
+  <p>Two devices sync directly to each other over your own local network, authenticated with an ephemeral key exchange and a six-digit code you confirm on both screens. There is no relay and no server in the middle, because none exists.</p>
+</section>
+
+<section class="card">
+  <div class="kicker">Features</div>
+  <h2>What it does</h2>
+  <div class="grid">
+    <div class="feat"><span class="num">01</span><b>Modern cryptography</b><p>Argon2id key derivation and XChaCha20-Poly1305 encryption, with envelope-wrapped unlock methods.</p></div>
+    <div class="feat"><span class="num">02</span><b>Everything in one vault</b><p>Logins, TOTP codes, secure notes, cards, identities, SSH keys, API keys, licences and recovery keys.</p></div>
+    <div class="feat"><span class="num">03</span><b>Password health</b><p>A dashboard for weak, reused and stale credentials, plus a generator.</p></div>
+    <div class="feat"><span class="num">04</span><b>Opt-in breach checking</b><p>Uses k-anonymity: only the first five characters of a password's hash ever leave your device.</p></div>
+    <div class="feat"><span class="num">05</span><b>Import from anywhere</b><p>Bitwarden, 1Password, KeePassXC, LastPass and browser CSV exports, plus encrypted export and import.</p></div>
+    <div class="feat"><span class="num">06</span><b>Direct device sync</b><p>LAN sync with QR pairing and a six-digit verification code. No relay, no cloud, no account.</p></div>
+  </div>
+</section>
+
+<div class="grid two">
+  <section class="card" style="margin-top:18px">
+    <div class="kicker">Privacy at a glance</div>
+    <h2>This app collects no data</h2>
+    <p>Keybound collects nothing. There is no sign-up, no email address, no device identifier, no usage analytics, no crash reporting and no advertising.</p>
+    <div class="cta">
+      <a class="btn" href="../../apps/keybound/privacy/">Read the full policy <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+  </section>
+
+  <section class="card" style="margin-top:18px">
+    <div class="kicker">At a glance</div>
+    <h2>Details</h2>
+    <div class="tablewrap">
+      <table class="spec">
+        <tbody>
+      <tr><th scope="row">Category</th><td>Utilities</td></tr>
+      <tr><th scope="row">Platforms</th><td>iOS, Android, macOS</td></tr>
+      <tr><th scope="row">Availability</th><td>In development</td></tr>
+      <tr><th scope="row">Bundle identifier</th><td><code>com.flowlab.aegisvault</code></td></tr>
+      <tr><th scope="row">Account required</th><td>No — there is no sign-up or login</td></tr>
+      <tr><th scope="row">Data collected</th><td>None</td></tr>
+      <tr><th scope="row">Privacy policy</th><td><a href="../../apps/keybound/privacy/">flowlabapps.com/apps/keybound/privacy/</a></td></tr>
+      <tr><th scope="row">Support</th><td><a href="../../apps/keybound/support/">flowlabapps.com/apps/keybound/support/</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+</main>
+<footer>
+  <div class="footgrid">
+    <div class="footbrand">
+      <a class="brand" href="../../"><span class="dot" aria-hidden="true"></span> Flowlab Apps</a>
+      <p>Focused apps and games for iPhone, iPad, Android and Mac. No accounts, no analytics,
+      no ads — your data stays on your device.</p>
+    </div>
+    <div>
+      <div class="footlabel">Apps</div>
+      <div class="footlinks">
+        <a href="../../apps/pulsefast/">PulseFast</a>
+        <a href="../../apps/lucidframe/">LucidFrame</a>
+        <a href="../../apps/syntaxpad/">SyntaxPad</a>
+        <a href="../../apps/black-hole-rush/">Black Hole Rush</a>
+        <a href="../../apps/twister-rush/">Twister Rush</a>
+        <a href="../../apps/city-rush/">City Rush</a>
+        <a href="../../apps/dream-home-adventures/">Dream Home Adventures</a>
+        <a href="../../apps/keyclave/">Keyclave</a>
+        <a href="../../apps/keybound/">Keybound</a>
+        <a href="../../apps/universal-remote/">Universal Remote</a>
+      </div>
+    </div>
+    <div>
+      <div class="footlabel">Company</div>
+      <div class="footlinks">
+        <a href="../../support/">Support</a>
+        <a href="../../privacy/">Privacy Policy</a>
+        <a href="../../terms/">Terms of Use</a>
+        <a href="../../data-deletion/">Data &amp; Account Deletion</a>
+        <a href="../../kids/">Children's Privacy</a>
+        <a href="../../accessibility/">Accessibility</a>
+        <a href="../../security/">Security</a>
+        <a href="mailto:dev@flowlabapps.com">dev@flowlabapps.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="footnote">© 2026 Flowlab Apps. All rights reserved.
+  Apple, App Store, iPhone, iPad, macOS and Apple Health are trademarks of Apple Inc.
+  Google Play and Android are trademarks of Google LLC.</div>
+</footer>
+</div>
+</body>
+</html>

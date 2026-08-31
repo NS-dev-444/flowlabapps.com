@@ -1,0 +1,549 @@
+{
+  "site": {
+    "company": "Flowlab Apps",
+    "domain": "flowlabapps.com",
+    "email": "dev@flowlabapps.com",
+    "updated": "August 30, 2026",
+    "copyright_year": "2026"
+  },
+  "apps": [
+    {
+      "slug": "pulsefast",
+      "name": "PulseFast",
+      "tagline": "Fast smarter, not harder.",
+      "category": "Health & Fitness",
+      "platforms": ["iOS", "Android"],
+      "status": "Store submission prep",
+      "status_kind": "soon",
+      "bundle_ids": ["com.pulsefast.app"],
+      "accent": ["#7a63ff", "#00d1ff"],
+      "glyph": "◐",
+      "summary": "PulseFast is an intermittent fasting companion. Start and stop a fast with one tap, watch a live ring close in on your goal, and keep every session, note and insight in one place — without a spreadsheet.",
+      "long": [
+        "Pick a preset — 14:10, 18:6, 20:4 — or set a custom target anywhere from 10 to 24 hours. PulseFast tracks the fasting window and the eating window that follows it, so you never have to do the arithmetic yourself.",
+        "When you close a fast you can attach a note: how hunger went, what you ate, what got in the way. Over time those notes turn into insight cards — rolling averages, longest fast, eating-window quality and a running tally of goals met.",
+        "On iOS a Live Activity keeps the countdown on your Lock Screen, and a home screen widget shows current progress on both platforms."
+      ],
+      "features": [
+        ["One-tap fasting", "Start or stop instantly. Eating windows are captured automatically the moment a fast closes."],
+        ["Presets and custom goals", "14:10, 18:6 and 20:4 out of the box, plus any custom target from 10 to 24 hours."],
+        ["Live progress ring", "A goal ring that updates in real time, mirrored on the home screen widget and iOS Lock Screen."],
+        ["Session journaling", "Attach hunger, meal and context notes to each closed fast so patterns are readable later."],
+        ["Hydration and activity", "Log hydration in-app, and optionally read steps, distance and active energy from Apple Health or Health Connect."],
+        ["Insights and history", "Rolling averages, longest fast, eating-window quality and a full timestamped history you can export."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "PulseFast keeps your fasting data on your device. There are no accounts, no analytics and no servers.",
+        "stored": [
+          ["Fasting sessions and eating windows", "On your device", "The core of the app — your timers, goals and history"],
+          ["Notes you attach to a fast", "On your device", "So a session still has context weeks later"],
+          ["Goals, presets and settings", "On your device", "To remember how you like the app configured"],
+          ["Hydration and weight entries you log", "On your device", "To chart trends alongside your fasts"],
+          ["Insight summaries", "On your device", "Calculated locally from the history above"]
+        ],
+        "permissions": [
+          ["Notifications", "To tell you when a fasting window opens or closes. Reminders are scheduled on your device; nothing is sent through a push server."],
+          ["Run at startup", "So reminders you already scheduled survive a device restart."],
+          ["Apple Health / Health Connect — read (optional)", "If you grant it, PulseFast reads steps, walking distance and active energy to show activity next to your fast. It is never required, and the app works fully without it."],
+          ["Apple Health / Health Connect — write (optional)", "If you grant it, hydration and calories you log in PulseFast can be saved back to Health so your other apps can see them."]
+        ],
+        "network": "PulseFast has no backend. It does not send your fasting data, health data or notes anywhere. If you use the export or share feature, the file goes wherever you send it — that destination's own privacy terms then apply.",
+        "third_parties": "None. There are no analytics SDKs, advertising libraries, crash reporters or trackers in the app.",
+        "health_note": "Health data is treated as sensitive. PulseFast reads it only with your explicit permission, uses it only to display activity inside the app, and never transmits it off your device or uses it for advertising."
+      },
+      "support": {
+        "faq": [
+          ["Which fasting schedules are supported?", "14:10, 18:6 and 20:4 presets, plus any custom target between 10 and 24 hours."],
+          ["Do I need an account?", "No. There is no sign-up and no login. The app works fully offline."],
+          ["Is Health integration required?", "No. Apple Health and Health Connect are both optional. Decline the permission and every other feature still works."],
+          ["Where is my data stored?", "On your device only. Deleting the app removes its local data, subject to your device's own backup and restore settings."],
+          ["Can I get my data out?", "Yes — export your history from the app and send it wherever you like via the standard share sheet."],
+          ["Which platforms are supported?", "iPhone and Android. iOS additionally supports Live Activities on the Lock Screen."]
+        ],
+        "report": ["Device model and OS version", "The fasting preset or custom goal in use", "What you expected versus what happened", "Steps to reproduce", "Roughly when it happened, so it can be matched to your session history"]
+      }
+    },
+    {
+      "slug": "lucidframe",
+      "name": "LucidFrame",
+      "tagline": "Menu bar screenshots and markup.",
+      "category": "Utilities",
+      "platforms": ["macOS"],
+      "status": "Store submission prep",
+      "status_kind": "soon",
+      "bundle_ids": [],
+      "accent": ["#00d1ff", "#7a63ff"],
+      "glyph": "▣",
+      "summary": "LucidFrame is a screenshot tool that lives in your menu bar and stays out of your way. Press a key, grab what you need, mark it up, and get on with your work.",
+      "long": [
+        "Capture a region, a single window or a whole display from a global shortcut — ⌃⇧3, ⌃⇧4 and ⌃⇧5 out of the box, remappable to whatever you prefer. Window captures come out with a proper macOS drop shadow and padding, so they look finished without extra work.",
+        "Every capture lands in your clipboard immediately and appears as a floating thumbnail you can click to edit or drag straight into another app. Annotations — arrows, boxes, highlights, text labels and crops — stay editable rather than being baked into the pixels.",
+        "Redaction is real redaction: the covered pixels are destroyed in the exported image, not painted over with a rectangle someone can move aside."
+      ],
+      "features": [
+        ["Menu bar, no dock icon", "Launches instantly, does no idle work, and never takes up a slot in your dock."],
+        ["Global shortcuts", "Region, window and display capture from the keyboard, with remappable hotkeys."],
+        ["Zero-click flow", "Capture, auto-copy to clipboard, floating thumbnail — click to edit, drag to drop the file elsewhere."],
+        ["Editable annotations", "Arrows, boxes, highlights, text and crop. Move, re-edit or delete anything you have already drawn."],
+        ["Proper redaction", "Redacted pixels are destroyed in the export, not merely covered."],
+        ["Searchable library", "A keyboard-navigable grid of past captures with Quick Look, search, drag-out and Reveal in Finder."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "LucidFrame collects nothing. It ships sandboxed with no networking entitlement, so it is technically incapable of making a network connection at all.",
+        "stored": [
+          ["Your captures", "The app's sandbox container on your Mac", "So the library is still there next launch"],
+          ["Annotations and capture metadata", "An index file in the same container", "So edits remain re-editable"],
+          ["Preferences (hotkeys, history limit, capture options)", "macOS user defaults on this Mac", "To remember how you like the app configured"],
+          ["A bookmark to your chosen save folder", "macOS user defaults on this Mac", "Only if you turn on “Also save to folder”, so it can keep writing there after a restart"]
+        ],
+        "permissions": [
+          ["Screen Recording", "macOS requires this permission of any app that captures the screen. LucidFrame uses it solely to take the screenshots you ask for, when you ask for them. Nothing is captured in the background."],
+          ["Folder access (optional)", "Only the one folder you pick yourself through the standard macOS panel, and only if you enable saving copies to a folder."]
+        ],
+        "network": "None, and this is enforced rather than promised: the app ships without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no server for your screenshots to go to.",
+        "third_parties": "None. No third-party SDKs, advertising libraries, trackers or analytics frameworks are compiled into the app.",
+        "extra": "LucidFrame does not request access to your camera, microphone, location, contacts, calendars or photo library, and cannot read any file you have not explicitly opened."
+      },
+      "support": {
+        "faq": [
+          ["Why does macOS ask for Screen Recording permission?", "macOS requires it of every screenshot app without exception. Grant it in System Settings → Privacy & Security → Screen Recording, then relaunch LucidFrame."],
+          ["Do my screenshots leave my Mac?", "No. The app has no network entitlement, so it cannot make a connection at all."],
+          ["Can I change the keyboard shortcuts?", "Yes, in Settings. The defaults are ⌃⇧3 for display, ⌃⇧4 for region and ⌃⇧5 for window."],
+          ["Where are my captures stored?", "In the app's own sandbox container. You can also turn on “Also save to folder” and pick a folder of your own."],
+          ["Is redaction actually safe?", "Yes. Redacted regions are destroyed in the exported image rather than covered by a shape that could be removed."],
+          ["How do I remove everything the app has stored?", "Delete captures from inside the library, or remove the app and its container to clear all of its data at once."]
+        ],
+        "report": ["macOS version and Mac model", "Whether Screen Recording permission is granted", "Which capture mode was in use (region, window or display)", "What you expected versus what happened", "Steps to reproduce"]
+      }
+    },
+    {
+      "slug": "syntaxpad",
+      "name": "SyntaxPad",
+      "tagline": "A fast, native Mac text editor.",
+      "category": "Developer Tools",
+      "platforms": ["macOS"],
+      "status": "Store submission prep",
+      "status_kind": "soon",
+      "bundle_ids": [],
+      "accent": ["#4ade80", "#00d1ff"],
+      "glyph": "❯",
+      "summary": "SyntaxPad is a lightweight, native macOS editor for notes, code, configuration files and Markdown — built entirely on Apple frameworks, with no Electron and no web runtime.",
+      "long": [
+        "It is not trying to replace Xcode or VS Code. It is the editor you reach for to open a config file, jot a note, read someone else's source, or write Markdown — and it opens instantly, every time.",
+        "Tabs, syntax highlighting, a background find-and-replace that will not freeze on a pathological regex, and a Markdown preview that renders locally under a strict content security policy.",
+        "Your unsaved scratch tabs survive a quit. Your open files come back where you left them."
+      ],
+      "features": [
+        ["Native and fast", "100% AppKit and SwiftUI. No Electron, no bundled browser, no cross-platform runtime."],
+        ["Tabs and session restore", "Unsaved scratch tabs and window state come back next launch."],
+        ["Syntax highlighting", "For source files, configuration formats and Markdown."],
+        ["Find and replace", "Runs on a background queue behind a debounce, so a slow regex cannot hang the app."],
+        ["Local Markdown preview", "Rendered on your Mac under a strict CSP that blocks scripts and network requests entirely."],
+        ["Large files", "Built to stay responsive on files that make lighter editors struggle."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and no network connections of any kind. Your documents never leave your Mac.",
+        "stored": [
+          ["Documents you open or create", "Wherever you choose to save them", "They are your files"],
+          ["Unsaved scratch tabs and window state", "The app's sandbox container", "So your tabs are still there next launch"],
+          ["Recently opened file list", "App preferences on this Mac", "To populate the Open Recent menu"],
+          ["Editor preferences (theme, indentation, word wrap)", "App preferences on this Mac", "To remember how you like the editor"],
+          ["Security-scoped bookmarks for files you opened", "App preferences on this Mac", "So files reopen after a restart without asking again"]
+        ],
+        "permissions": [
+          ["Files you choose yourself", "SyntaxPad runs in the macOS App Sandbox with exactly three entitlements — app sandbox, user-selected file read/write, and app-scope bookmarks. It can read and write only files you have picked through an Open or Save dialog."]
+        ],
+        "network": "None. The app ships without the network entitlement, so macOS itself prevents any connection. The Markdown preview is served under a `default-src 'none'` content security policy, which means a Markdown file cannot load a remote image, phone home, or report that you opened it. Remote images therefore show their alt text instead — a deliberate trade.",
+        "third_parties": "None. No SDKs, no trackers, no analytics.",
+        "extra": "Links you click in a Markdown preview open in your default browser, and only http, https and mailto links are permitted. Once a link opens, that browser's own privacy policy applies."
+      },
+      "support": {
+        "faq": [
+          ["Why don't remote images appear in the Markdown preview?", "The preview blocks all network requests by design, so a document cannot signal that you opened it. Alt text is shown instead."],
+          ["Can SyntaxPad open files anywhere on my Mac?", "Only files you pick through an Open or Save dialog. The sandbox blocks everything else."],
+          ["Are my unsaved tabs safe if I quit?", "Yes. Scratch tabs and window state are saved into the app's container and restored on next launch."],
+          ["Does it work offline?", "Always — it has no network access at all."],
+          ["How do I remove everything it has stored?", "Delete the app and its sandbox container. Documents you saved yourself are untouched, since they are your own files."]
+        ],
+        "report": ["macOS version and Mac model", "File type and rough file size", "What you expected versus what happened", "Steps to reproduce", "Whether the file can be shared, or a small sample that reproduces it"]
+      }
+    },
+    {
+      "slug": "black-hole-rush",
+      "name": "Black Hole Rush",
+      "tagline": "Start small. Swallow the city.",
+      "category": "Games — Arcade",
+      "platforms": ["iOS", "iPadOS", "Android"],
+      "status": "Submission candidate",
+      "status_kind": "soon",
+      "bundle_ids": ["com.blackholerush.game"],
+      "accent": ["#8b5cf6", "#22d3ee"],
+      "glyph": "◉",
+      "summary": "A fast-session arcade growth game. You are a small black hole loose in Gravity City. Everything you swallow makes you bigger, and everything bigger than you is a threat — until it isn't.",
+      "long": [
+        "A match runs two minutes across three phases — Scavenge, Expansion and Collapse — and then a thirty-second sudden-death Elimination round where a single point of mass is enough to swallow a rival and nobody who goes down comes back.",
+        "Six seeded districts, five personality-driven bots, and capture rules that are exactly as strict as they sound: you need a 0.1% radius edge, so only a near-exact tie bounces.",
+        "Everything unlockable is cosmetic. There is no pay-to-win system, no energy gate and no timer standing between you and the next match — rematch happens without a reload."
+      ],
+      "features": [
+        ["Three-minute sessions", "A two-minute three-phase match plus a thirty-second elimination round. Built for the gap between other things."],
+        ["Six districts", "Gravity City is seeded into six districts with different object density and risk."],
+        ["Five rival bots", "Each with its own personality — they hunt, hoard and avoid differently."],
+        ["Gravity Pulse", "A short-cooldown ability that shoves nearby mass, on a button and on the space bar."],
+        ["Cosmetics only", "Progression, challenges and equippable cosmetics. No pay-to-win, no loot boxes, no energy gates."],
+        ["Accessibility", "Reduced motion, high contrast, text size, handedness, camera shake, and separate music, effects and haptics controls."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Black Hole Rush is a completely offline game. It collects no data, contains no advertising, has no analytics and makes no network connections.",
+        "stored": [
+          ["Progression, XP and currency", "On your device", "So your unlocks are still there next session"],
+          ["Challenges and journey milestones", "On your device", "To track what you have completed"],
+          ["Equipped cosmetics and statistics", "On your device", "To restore your setup and show your record"],
+          ["Settings and tutorial completion", "On your device", "So the game stays configured how you left it"]
+        ],
+        "permissions": [
+          ["None", "The game requests no runtime permissions. It does not use your location, camera, microphone, contacts, photos or files."]
+        ],
+        "network": "The game does not connect to the internet. There is no account, no leaderboard server, no cloud save and no matchmaking service — the rival holes are bots running on your own device.",
+        "third_parties": "None. No advertising networks, no analytics SDKs, no crash reporters, no social login and no third-party trackers are included in the build.",
+        "children": "Black Hole Rush is suitable for a broad audience including children. Because it collects no data whatsoever, it collects no data from children — there is nothing to disclose, share or delete. It contains no advertising, no in-app purchases, no chat and no user-generated content.",
+        "purchases": "There are no in-app purchases and no real-money transactions of any kind."
+      },
+      "support": {
+        "faq": [
+          ["Does the game need an internet connection?", "No. Everything runs on your device, including the rival holes, which are bots."],
+          ["Are there in-app purchases or ads?", "Neither. Everything unlockable is cosmetic and earned by playing."],
+          ["Is my progress saved anywhere else?", "No. Saves are local to the device, with an automatic recovery copy in case of a corrupted write."],
+          ["Is it multiplayer?", "Matches are against five on-device bots. Online multiplayer is not part of the current release."],
+          ["What are the accessibility options?", "Reduced motion, high contrast, adjustable text size, handedness, camera shake control, and separate music, effects and haptics sliders."],
+          ["Which devices are supported?", "iPhone, iPad and Android phones and tablets, in landscape."]
+        ],
+        "report": ["Device model and OS version", "Which phase the match was in when it happened", "What you expected versus what happened", "Steps to reproduce", "Whether it happens every match or occasionally"]
+      }
+    },
+    {
+      "slug": "twister-rush",
+      "name": "Twister Rush",
+      "tagline": "Twelve tiers, from drink cups to skyscrapers.",
+      "category": "Games — Arcade",
+      "platforms": ["iOS", "iPadOS", "Android"],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": ["com.twisterrush.game"],
+      "accent": ["#38bdf8", "#a78bfa"],
+      "glyph": "🌀",
+      "summary": "A 3D arcade tornado-growth game. Drive a funnel through a city, absorb everything you are big enough to lift, and climb a twelve-tier ladder from drink cups to skyscrapers.",
+      "long": [
+        "What you can absorb is decided by how big an object actually is — measured off its mesh rather than read from a category someone assigned — so two things the same size always behave the same way, and a bigger thing is always harder.",
+        "Objects one tier above you do not sit still. They heave up, tip toward the funnel and drop back, and every so often one gives way. When one will not go, you can knock it flat instead — and a felled object needs 20% less tornado when you come back for it.",
+        "Five AI tornadoes share the city, colour-coded by archetype, and a crown floats over whichever funnel is currently the biggest, so you always know whether that is you."
+      ],
+      "features": [
+        ["Twelve-tier ladder", "From drink cups to skyscrapers, with absorption decided by real mesh size."],
+        ["Two-minute matches", "A 3·2·1·GO countdown, a two-minute match, a ranked results screen and Play Again with no menu in between."],
+        ["Five rival tornadoes", "Colour-coded AI archetypes that hunt, harvest and avoid differently."],
+        ["Objects that resist", "Buildings heave and tip before they go. Knock one flat and it is easier next time."],
+        ["The crown", "Floats over the biggest tornado on the map so the standings are always readable at a glance."],
+        ["One codebase, two stores", "A single Unity project targeting iPhone, iPad, Android phones and Android tablets."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Twister Rush is an offline game. It collects no data, shows no advertising, has no analytics and makes no network connections.",
+        "stored": [
+          ["Match results and best scores", "On your device", "So your record survives between sessions"],
+          ["Settings and preferences", "On your device", "To keep the game configured how you left it"]
+        ],
+        "permissions": [
+          ["None", "The game requests no runtime permissions and does not access your location, camera, microphone, contacts, photos or files."]
+        ],
+        "network": "The game does not connect to the internet. The rival tornadoes are AI opponents running on your own device.",
+        "third_parties": "None. No advertising networks, analytics SDKs, crash reporters or third-party trackers are included.",
+        "children": "Twister Rush is suitable for a broad audience including children. It collects no data from anyone of any age, and contains no advertising, no in-app purchases, no chat and no user-generated content.",
+        "purchases": "There are no in-app purchases."
+      },
+      "support": {
+        "faq": [
+          ["Does it need an internet connection?", "No. Everything, including the five rival tornadoes, runs on your device."],
+          ["Are there ads or in-app purchases?", "No, neither."],
+          ["Why won't a building go into my tornado?", "It is a tier above you. Grow first, or knock it flat — a felled object needs 20% less tornado when you return."],
+          ["How long is a match?", "Two minutes, after a short countdown, ending on a ranked results screen with Play Again."],
+          ["Which devices are supported?", "iPhone, iPad, and Android phones and tablets."]
+        ],
+        "report": ["Device model and OS version", "What you were absorbing when it happened", "What you expected versus what happened", "Steps to reproduce", "Whether it is reproducible or intermittent"]
+      }
+    },
+    {
+      "slug": "city-rush",
+      "name": "City Rush",
+      "tagline": "Pick up a fare. Drop it off. Go again.",
+      "category": "Games — Arcade",
+      "platforms": ["iOS", "iPadOS"],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": ["com.cityrush"],
+      "accent": ["#fbbf24", "#f97316"],
+      "glyph": "▲",
+      "summary": "A top-down arcade driving game with two ways to play on the same city: an endless Rush Hour score attack, and a twelve-mission Career.",
+      "long": [
+        "Rush Hour is one loop with no menus in the middle of it. A shift starts at 45 seconds, and reaching a pickup or completing a drop-off banks time sized to the leg you just drove — so a long haul funds itself and a short hop does not. The run ends when the clock does.",
+        "Every delivery raises a streak multiplier up to ×10. Every crash resets it to ×1 and costs two seconds, which makes driving clean the actual skill. Finish a fare without touching anything and it pays 25% extra before the multiplier applies.",
+        "Ambient traffic circulates the grid on correct right-hand lanes and picks turns at intersections. Hitting one is a crash; sliding past one at speed is a near miss, which pays cash and banks nitro. Coins sit in the driving lanes, so the greedy line and the fast line rarely match."
+      ],
+      "features": [
+        ["Rush Hour", "An endless score-attack shift. Two taps from launch to driving, and it lasts as long as you keep earning time."],
+        ["Career", "Twelve stage-driven missions on the same city, reached from the home screen."],
+        ["Streak multiplier", "Up to ×10 for clean driving, reset to ×1 by any crash."],
+        ["Near misses", "Sliding past traffic at speed pays cash and banks nitro. Hitting it does not."],
+        ["Emergent session length", "A bad shift is 40 seconds, a good one runs several minutes. Nothing asks you to commit up front."],
+        ["Difficulty that ramps", "Time is granted less generously and traffic thickens with every delivery, instead of a hard timer cutting you off."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "City Rush is an offline game. It collects no data, shows no advertising, has no analytics and makes no network connections.",
+        "stored": [
+          ["High scores and career progress", "On your device", "So your record and mission progress persist"],
+          ["Settings and preferences", "On your device", "To keep the game configured how you left it"]
+        ],
+        "permissions": [
+          ["None", "The game requests no runtime permissions and does not access your location, camera, microphone, contacts, photos or files."]
+        ],
+        "network": "The game does not connect to the internet. There is no account, leaderboard server or cloud save.",
+        "third_parties": "None. No advertising networks, analytics SDKs, crash reporters or third-party trackers are included.",
+        "children": "City Rush is suitable for a broad audience including children. It collects no data from anyone of any age, and contains no advertising, no in-app purchases, no chat and no user-generated content.",
+        "purchases": "There are no in-app purchases."
+      },
+      "support": {
+        "faq": [
+          ["What is the difference between Rush Hour and Career?", "Rush Hour is an endless score attack where the clock is the score limiter. Career is twelve stage-driven missions on the same city."],
+          ["How do I last longer in a shift?", "Drive clean. Crashes reset your multiplier and cost two seconds, and clean fares pay 25% extra before the multiplier applies."],
+          ["Does it need an internet connection?", "No. Everything runs on your device."],
+          ["Are there ads or in-app purchases?", "No, neither."],
+          ["Which devices are supported?", "iPhone and iPad, in landscape."]
+        ],
+        "report": ["Device model and iOS version", "Rush Hour or Career, and which mission", "What you expected versus what happened", "Steps to reproduce", "Whether it is reproducible or intermittent"]
+      }
+    },
+    {
+      "slug": "dream-home-adventures",
+      "name": "Dream Home Adventures",
+      "tagline": "Decorate, collect, and make it yours.",
+      "category": "Games — Simulation",
+      "platforms": ["iOS", "iPadOS", "macOS"],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": ["com.dreamhomeadventures"],
+      "accent": ["#f472b6", "#a78bfa"],
+      "glyph": "⌂"  ,
+      "summary": "A 2.5D dollhouse game for iPhone, iPad and Mac. Customize an avatar, move into a starter apartment, and decorate it room by room with real 3D furniture you place yourself.",
+      "long": [
+        "Enter Decorate mode, select a piece of furniture, drag it into the room, rotate it, and confirm the placement when it reads green. Change wall and floor finishes, interact with household objects, and work through short tasks that open up more of the house.",
+        "Walk into the Dream Decor Store, buy something, carry it home and place it from your inventory. Progress saves automatically after purchases, placements, tasks, room exits and whenever the app goes to the background.",
+        "There are no ads, no open chat, no real-money purchases, no energy gates and no punitive pet systems. It is a game about arranging a room you like."
+      ],
+      "features": [
+        ["Real 3D placement", "Drag, rotate and confirm furniture in a controlled dollhouse camera — not a grid of flat stickers."],
+        ["Walk-in store", "Enter the Dream Decor Store, buy an item, return home and place it from inventory."],
+        ["Finishes and interactions", "Change wall and floor finishes, and interact with household objects around the home."],
+        ["Tasks and properties", "Short tasks and multiple properties driven by reusable catalogs."],
+        ["Autosave", "Progress is written after purchases, placements, tasks, room exits and app backgrounding."],
+        ["No dark patterns", "No ads, no open chat, no real-money purchases, no energy gates, no punitive pet systems."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Dream Home Adventures is an offline game. It collects no data, shows no advertising, has no analytics and makes no network connections.",
+        "stored": [
+          ["Your avatar, homes and furniture placements", "On your device", "So your home is exactly as you left it"],
+          ["Inventory, currency and task progress", "On your device", "To restore your progress"],
+          ["Settings and preferences", "On your device", "To keep the game configured how you left it"]
+        ],
+        "permissions": [
+          ["Add to Photo Library (optional)", "Only if you choose to save a picture of a room you built. The app can add that image to your photos; it cannot read your photo library."]
+        ],
+        "network": "The game does not connect to the internet. There is no account, no cloud save and no online play.",
+        "third_parties": "None. No advertising networks, analytics SDKs, crash reporters or third-party trackers are included.",
+        "children": "Dream Home Adventures is suitable for children. It collects no data from anyone of any age. It contains no advertising, no in-app purchases, no open chat and no user-generated content shared with other players.",
+        "purchases": "There are no real-money purchases. In-game currency is earned by playing and cannot be bought."
+      },
+      "support": {
+        "faq": [
+          ["Are there real-money purchases?", "No. In-game currency is earned by playing, and there is nothing to buy with real money."],
+          ["Is there chat or online play?", "No. The game is entirely single-player and offline."],
+          ["Why won't a piece of furniture place?", "Placement must read green. Rotate it or move it clear of another object and the indicator will change."],
+          ["Is my progress saved automatically?", "Yes — after purchases, placements, tasks, room exits and whenever the app goes to the background."],
+          ["Which devices are supported?", "iPhone and iPad running iOS 17 or later, in landscape, plus Mac."]
+        ],
+        "report": ["Device model and OS version", "Which room and which piece of furniture", "What you expected versus what happened", "Steps to reproduce", "Whether progress was lost, and roughly when it last saved"]
+      }
+    },
+    {
+      "slug": "keyclave",
+      "name": "Keyclave",
+      "tagline": "Your documents, encrypted and offline.",
+      "category": "Productivity",
+      "platforms": ["iOS", "macOS"],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": ["com.flowlab.keyclave"],
+      "accent": ["#34d399", "#0ea5e9"],
+      "glyph": "▤",
+      "summary": "An offline, encrypted vault for the documents that matter — passports, licences, insurance, medical records, titles, warranties and contracts. Nothing leaves your device, because there is nowhere for it to go.",
+      "long": [
+        "Every document is encrypted with its own key, and those keys are wrapped by a master key derived from your password. Unlock with a password, a six-digit PIN, Face ID or Touch ID, with a 160-bit recovery key as a fallback.",
+        "Text inside your documents is recognized on-device with Apple's Vision framework, so search covers what a document says and not just what you named it. Filter by category, tag, date, expiration and document type.",
+        "There is no networking code anywhere in the project — no analytics, no logging, no third-party SDKs and no cloud sync. The privacy claim is a property of the build, not a promise in a policy."
+      ],
+      "features": [
+        ["Per-file encryption", "AES-256-GCM with a per-document key, wrapped by a master key derived from your password."],
+        ["Unlock how you like", "Password or six-digit PIN, plus optional Face ID and Touch ID, with a recovery key as a fallback."],
+        ["On-device OCR", "Apple Vision reads the text in your documents so search finds what they actually say."],
+        ["Organized how you think", "Thirteen categories, unlimited user-defined tags, and filters for date, expiration and type."],
+        ["Save to Vault", "A share extension so documents can go straight into the vault from anywhere in the system."],
+        ["Expiration reminders", "Local notifications before a passport, licence or policy runs out. Scheduled on-device."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Keyclave collects nothing. There is no account, no server and no analytics — and no networking code in the app at all.",
+        "stored": [
+          ["Your documents", "Encrypted, in the app's private storage on your device", "They are the point of the app"],
+          ["The search index and timeline", "Encrypted, alongside the documents", "So search and history work offline"],
+          ["Your master key material", "The device Keychain, marked “when unlocked, this device only”", "So biometric unlock works without storing your password"],
+          ["Lockout state", "The device Keychain", "So repeated failed attempts still count after a relaunch"],
+          ["Preferences", "App preferences on your device", "To remember how you like the app configured"]
+        ],
+        "permissions": [
+          ["Face ID / Touch ID (optional)", "To unlock the vault without typing your password. The biometric check happens in Apple's secure hardware; the app never receives your biometric data."],
+            ["Camera (optional)", "Only to scan a paper document into the vault when you choose to. Scans are processed on-device and stored encrypted."],
+          ["Photo Library (optional)", "Only to import a photo you select into the vault."],
+          ["Notifications (optional)", "For expiration reminders you set. Scheduled locally on your device — no push server is involved."]
+        ],
+        "network": "There is none. The app contains no URLSession, no network connections and no web views that load remote content. It cannot upload your documents, and there is no service to upload them to.",
+        "third_parties": "None. The project declares zero external dependencies — no CocoaPods, no Carthage, no remote Swift packages, no analytics and no crash reporting. Only Apple's own frameworks are used.",
+        "extra": "Your master password is never stored anywhere — not on the device and not with us. That means we cannot recover your vault if you lose both your password and your recovery key. That is the trade-off that makes the encryption meaningful."
+      },
+      "support": {
+        "faq": [
+          ["What happens if I forget my password?", "Use your recovery key. If you have lost both, the vault cannot be opened — by you or by us. Your master password is never stored anywhere, which is what makes the encryption real."],
+          ["Is my vault backed up to iCloud?", "No. There is no cloud sync of any kind. Use the app's own encrypted export if you want a backup, and store it somewhere you control."],
+          ["Can Flowlab Apps read my documents?", "No. We have no server, no account system and no key. There is nothing on our side to read."],
+          ["Does search work offline?", "Yes. Text recognition runs on your device with Apple's Vision framework, and the index is stored encrypted alongside your documents."],
+          ["How do I add a document from another app?", "Use the Share sheet and pick “Save to Vault”."],
+          ["Which devices are supported?", "iPhone running iOS 17 or later, and Mac running macOS 14 or later."]
+        ],
+        "report": ["Device model and OS version", "What you were doing — importing, searching, unlocking", "What you expected versus what happened", "Steps to reproduce", "Never include the document itself, your password or your recovery key"]
+      }
+    },
+    {
+      "slug": "keybound",
+      "name": "Keybound",
+      "tagline": "A password manager with no account and no server.",
+      "category": "Utilities",
+      "platforms": ["iOS", "Android", "macOS"],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": ["com.flowlab.aegisvault"],
+      "accent": ["#60a5fa", "#818cf8"],
+      "glyph": "⚿",
+      "summary": "A local-first password manager for macOS, iOS and Android. There is no account, no server and no sync service. Your vault is a single encrypted file on your device, and the only thing that opens it is your master password.",
+      "long": [
+        "Argon2id at 64 MiB and t=3 derives your key; XChaCha20-Poly1305 encrypts the vault. Envelope encryption means a random vault master key encrypts the body, and each unlock method — password, recovery key, biometric — stores its own wrapped copy, so adding a recovery key never weakens the password path.",
+        "All cryptography lives in Rust. The interface receives decrypted entries only when it needs them, and never the master key, TOTP seeds or passkey private keys.",
+        "Two devices sync directly to each other over your own local network, authenticated with an ephemeral key exchange and a six-digit code you confirm on both screens. There is no relay and no server in the middle, because none exists."
+      ],
+      "features": [
+        ["Modern cryptography", "Argon2id key derivation and XChaCha20-Poly1305 encryption, with envelope-wrapped unlock methods."],
+        ["Everything in one vault", "Logins, TOTP codes, secure notes, cards, identities, SSH keys, API keys, licences and recovery keys."],
+        ["Password health", "A dashboard for weak, reused and stale credentials, plus a generator."],
+        ["Opt-in breach checking", "Uses k-anonymity: only the first five characters of a password's hash ever leave your device."],
+        ["Import from anywhere", "Bitwarden, 1Password, KeePassXC, LastPass and browser CSV exports, plus encrypted export and import."],
+        ["Direct device sync", "LAN sync with QR pairing and a six-digit verification code. No relay, no cloud, no account."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Keybound collects nothing. There is no sign-up, no email address, no device identifier, no usage analytics, no crash reporting and no advertising.",
+        "stored": [
+          ["Your vault", "A single encrypted file in the app's private storage on your device", "It holds your logins, notes, cards and keys"],
+          ["Your biometric unlock key", "Your device's keychain or keystore, protected by biometric hardware", "So Face ID or a fingerprint can unlock the vault"],
+          ["App preferences", "On your device", "Auto-lock timing, theme and similar settings"],
+          ["Backups you export", "Wherever you choose to put them, encrypted with the same scheme", "So you can keep a copy you control"]
+        ],
+        "permissions": [
+          ["Biometrics (optional)", "Face ID, Touch ID or Android biometric unlock. The check happens in your device's secure hardware, and the key is invalidated automatically if your enrolled biometrics change."],
+          ["Camera (optional)", "Only to scan a QR code when pairing two of your own devices for sync, or to capture a TOTP setup code."],
+          ["Local network (optional)", "Only when you sync two of your own devices, and only for the duration of that sync."]
+        ],
+        "network": "Two connections exist, both under your control. **Breach checking is opt-in**: when you run it, a SHA-1 hash is computed on your device and only the first five hexadecimal characters are sent to api.pwnedpasswords.com, which replies with hundreds of matching prefixes; the comparison happens on your device. The service never receives your password, your full hash, or anything identifying you. **Device sync is peer-to-peer**: your two devices connect directly over your own local network, authenticated by an ephemeral P-256 key exchange and a short code you confirm on both screens. There is no relay and no copy retained anywhere.",
+        "third_parties": "Have I Been Pwned (api.pwnedpasswords.com) receives a five-character hash prefix, and only if you choose to run a breach check. Their handling of that request is governed by their own privacy policy. If you never run a breach check, the app never contacts them. There are no other third parties, no analytics libraries and no advertising SDKs.",
+        "store_note": "One qualification, for completeness: if you run the optional breach check, five hexadecimal characters of a password's SHA-1 hash are sent to Have I Been Pwned. That prefix matches hundreds of unrelated passwords, cannot identify you or the password it came from, is never seen or stored by us, and is only ever sent when you ask for the check. That is why the declarations above still read **no data collected**. Section 4 describes it in full.",
+        "extra": "Your master password is never stored — not on your device and not anywhere else. We have no server holding your data, no account system and no way to identify you. We could not hand over your vault if we were asked to, because we do not have it."
+      },
+      "support": {
+        "faq": [
+          ["What happens if I forget my master password?", "Use your recovery key. Without either, the vault cannot be opened by anyone, including us. That is the point."],
+          ["Is there a cloud sync?", "No. Devices sync directly to each other over your local network, with a code you confirm on both screens."],
+          ["What exactly gets sent during a breach check?", "The first five characters of a password's SHA-1 hash, and nothing else. The service returns hundreds of candidate hashes and the match is computed on your device."],
+          ["Can I import from another password manager?", "Yes — Bitwarden, 1Password, KeePassXC, LastPass and browser CSV exports are supported."],
+          ["Where does the encryption happen?", "In Rust, on your device. The interface never receives the master key, TOTP seeds or passkey private keys."],
+          ["Which platforms are supported?", "macOS, iOS and Android."]
+        ],
+        "report": ["Device model and OS version", "What you were doing — unlocking, importing, syncing", "What you expected versus what happened", "Steps to reproduce", "Never include your master password, recovery key or any vault contents"]
+      }
+    },
+    {
+      "slug": "universal-remote",
+      "name": "Universal Remote",
+      "tagline": "Your phone, as the remote you actually lost.",
+      "category": "Utilities",
+      "platforms": ["iOS", "iPadOS", "Android"],
+      "status": "Early development",
+      "status_kind": "dev",
+      "bundle_ids": [],
+      "accent": ["#f87171", "#fb923c"],
+      "glyph": "⬒",
+      "summary": "A remote control app that finds compatible TVs and streaming devices on your Wi-Fi, pairs with them, and loads the right remote layout automatically.",
+      "long": [
+        "Discovery finds supported devices on your local network, identifies the manufacturer, walks you through whatever pairing the TV requires, and then shows a remote built for that device rather than a generic grid of buttons.",
+        "Multiple TVs in the same household are supported, and paired devices are remembered so the second launch is instant.",
+        "Where a manufacturer has closed off local control, the app says so plainly instead of showing a button that silently does nothing. Adapters for Google TV / Android TV, Samsung, LG and Vizio are in progress.",
+        "This app is early in development and is not yet available in either store."
+      ],
+      "features": [
+        ["Automatic discovery", "Finds compatible devices on your Wi-Fi and identifies what they are."],
+        ["Guided pairing", "Walks through whatever approval the TV asks for on screen."],
+        ["The right layout, automatically", "Loads a remote built for the device you connected to, not a lowest-common-denominator grid."],
+        ["Multiple devices", "Remembers paired and favorite devices across several TVs in one household."],
+        ["Honest about limits", "When a function or a device is unsupported, it says so rather than failing quietly."],
+        ["Local only", "Commands go straight from your phone to your TV over your own network."]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Universal Remote collects no data. It talks to your TV over your own network and to nothing else.",
+        "stored": [
+          ["Paired and favorite devices", "On your device", "So you do not have to re-pair every launch"],
+          ["Pairing tokens issued by your TV", "On your device", "So the TV keeps trusting this phone"],
+          ["App preferences", "On your device", "To remember your layout and settings"]
+        ],
+        "permissions": [
+          ["Local network", "To discover TVs on your Wi-Fi and send them commands. Nothing about your network is sent off your device."]
+        ],
+        "network": "Traffic goes from your phone directly to your TV on your own local network. There is no account, no cloud service and no server operated by Flowlab Apps involved in controlling a device.",
+        "third_parties": "None. No analytics SDKs, advertising libraries or trackers are included.",
+        "store_note": "Universal Remote does send network traffic — commands to a television on your own Wi-Fi. That traffic stays inside your home network, never reaches a server operated by us, and carries nothing about you, which is why the declarations above read **no data collected**.",
+        "extra": "The app does not read your viewing history, does not know what you are watching, and does not inventory the other devices on your network beyond the televisions it is looking for."
+      },
+      "support": {
+        "faq": [
+          ["Is this available yet?", "Not yet. Universal Remote is early in development and has not been released to either store."],
+          ["Why can't the app find my TV?", "Both devices must be on the same Wi-Fi network, and the TV must have network control enabled. Some manufacturers now disable it by default."],
+          ["Why are some buttons unavailable?", "Because that television does not expose that function to third-party apps. The app shows what is genuinely available rather than pretending."],
+          ["Does it work over Bluetooth or infrared?", "No. Control is over Wi-Fi, which is what the supported platforms expose to third-party apps."],
+          ["Which TVs are supported?", "Adapters for Google TV / Android TV, Samsung, LG and Vizio are in progress. The supported list will be published before release."]
+        ],
+        "report": ["Phone model and OS version", "TV manufacturer, model and firmware version if you can find it", "Whether the TV was discovered, and whether pairing completed", "Which button or function failed", "Steps to reproduce"]
+      }
+    }
+  ]
+}
