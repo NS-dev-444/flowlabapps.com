@@ -74,6 +74,17 @@ def write(relpath, content):
     for attr in ("href", "src"):
         content = content.replace(f'{attr}="/', f'{attr}="{prefix}')
 
+    # Cloudflare's Email Address Obfuscation rewrites every mailto: link into a
+    # /cdn-cgi/l/email-protection URL whose text only resolves once
+    # email-decode.min.js runs. Our CSP allows exactly one script hash and no
+    # host sources, so that script is blocked and the contact address renders
+    # as the literal string "[email protected]" — a dead end for anyone trying
+    # to reach support, App Review included. These markers tell Cloudflare to
+    # leave the address alone.
+    content = re.sub(r'(<a\b[^>]*href="mailto:[^"]*"[^>]*>.*?</a>)',
+                     r'<!--email_off-->\1<!--/email_off-->',
+                     content, flags=re.S)
+
     path = os.path.join(ROOT, relpath)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
@@ -964,21 +975,38 @@ hold any of it.</p>""")
     store_note = ""
     if p.get("store_note"):
         store_note = f"""<p>{md_inline(p['store_note'])}</p>"""
+    # Only declare against stores the app actually ships on. A macOS-only
+    # title carrying a "Google Play — Data safety" row reads as boilerplate
+    # and invites the reviewer to wonder what else was pasted in unchecked.
+    on_apple = any(pl in ("iOS", "iPadOS", "macOS") for pl in app["platforms"])
+    on_google = "Android" in app["platforms"]
+    store_rows = ""
+    if on_apple:
+        store_rows += """
+      <tr><td>Apple App Store — App Privacy</td>
+          <td>Data Not Collected. Nothing is collected from this app, by us or by anyone else,
+          so no data type is linked to you and none is used to track you.</td></tr>"""
+    if on_google:
+        store_rows += """
+      <tr><td>Google Play — Data safety</td>
+          <td>No data collected. No data shared with third parties. No data is transmitted off
+          the device, so there is none to encrypt in transit. Users can erase everything the
+          app holds by deleting it.</td></tr>"""
+    if on_apple and on_google:
+        store_intro = "Apple and Google each require a privacy declaration alongside the app listing."
+    elif on_google:
+        store_intro = "Google requires a privacy declaration alongside the app listing."
+    else:
+        store_intro = "Apple requires a privacy declaration alongside the app listing."
+
     sections.append(f"""<h2 id="store-labels">6. What we declare to the app stores</h2>
-<p>Apple and Google each require a privacy declaration alongside the app listing. These are the
+<p>{store_intro} These are the
 answers we give for {e(app['name'])}, reproduced here so you can check them against the rest of
 this policy.</p>
 <div class="tablewrap">
   <table>
     <thead><tr><th>Store declaration</th><th>Our answer</th></tr></thead>
-    <tbody>
-      <tr><td>Apple App Store — App Privacy</td>
-          <td>Data Not Collected. Nothing is collected from this app, by us or by anyone else,
-          so no data type is linked to you and none is used to track you.</td></tr>
-      <tr><td>Google Play — Data safety</td>
-          <td>No data collected. No data shared with third parties. No data is transmitted off
-          the device, so there is none to encrypt in transit. Users can erase everything the
-          app holds by deleting it.</td></tr>
+    <tbody>{store_rows}
       <tr><td>Account deletion</td>
           <td>Not applicable — the app has no account. See
           <a href="/data-deletion/">Data &amp; Account Deletion</a>.</td></tr>
