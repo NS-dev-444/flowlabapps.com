@@ -65,8 +65,8 @@
       }
     },
     {
-      "slug": "lucidframe",
-      "name": "LucidFrame",
+      "slug": "lucidcapture",
+      "name": "LucidCapture",
       "tagline": "Menu bar screenshots and markup.",
       "category": "Utilities",
       "platforms": ["macOS"],
@@ -75,7 +75,7 @@
       "bundle_ids": [],
       "accent": ["#00d1ff", "#7a63ff"],
       "glyph": "▣",
-      "summary": "LucidFrame is a screenshot tool that lives in your menu bar and stays out of your way. Press a key, grab what you need, mark it up, and get on with your work.",
+      "summary": "LucidCapture is a screenshot tool that lives in your menu bar and stays out of your way. Press a key, grab what you need, mark it up, and get on with your work.",
       "long": [
         "Capture a region, a single window or a whole display from a global shortcut — ⌃⇧3, ⌃⇧4 and ⌃⇧5 out of the box, remappable to whatever you prefer. Window captures come out with a proper macOS drop shadow and padding, so they look finished without extra work.",
         "Every capture lands in your clipboard immediately and appears as a floating thumbnail you can click to edit or drag straight into another app. Annotations — arrows, boxes, highlights, text labels and crops — stay editable rather than being baked into the pixels.",
@@ -91,7 +91,7 @@
       ],
       "privacy": {
         "collects_data": false,
-        "headline": "LucidFrame collects nothing. It ships sandboxed with no networking entitlement, so it is technically incapable of making a network connection at all.",
+        "headline": "LucidCapture collects nothing. It ships sandboxed with no networking entitlement, so it is technically incapable of making a network connection at all.",
         "stored": [
           ["Your captures", "The app's sandbox container on your Mac", "So the library is still there next launch"],
           ["Annotations and capture metadata", "An index file in the same container", "So edits remain re-editable"],
@@ -99,16 +99,16 @@
           ["A bookmark to your chosen save folder", "macOS user defaults on this Mac", "Only if you turn on “Also save to folder”, so it can keep writing there after a restart"]
         ],
         "permissions": [
-          ["Screen Recording", "macOS requires this permission of any app that captures the screen. LucidFrame uses it solely to take the screenshots you ask for, when you ask for them. Nothing is captured in the background."],
+          ["Screen Recording", "macOS requires this permission of any app that captures the screen. LucidCapture uses it solely to take the screenshots you ask for, when you ask for them. Nothing is captured in the background."],
           ["Folder access (optional)", "Only the one folder you pick yourself through the standard macOS panel, and only if you enable saving copies to a folder."]
         ],
         "network": "None, and this is enforced rather than promised: the app ships without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no server for your screenshots to go to.",
         "third_parties": "None. No third-party SDKs, advertising libraries, trackers or analytics frameworks are compiled into the app.",
-        "extra": "LucidFrame does not request access to your camera, microphone, location, contacts, calendars or photo library, and cannot read any file you have not explicitly opened."
+        "extra": "LucidCapture does not request access to your camera, microphone, location, contacts, calendars or photo library, and cannot read any file you have not explicitly opened."
       },
       "support": {
         "faq": [
-          ["Why does macOS ask for Screen Recording permission?", "macOS requires it of every screenshot app without exception. Grant it in System Settings → Privacy & Security → Screen Recording, then relaunch LucidFrame."],
+          ["Why does macOS ask for Screen Recording permission?", "macOS requires it of every screenshot app without exception. Grant it in System Settings → Privacy & Security → Screen Recording, then relaunch LucidCapture."],
           ["Do my screenshots leave my Mac?", "No. The app has no network entitlement, so it cannot make a connection at all."],
           ["Can I change the keyboard shortcuts?", "Yes, in Settings. The defaults are ⌃⇧3 for display, ⌃⇧4 for region and ⌃⇧5 for window."],
           ["Where are my captures stored?", "In the app's own sandbox container. You can also turn on “Also save to folder” and pick a folder of your own."],

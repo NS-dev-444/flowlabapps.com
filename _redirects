@@ -1,1 +1,5 @@
 /.well-known/security.txt  /security.txt  301
+/apps/lucidframe/privacy/  /apps/lucidcapture/privacy/  301
+/apps/lucidframe/support/  /apps/lucidcapture/support/  301
+/apps/lucidframe/*         /apps/lucidcapture/:splat    301
+/apps/lucidframe           /apps/lucidcapture/          301
