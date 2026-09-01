@@ -18,15 +18,16 @@
       "bundle_ids": ["com.pulsefast.app"],
       "accent": ["#7a63ff", "#00d1ff"],
       "glyph": "◐",
-      "summary": "PulseFast is an intermittent fasting companion. Start and stop a fast with one tap, watch a live ring close in on your goal, and keep every session, note and insight in one place — without a spreadsheet.",
+      "summary": "PulseFast is a fasting companion. Start and stop a fast with one tap, watch a live ring close in on your goal, and keep every session, note and insight in one place — without a spreadsheet. It handles everyday intermittent fasting and longer extended fasts alike.",
       "long": [
-        "Pick a preset — 14:10, 18:6, 20:4 — or set a custom target anywhere from 10 to 24 hours. PulseFast tracks the fasting window and the eating window that follows it, so you never have to do the arithmetic yourself.",
+        "Pick a preset — 13, 15, 16, 18, 20, 24, 30, 36, 42, 48, 60 or 72 hours — or set a custom target anywhere from 12 hours to 168 hours (7 days). PulseFast tracks the fasting window and the eating window that follows it, so you never have to do the arithmetic yourself.",
         "When you close a fast you can attach a note: how hunger went, what you ate, what got in the way. Over time those notes turn into insight cards — rolling averages, longest fast, eating-window quality and a running tally of goals met.",
-        "On iOS a Live Activity keeps the countdown on your Lock Screen, and a home screen widget shows current progress on both platforms."
+        "On iOS a Live Activity keeps the countdown on your Lock Screen, and a home screen widget shows current progress on both platforms.",
+        "PulseFast does not endorse or recommend any specific fasting duration. The presets are provided for convenience only, and the app shows a health disclaimer before you commit to a long fast. Consult a healthcare professional to decide what is safe and appropriate for you."
       ],
       "features": [
         ["One-tap fasting", "Start or stop instantly. Eating windows are captured automatically the moment a fast closes."],
-        ["Presets and custom goals", "14:10, 18:6 and 20:4 out of the box, plus any custom target from 10 to 24 hours."],
+        ["Presets and custom goals", "Presets from 13 to 72 hours out of the box, plus any custom target from 12 hours up to 168 hours (7 days)."],
         ["Live progress ring", "A goal ring that updates in real time, mirrored on the home screen widget and iOS Lock Screen."],
         ["Session journaling", "Attach hunger, meal and context notes to each closed fast so patterns are readable later."],
         ["Hydration and activity", "Log hydration in-app, and optionally read steps, distance and active energy from Apple Health or Health Connect."],
@@ -54,7 +55,7 @@
       },
       "support": {
         "faq": [
-          ["Which fasting schedules are supported?", "14:10, 18:6 and 20:4 presets, plus any custom target between 10 and 24 hours."],
+          ["Which fasting schedules are supported?", "Presets at 13, 15, 16, 18, 20, 24, 30, 36, 42, 48, 60 and 72 hours, plus any custom target between 12 and 168 hours (7 days)."],
           ["Do I need an account?", "No. There is no sign-up and no login. The app works fully offline."],
           ["Is Health integration required?", "No. Apple Health and Health Connect are both optional. Decline the permission and every other feature still works."],
           ["Where is my data stored?", "On your device only. Deleting the app removes its local data, subject to your device's own backup and restore settings."],
