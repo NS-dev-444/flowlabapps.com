@@ -58,6 +58,34 @@ Delete its entry from `apps.json` and rebuild — the build clears `apps/` first
 pages disappear. If that app was already published to a store, leave its privacy policy
 reachable until the listing is gone.
 
+## The one way to break this site
+
+**Cloudflare runs no build command.** It serves exactly the HTML that is committed. So
+editing `_build/apps.json` and committing *without re-running the build* deploys the old
+pages while the data file says something new — silently, with a green tick in the
+Cloudflare dashboard and no error anywhere.
+
+That is not hypothetical: the PulseFast page advertised "14:10, 18:6, 20:4 presets and a
+custom target from 10 to 24 hours" for weeks. The app has never had those. Its real presets
+run 13–72h with custom goals to 168h. For a Health & Fitness listing, marketing copy that
+understates a seven-day fasting ceiling is an App Review problem, not a typo.
+
+**After any edit to `apps.json`, run the build before committing:**
+
+```bash
+python3 _build/build.py
+git add -A
+```
+
+A pre-commit hook enforces this. Install it once per clone:
+
+```bash
+bash _build/hooks/install.sh
+```
+
+It rebuilds, and refuses the commit if that produces changes you have not staged, naming
+the files. `git commit --no-verify` bypasses it, which you should not need.
+
 ## Deploying (Cloudflare Pages)
 
 The generated HTML is committed, so Cloudflare does **not** need to run Python. Connect the
@@ -68,6 +96,10 @@ repo and set:
 | Framework preset | None |
 | Build command | *(leave blank)* |
 | Build output directory | `/` |
+
+Deploys are Git-driven: a push to `main` triggers a Cloudflare build and promotes it
+automatically. Earlier deployments in the dashboard marked *"Manually deployed"* predate
+that connection. Verified 31 Aug 2026 — a push went live without any manual step.
 
 `_headers` (security headers, including a CSP that pins the one inline script by hash) and
 `_redirects` are read by Cloudflare Pages automatically. No `CNAME` file is needed — the

@@ -1,0 +1,46 @@
+#!/bin/bash
+# Refuse a commit whose generated HTML does not match its source data.
+#
+# Cloudflare Pages serves this repo with no build command -- the generated HTML
+# is what ships. So a commit that edits _build/apps.json without re-running the
+# build deploys the OLD pages while the data says something new, silently. That
+# is how the PulseFast page spent weeks advertising fasting presets the app had
+# never had.
+#
+# Install:  bash _build/hooks/install.sh
+# Bypass:   git commit --no-verify   (you had better mean it)
+
+cd "$(git rev-parse --show-toplevel)" || exit 1
+
+command -v python3 >/dev/null || { echo "pre-commit: python3 not found"; exit 1; }
+
+# Files already dirty before we touch anything -- not our business.
+BEFORE=$(git diff --name-only | sort)
+
+if ! python3 _build/build.py >/dev/null 2>&1; then
+    echo
+    echo "  BUILD FAILED -- commit refused."
+    echo "  Run: python3 _build/build.py"
+    echo
+    exit 1
+fi
+
+AFTER=$(git diff --name-only | sort)
+DRIFT=$(comm -13 <(echo "$BEFORE") <(echo "$AFTER"))
+
+if [ -n "$DRIFT" ]; then
+    echo
+    echo "  Generated pages are out of sync with _build/apps.json."
+    echo "  Rebuilt for you; these files changed and are NOT staged:"
+    echo
+    echo "$DRIFT" | sed 's/^/      /'
+    echo
+    echo "  Cloudflare runs no build command -- it serves exactly what is"
+    echo "  committed. Committing now would deploy the old pages."
+    echo
+    echo "  Fix:  git add -A && git commit"
+    echo
+    exit 1
+fi
+
+exit 0
