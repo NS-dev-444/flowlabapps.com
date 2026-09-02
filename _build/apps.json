@@ -127,7 +127,7 @@
       "platforms": ["macOS"],
       "status": "Store submission prep",
       "status_kind": "soon",
-      "bundle_ids": [],
+      "bundle_ids": ["com.flowlab.syntaxpad"],
       "accent": ["#4ade80", "#00d1ff"],
       "glyph": "❯",
       "summary": "SyntaxPad is a lightweight, native macOS editor for notes, code, configuration files and Markdown — built entirely on Apple frameworks, with no Electron and no web runtime.",
