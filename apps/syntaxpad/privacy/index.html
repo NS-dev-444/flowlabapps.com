@@ -4,11 +4,11 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Privacy Policy — SyntaxPad</title>
-<meta name="description" content="Privacy policy for SyntaxPad by Flowlab Apps. SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and no network connections of any kind. Your documents never leave your Mac." />
+<meta name="description" content="Privacy policy for SyntaxPad by Flowlab Apps. SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and it makes no network requests. Your documents never leave your Mac." />
 <meta name="theme-color" content="#07080c" />
 <meta name="color-scheme" content="dark" />
 <meta property="og:title" content="Privacy Policy — SyntaxPad" />
-<meta property="og:description" content="Privacy policy for SyntaxPad by Flowlab Apps. SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and no network connections of any kind. Your documents never leave your Mac." />
+<meta property="og:description" content="Privacy policy for SyntaxPad by Flowlab Apps. SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and it makes no network requests. Your documents never leave your Mac." />
 <meta property="og:site_name" content="Flowlab Apps" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
@@ -50,7 +50,7 @@
   macOS, all versions</p>
 
   <div class="note">
-    <p><b>The short version.</b> SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and no network connections of any kind. Your documents never leave your Mac.</p>
+    <p><b>The short version.</b> SyntaxPad collects no data. No accounts, no analytics, no telemetry, no crash reporting, no advertising, and it makes no network requests. Your documents never leave your Mac.</p>
   </div>
 
   <div class="toc">
@@ -97,11 +97,11 @@ no backend to send it to.</p>
 <p>SyntaxPad asks for the following, and nothing else. Every permission marked
 optional can be declined, and the app keeps working without it.</p>
 <ul>
-    <li><b>Files you choose yourself</b> — SyntaxPad runs in the macOS App Sandbox with exactly three entitlements — app sandbox, user-selected file read/write, and app-scope bookmarks. It can read and write only files you have picked through an Open or Save dialog.</li>
+    <li><b>Files you choose yourself</b> — SyntaxPad runs in the macOS App Sandbox with four entitlements — app sandbox, user-selected file read/write, app-scope bookmarks, and the network-client entitlement that macOS requires before it will start the web-rendering component behind the Markdown preview. It can read and write only files you have picked through an Open or Save dialog.</li>
 </ul>
 
 <h2 id="network">4. Network activity</h2>
-<p>None. The app ships without the network entitlement, so macOS itself prevents any connection. The Markdown preview is served under a <code>default-src 'none'</code> content security policy, which means a Markdown file cannot load a remote image, phone home, or report that you opened it. Remote images therefore show their alt text instead — a deliberate trade.</p>
+<p>None. SyntaxPad makes no network requests — there is no server to contact and no code that contacts one. It does declare the network-client entitlement, but not to reach the network: macOS will not start the system web-rendering component behind the Markdown preview without it. That preview is served under a <code>default-src 'none'</code> content security policy, which is what actually prevents a Markdown file loading a remote image, phoning home, or reporting that you opened it. Remote images therefore show their alt text instead — a deliberate trade.</p>
 
 <h2 id="third-parties">5. Third parties</h2>
 <p>None. No SDKs, no trackers, no analytics.</p>
