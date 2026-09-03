@@ -517,6 +517,145 @@
       }
     },
     {
+      "slug": "pixcelate",
+      "name": "Pixcelate",
+      "tagline": "Background removal that never leaves your phone.",
+      "category": "Photo & Video",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": [
+        "com.flowlabapps.pixcelate"
+      ],
+      "accent": [
+        "#4fd1c5",
+        "#f6ad55"
+      ],
+      "glyph": "◧",
+      "summary": "Pixcelate lifts the subject out of a photo and hands you a clean transparent PNG. The segmentation model is bundled inside the app and runs on your own device, so there is no upload, no queue and no account — and it works in airplane mode.",
+      "long": [
+        "Most background removers recognise a fixed list of things — people, cars, a handful of animals — and give up on anything else. Pixcelate uses a salient object model instead, which finds whatever the subject of the photo actually is without needing to name it. A plate of food, a pair of earrings, a houseplant, a signature on paper: all of them cut out the same way.",
+        "The cutout keeps a soft edge. Rather than deciding each pixel is in or out, the model produces a continuous matte that becomes the alpha channel directly — so hair, fur, blades of grass and motion blur survive instead of turning into a jagged sticker outline.",
+        "From there it is a proper editor. Eight filter presets, brightness, contrast, saturation and hue, blur, sharpen and clarity, rotation and aspect crop, and a background you can leave transparent or fill with a colour or gradient. Every change is non-destructive with twenty steps of undo, and you export as PNG or JPEG at full resolution or a size you choose."
+      ],
+      "features": [
+        [
+          "Works on any subject",
+          "A salient object model finds the subject without needing to recognise it, so food, products, plants and documents all work — not just people and pets."
+        ],
+        [
+          "Soft edges, not stickers",
+          "The matte is used as a continuous alpha channel rather than an in-or-out mask, so hair, fur and grass keep their detail."
+        ],
+        [
+          "Entirely on device",
+          "The 2.4 MB model ships inside the app. Nothing is uploaded, there is no account, and removal works with no connection at all."
+        ],
+        [
+          "Live Photo aware",
+          "Pick a Live Photo and Pixcelate pulls out candidate frames, ranks them by sharpness and matches Apple's own key photo so you start from the right still."
+        ],
+        [
+          "Non-destructive editing",
+          "Presets, colour and detail adjustments, crop, rotate and background fill — all re-editable, with twenty steps of undo and redo."
+        ],
+        [
+          "Export on your terms",
+          "PNG to keep transparency or JPEG to save space, at full resolution or a maximum edge you pick, straight to your photo library or out through the share sheet."
+        ]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Pixcelate collects nothing. Your photos are processed by a model bundled inside the app, on your own device — there is no account, no backend and no analytics. On Android this is enforced rather than promised: the release build does not request the INTERNET permission, so the system itself blocks any connection.",
+        "stored": [
+          [
+            "Photos you export",
+            "Your device's photo library, in a Pixcelate album",
+            "Because you tapped Save — this is the only thing the app deliberately keeps"
+          ],
+          [
+            "A photo you take inside the app",
+            "Your device's photo library, and the app's temporary folder while you work on it",
+            "So you can cut it out; the working copy is swept once it is a day old"
+          ],
+          [
+            "Working files — an extracted Live Photo frame, the file handed to the share sheet",
+            "The app's own temporary folder on your device",
+            "So a cutout survives long enough to be shared or saved; swept automatically once it is a day old"
+          ],
+          [
+            "A diagnostic log, only if something goes wrong",
+            "The app's own temporary folder on your device",
+            "So you can read the error under Diagnostics and paste it into a bug report; swept on the same schedule"
+          ]
+        ],
+        "permissions": [
+          [
+            "Photo library (read)",
+            "To open the photo or Live Photo you pick. Pixcelate only ever receives the single item you chose in the system picker — it cannot browse your library."
+          ],
+          [
+            "Camera (optional)",
+            "Only when you choose “Take a photo” instead of picking from your library. Pixcelate never opens the camera on its own, records nothing, and keeps the shot on your device like any other photo. Decline it and the library still works."
+          ],
+          [
+            "Photo library (add)",
+            "Only when you tap Save, to write the finished image into a Pixcelate album. Decline it and everything else still works; use the share sheet instead."
+          ],
+          [
+            "Storage on older Android (optional)",
+            "Android 10 and below required this to write a saved image to shared storage. It is capped at API 29 and is never requested on newer versions of Android."
+          ]
+        ],
+        "network": "None. There is no networking code in the app, no analytics, advertising, crash-reporting or attribution SDK, and no server for anything to be sent to. Background removal runs against a model file compiled into the app itself, which is why it behaves identically in airplane mode. On Android the release build declares no INTERNET permission at all, so Android blocks any connection whether or not code attempts one.",
+        "third_parties": "None. No third-party SDK, advertising library, tracker or analytics framework is compiled into the app. The open-source components it does use — the system image picker, the TensorFlow Lite runtime, the share sheet and the photo-library writer — all run locally, and none of them report anything to anyone.",
+        "store_note": "One qualification, for completeness: the development and profile builds used while the app is being written do declare Android's INTERNET permission, because Flutter's hot-reload tooling needs it. That permission is absent from the release build, which is the only build that ever reaches a store or a phone.",
+        "extra": "Nothing you do in the editor survives closing the app. The cutout, the adjustments and the undo history are all held in memory only — quit Pixcelate and they are gone, and only what you deliberately exported to your photo library remains. Pixcelate does not request your microphone, location, contacts or calendars."
+      },
+      "support": {
+        "faq": [
+          [
+            "Do my photos leave my device?",
+            "No. The segmentation model is bundled inside the app and runs locally. There is no server involved, and on Android the release build has no INTERNET permission, so a connection is not possible in the first place."
+          ],
+          [
+            "Does it work without a connection?",
+            "Yes, completely. Try it in airplane mode — nothing changes."
+          ],
+          [
+            "Does the camera shortcut record anything?",
+            "No. Choosing “Take a photo” opens the standard camera for a single shot, which is then handed to the editor. Pixcelate captures no video or audio, and never opens the camera unless you ask it to."
+          ],
+          [
+            "It cut out the wrong thing. What now?",
+            "Pixcelate looks for the single most prominent subject in the frame. On a scene with no clear subject — an open landscape, or a flat-lay of many objects — the result can be unpredictable. Cropping tighter around what you want before removing the background usually fixes it."
+          ],
+          [
+            "What happens when I pick a Live Photo?",
+            "Pixcelate pulls several still frames out of it, ranks them by sharpness, and compares them against Apple's own key photo so it can preselect the right one. You can override the choice, or ask for the key photo directly."
+          ],
+          [
+            "Where do saved photos go?",
+            "Into a Pixcelate album in your normal photo library. The Save confirmation has a View button that opens it."
+          ],
+          [
+            "How do I remove everything the app has stored?",
+            "Delete the exported photos from your photo library as you would any others, and delete the app. Its temporary working files go with it — and they are cleared automatically a day after they are written anyway."
+          ]
+        ],
+        "report": [
+          "iOS or Android version, and your device model",
+          "Whether the photo was a normal still or a Live Photo",
+          "Roughly how large the photo was, if you know",
+          "What you expected versus what actually happened",
+          "Anything shown under Diagnostics — there is a Copy button in that dialog"
+        ]
+      }
+    },
+    {
       "slug": "twister-rush",
       "name": "Twister Rush",
       "tagline": "Twelve tiers, from drink cups to skyscrapers.",
