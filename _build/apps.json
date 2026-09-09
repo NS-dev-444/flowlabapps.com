@@ -1373,6 +1373,154 @@
           "Steps to reproduce"
         ]
       }
+    },
+    {
+      "slug": "fanoos",
+      "name": "Fanoos",
+      "tagline": "Ramadan, prayer and Quran. Calm, offline, private.",
+      "category": "Lifestyle — Religion",
+      "platforms": [
+        "iOS",
+        "Android"
+      ],
+      "status": "In development",
+      "status_kind": "dev",
+      "bundle_ids": [
+        "com.flowlabapps.fanoos"
+      ],
+      "accent": [
+        "#f59e0b",
+        "#7c3aed"
+      ],
+      "glyph": "☾",
+      "summary": "Fanoos is a companion for a Muslim's daily worship: a Ramadan fasting countdown for suhoor and iftar, prayer times with reliable reminders, a Qibla compass and an offline Quran. Everything is calculated on your phone. There are no accounts, no ads, no analytics and no servers.",
+      "long": [
+        "During Ramadan, Fanoos shows whether you are fasting right now, how long until suhoor ends and how long until iftar, with a countdown on your Lock Screen and Dynamic Island on iOS and on the home screen on both platforms. Reminders for suhoor, Fajr, iftar and each prayer are scheduled on your device.",
+        "Prayer times are computed locally from your location (or a city you pick) using a calculation method you choose. The method, madhab and any high-latitude rule are always shown on screen, because authorities legitimately differ and your mosque may follow a different convention.",
+        "The Quran reader works fully offline with the Uthmani text from the Tanzil project and an English translation by Talal Itani. Bookmarks, your last-read position and search stay on the device.",
+        "Fanoos is a worship companion, not a source of religious rulings. Hijri dates and the start of Ramadan are shown as estimates until you confirm the announcement for your region."
+      ],
+      "features": [
+        [
+          "Ramadan fasting countdown",
+          "Suhoor and iftar countdowns derived from Fajr and Maghrib for your location, with a fasting-day ring, Live Activity and home screen widgets."
+        ],
+        [
+          "Prayer times and reminders",
+          "Five daily prayers plus sunrise, with per-prayer reminders and adhan sounds. Exact alarms on Android so reminders fire on time."
+        ],
+        [
+          "Transparent calculation settings",
+          "Choose the calculation authority, Asr madhab, high-latitude rule and per-prayer offsets. The active method is always visible."
+        ],
+        [
+          "Qibla compass",
+          "Direction to the Kaaba from your location, with a numeric bearing, accuracy indicator and calibration guidance."
+        ],
+        [
+          "Offline Quran",
+          "Uthmani Arabic text with an English translation, bookmarks, last-read position and search, with no download required."
+        ],
+        [
+          "Hijri calendar",
+          "Today's Hijri date with an adjustment for local moon sighting, and notable dates marked as estimates."
+        ]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Fanoos keeps everything on your device. Your location never leaves your phone. There are no accounts, no ads, no analytics and no servers.",
+        "stored": [
+          [
+            "Your chosen location or city",
+            "On your device",
+            "To compute prayer times, fasting times and the Qibla direction"
+          ],
+          [
+            "Calculation settings and reminder preferences",
+            "On your device",
+            "To remember how you like the app configured"
+          ],
+          [
+            "Fasting days you mark",
+            "On your device",
+            "Your private Ramadan record; nothing is shared"
+          ],
+          [
+            "Quran bookmarks and last-read position",
+            "On your device",
+            "So you can continue where you stopped"
+          ],
+          [
+            "Hijri date adjustment",
+            "On your device",
+            "To match your community's announcement"
+          ]
+        ],
+        "permissions": [
+          [
+            "Location (while using the app, approximate)",
+            "To compute prayer times, fasting times and the Qibla direction for where you are. Fanoos asks only for approximate accuracy and only while the app is open, never in the background. You can decline it and pick a city from the built-in offline list instead."
+          ],
+          [
+            "Notifications",
+            "For prayer, suhoor and iftar reminders. Everything is scheduled on your device; nothing goes through a push server."
+          ],
+          [
+            "Exact alarms (Android)",
+            "So a reminder fires at the exact minute rather than whenever the system gets around to it. Android may ask you to allow this in Settings."
+          ],
+          [
+            "Run at startup (Android)",
+            "So reminders you already scheduled survive a device restart."
+          ],
+          [
+            "Compass and motion sensors",
+            "To point the Qibla compass. Sensor readings are used on the device and never stored or sent anywhere."
+          ]
+        ],
+        "network": "Version 1 of Fanoos makes no network requests at all. Prayer times, the Hijri calendar, the Qibla direction and the Quran text are all computed or stored on the device. If a later version adds streamed Quran audio, it will fetch audio files from a content server; that request contains the file requested and nothing about you, and this policy will be updated before that version ships.",
+        "third_parties": "None. There are no analytics SDKs, advertising libraries, crash reporters or trackers in the app.",
+        "store_note": "Because location is processed only on the device and never transmitted, both stores treat it as not collected."
+      },
+      "support": {
+        "faq": [
+          [
+            "Why do my prayer times differ from my mosque?",
+            "Prayer times are calculated from your location using the authority you select in Settings. Mosques often apply their own precaution minutes or a different convention for Fajr and Isha. Fanoos shows the active method on screen so you can compare, and per-prayer offsets let you match your local timetable."
+          ],
+          [
+            "Why is the Ramadan start date marked as estimated?",
+            "The Hijri calendar in Fanoos follows the calculated Umm al-Qura calendar. Many communities begin Ramadan on a confirmed moon sighting, which can differ by a day. Fanoos asks you to confirm the announced date for your region and lets you adjust the Hijri date by a day either way."
+          ],
+          [
+            "Does the fast start at imsak or at Fajr?",
+            "The fast begins at Fajr. Some communities stop eating a few minutes earlier as a precaution; Fanoos can show that imsak line if you turn it on, and labels it as precautionary."
+          ],
+          [
+            "Do I need an account or an internet connection?",
+            "No. There is no sign-up and no login, and every feature in version 1 works offline."
+          ],
+          [
+            "Reminders are late or missing on Android.",
+            "Some Android phones stop apps from scheduling exact alarms to save battery. Fanoos includes a reminder self-test and step-by-step guidance for your phone brand in Settings. Allowing exact alarms and turning off battery optimisation for Fanoos fixes most cases."
+          ],
+          [
+            "Where is my data stored?",
+            "On your device only. Deleting the app removes its local data, subject to your device's own backup and restore settings."
+          ],
+          [
+            "Which platforms are supported?",
+            "iPhone and Android. iOS additionally supports Live Activities on the Lock Screen and Dynamic Island."
+          ]
+        ],
+        "report": [
+          "Device model and OS version",
+          "Your location or selected city, and the calculation method shown in Settings",
+          "What you expected versus what happened",
+          "Steps to reproduce",
+          "Roughly when it happened, so it can be matched to your reminder schedule"
+        ]
+      }
     }
   ]
 }
