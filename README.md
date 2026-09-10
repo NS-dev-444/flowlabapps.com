@@ -43,6 +43,31 @@ app whose network behaviour needs a word of qualification next to the store decl
 
 A `category` beginning with `Games` files the app under the Games filter on the home page.
 
+### Publishing an app
+
+When a listing actually goes live, three things change together in its `apps.json` entry:
+
+```json
+"status": "Available on the Mac App Store",
+"status_kind": "live",
+"stores": [
+  { "name": "Mac App Store", "url": "https://apps.apple.com/app/id6807086655" }
+]
+```
+
+`stores` is optional and empty until then. Each entry adds a primary **Download on the
+&lt;name&gt;** button at the top of the app page (ahead of Support, which stops being the
+primary action) and a row in its details table. An app on two stores lists two of each, in
+the order given.
+
+Apple's own "Download on the App Store" badge artwork is deliberately not used: it is a
+trademarked asset with its own placement rules, and an approximation of it would be worse
+than plain text.
+
+**Do not flip `status_kind` to `live` before the store URL resolves.** Apple's listing takes
+up to a day to propagate after approval, and a 404 on the download button is worse than a
+"Coming soon" badge.
+
 To add its icon, drop the 1024&nbsp;px store icon through:
 
 ```bash

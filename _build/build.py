@@ -830,11 +830,17 @@ def build_app_page(app):
     )
     longs = "\n  ".join(f"<p>{e(p)}</p>" for p in app["long"])
 
+    stores = app.get("stores", [])
+
     rows = [
         ("Category", e(app["category"])),
         ("Platforms", e(", ".join(app["platforms"]))),
         ("Availability", app["status"]),
     ]
+    for s in stores:
+        rows.append((e(s["name"]),
+                     f'<a href="{html.escape(s["url"], quote=True)}">'
+                     f'{e(s["url"].split("://", 1)[-1])}</a>'))
     if app["bundle_ids"]:
         rows.append(("Bundle identifier",
                      ", ".join(f"<code>{e(b)}</code>" for b in app["bundle_ids"])))
@@ -855,6 +861,15 @@ def build_app_page(app):
         f"      <tr><th scope=\"row\">{k}</th><td>{v}</td></tr>" for k, v in rows
     )
 
+    # A published listing takes over as the page's primary action; Support keeps
+    # the top row but stops being the button the eye lands on first.
+    store_btns = "".join(
+        f'      <a class="btn primary" href="{html.escape(s["url"], quote=True)}">'
+        f'Download on the {e(s["name"])} {ARROW}</a>\n'
+        for s in stores
+    )
+    support_cls = "btn" if stores else "btn primary"
+
     body = f"""{back_to_apps()}
 {app_header(app)}
 
@@ -866,7 +881,7 @@ def build_app_page(app):
     <p class="lede">{e(app['summary'])}</p>
     <div style="margin-top:18px">{platform_pills(app)} {status_badge(app)}</div>
     <div class="cta">
-      <a class="btn primary" href="/apps/{app['slug']}/support/">Support {ARROW}</a>
+{store_btns}      <a class="{support_cls}" href="/apps/{app['slug']}/support/">Support {ARROW}</a>
       <a class="btn" href="/apps/{app['slug']}/privacy/">Privacy policy</a>
       <a class="btn" href="mailto:{EMAIL}?subject={e(app['name'])}">Email us</a>
     </div>

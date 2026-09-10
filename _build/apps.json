@@ -155,9 +155,17 @@
       "platforms": [
         "macOS"
       ],
-      "status": "Store submission prep",
-      "status_kind": "soon",
-      "bundle_ids": [],
+      "status": "Available on the Mac App Store",
+      "status_kind": "live",
+      "stores": [
+        {
+          "name": "Mac App Store",
+          "url": "https://apps.apple.com/app/id6807086655"
+        }
+      ],
+      "bundle_ids": [
+        "com.flowlabapps.LucidCapture"
+      ],
       "accent": [
         "#00d1ff",
         "#7a63ff"
