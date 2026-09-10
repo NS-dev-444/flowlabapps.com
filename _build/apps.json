@@ -1375,8 +1375,8 @@
       }
     },
     {
-      "slug": "ishraq",
-      "name": "Ishraq",
+      "slug": "matla",
+      "name": "Matla",
       "tagline": "Ramadan, prayer and Quran. Calm, offline, private.",
       "category": "Lifestyle — Religion",
       "platforms": [
@@ -1386,19 +1386,19 @@
       "status": "In development",
       "status_kind": "dev",
       "bundle_ids": [
-        "com.flowlabapps.ishraq"
+        "com.flowlabapps.matla"
       ],
       "accent": [
         "#f59e0b",
         "#7c3aed"
       ],
       "glyph": "☾",
-      "summary": "Ishraq is a companion for a Muslim's daily worship: a Ramadan fasting countdown for suhoor and iftar, prayer times with reliable reminders, a Qibla compass and an offline Quran. Everything is calculated on your phone. There are no accounts, no ads, no analytics and no servers.",
+      "summary": "Matla is a companion for a Muslim's daily worship: a Ramadan fasting countdown for suhoor and iftar, prayer times with reliable reminders, a Qibla compass and an offline Quran. Everything is calculated on your phone. There are no accounts, no ads, no analytics and no servers.",
       "long": [
-        "During Ramadan, Ishraq shows whether you are fasting right now, how long until suhoor ends and how long until iftar, with a countdown on your Lock Screen and Dynamic Island on iOS and on the home screen on both platforms. Reminders for suhoor, Fajr, iftar and each prayer are scheduled on your device.",
+        "During Ramadan, Matla shows whether you are fasting right now, how long until suhoor ends and how long until iftar, with a countdown on your Lock Screen and Dynamic Island on iOS and on the home screen on both platforms. Reminders for suhoor, Fajr, iftar and each prayer are scheduled on your device.",
         "Prayer times are computed locally from your location (or a city you pick) using a calculation method you choose. The method, madhab and any high-latitude rule are always shown on screen, because authorities legitimately differ and your mosque may follow a different convention.",
         "The Quran reader works fully offline with the Uthmani text from the Tanzil project and an English translation by Talal Itani. Bookmarks, your last-read position and search stay on the device.",
-        "Ishraq is a worship companion, not a source of religious rulings. Hijri dates and the start of Ramadan are shown as estimates until you confirm the announcement for your region."
+        "Matla is a worship companion, not a source of religious rulings. Hijri dates and the start of Ramadan are shown as estimates until you confirm the announcement for your region."
       ],
       "features": [
         [
@@ -1428,7 +1428,7 @@
       ],
       "privacy": {
         "collects_data": false,
-        "headline": "Ishraq keeps everything on your device. Your location never leaves your phone. There are no accounts, no ads, no analytics and no servers.",
+        "headline": "Matla keeps everything on your device. Your location never leaves your phone. There are no accounts, no ads, no analytics and no servers.",
         "stored": [
           [
             "Your chosen location or city",
@@ -1459,7 +1459,7 @@
         "permissions": [
           [
             "Location (while using the app, approximate)",
-            "To compute prayer times, fasting times and the Qibla direction for where you are. Ishraq asks only for approximate accuracy and only while the app is open, never in the background. You can decline it and pick a city from the built-in offline list instead."
+            "To compute prayer times, fasting times and the Qibla direction for where you are. Matla asks only for approximate accuracy and only while the app is open, never in the background. You can decline it and pick a city from the built-in offline list instead."
           ],
           [
             "Notifications",
@@ -1478,7 +1478,7 @@
             "To point the Qibla compass. Sensor readings are used on the device and never stored or sent anywhere."
           ]
         ],
-        "network": "Version 1 of Ishraq makes no network requests at all. Prayer times, the Hijri calendar, the Qibla direction and the Quran text are all computed or stored on the device. If a later version adds streamed Quran audio, it will fetch audio files from a content server; that request contains the file requested and nothing about you, and this policy will be updated before that version ships.",
+        "network": "Version 1 of Matla makes no network requests at all. Prayer times, the Hijri calendar, the Qibla direction and the Quran text are all computed or stored on the device. If a later version adds streamed Quran audio, it will fetch audio files from a content server; that request contains the file requested and nothing about you, and this policy will be updated before that version ships.",
         "third_parties": "None. There are no analytics SDKs, advertising libraries, crash reporters or trackers in the app.",
         "store_note": "Because location is processed only on the device and never transmitted, both stores treat it as not collected."
       },
@@ -1486,15 +1486,15 @@
         "faq": [
           [
             "Why do my prayer times differ from my mosque?",
-            "Prayer times are calculated from your location using the authority you select in Settings. Mosques often apply their own precaution minutes or a different convention for Fajr and Isha. Ishraq shows the active method on screen so you can compare, and per-prayer offsets let you match your local timetable."
+            "Prayer times are calculated from your location using the authority you select in Settings. Mosques often apply their own precaution minutes or a different convention for Fajr and Isha. Matla shows the active method on screen so you can compare, and per-prayer offsets let you match your local timetable."
           ],
           [
             "Why is the Ramadan start date marked as estimated?",
-            "The Hijri calendar in Ishraq follows the calculated Umm al-Qura calendar. Many communities begin Ramadan on a confirmed moon sighting, which can differ by a day. Ishraq asks you to confirm the announced date for your region and lets you adjust the Hijri date by a day either way."
+            "The Hijri calendar in Matla follows the calculated Umm al-Qura calendar. Many communities begin Ramadan on a confirmed moon sighting, which can differ by a day. Matla asks you to confirm the announced date for your region and lets you adjust the Hijri date by a day either way."
           ],
           [
             "Does the fast start at imsak or at Fajr?",
-            "The fast begins at Fajr. Some communities stop eating a few minutes earlier as a precaution; Ishraq can show that imsak line if you turn it on, and labels it as precautionary."
+            "The fast begins at Fajr. Some communities stop eating a few minutes earlier as a precaution; Matla can show that imsak line if you turn it on, and labels it as precautionary."
           ],
           [
             "Do I need an account or an internet connection?",
@@ -1502,7 +1502,7 @@
           ],
           [
             "Reminders are late or missing on Android.",
-            "Some Android phones stop apps from scheduling exact alarms to save battery. Ishraq includes a reminder self-test and step-by-step guidance for your phone brand in Settings. Allowing exact alarms and turning off battery optimisation for Ishraq fixes most cases."
+            "Some Android phones stop apps from scheduling exact alarms to save battery. Matla includes a reminder self-test and step-by-step guidance for your phone brand in Settings. Allowing exact alarms and turning off battery optimisation for Matla fixes most cases."
           ],
           [
             "Where is my data stored?",
