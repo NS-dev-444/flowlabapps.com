@@ -14,6 +14,7 @@ import json
 import os
 import re
 import shutil
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "_build", "apps.json")
@@ -206,9 +207,9 @@ MARKS = {
                   '<path d="M12 3.4a8.6 8.6 0 0 1 7.7 12.4"/>'
                   '<circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"/>'),
     # Capture frame with a selection inside it.
-    "lucidframe": ('<path d="M4 8.6V6.2A2.2 2.2 0 0 1 6.2 4h2.4M15.4 4h2.4A2.2 2.2 0 0 1 20 6.2v2.4'
-                   'M20 15.4v2.4a2.2 2.2 0 0 1-2.2 2.2h-2.4M8.6 20H6.2A2.2 2.2 0 0 1 4 17.8v-2.4"/>'
-                   '<rect x="8.4" y="8.4" width="7.2" height="7.2" rx="1.6" opacity=".55"/>'),
+    "lucidcapture": ('<path d="M4 8.6V6.2A2.2 2.2 0 0 1 6.2 4h2.4M15.4 4h2.4A2.2 2.2 0 0 1 20 6.2v2.4'
+                     'M20 15.4v2.4a2.2 2.2 0 0 1-2.2 2.2h-2.4M8.6 20H6.2A2.2 2.2 0 0 1 4 17.8v-2.4"/>'
+                     '<rect x="8.4" y="8.4" width="7.2" height="7.2" rx="1.6" opacity=".55"/>'),
     # Editor prompt: chevron and a caret rule.
     "syntaxpad": ('<rect x="3" y="4.2" width="18" height="15.6" rx="3.2" opacity=".38"/>'
                   '<path d="m7.6 9.2 3.2 2.9-3.2 2.9"/><path d="M13.4 15h3.4"/>'),
@@ -238,6 +239,30 @@ MARKS = {
                          '<path d="M9.6 12h4.8M9.6 15.6h4.8" opacity=".6"/>'),
 }
 
+# What app_icon() draws for an app that has neither artwork nor a mark of its
+# own. Borrowing a real app's mark is a failure that looks deliberate on the
+# page — Matla shipped with SyntaxPad's code-editor chevron — so the build says
+# so out loud instead; see missing_icons() and main().
+FALLBACK_SLUG = "syntaxpad"
+FALLBACK_MARK = MARKS[FALLBACK_SLUG]
+
+
+def missing_icons():
+    """Apps with no icon of their own: no store artwork and no drawn mark."""
+    return [a for a in APPS
+            if a["slug"] not in APP_ART and a["slug"] not in MARKS]
+
+
+def orphaned_marks():
+    """MARKS keys that match no app, so nothing can ever draw them.
+
+    The other half of the same failure: LucidCapture's mark sat under its
+    pre-launch slug "lucidframe" and went unnoticed because the app had
+    artwork and the wrong key simply never came up.
+    """
+    return sorted(set(MARKS) - {a["slug"] for a in APPS})
+
+
 ARROW = ('<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" '
          'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
          '<path d="M3 8h10M9 4l4 4-4 4"/></svg>')
@@ -260,7 +285,10 @@ def app_icon(app, size="md", eager=False):
         return (f'<span class="icon icon-{size} has-art" style="--c1:{c1};--c2:{c2}" aria-hidden="true">'
                 f'<img src="/assets/icons/{art}" alt="" width="256" height="256" '
                 f'loading="{load}" decoding="async" /></span>')
-    mark = MARKS.get(app["slug"], MARKS["syntaxpad"])
+    # An app with neither artwork nor a mark borrows another app's identity
+    # here rather than rendering nothing, so the build reports it — see
+    # missing_icons().
+    mark = MARKS.get(app["slug"], FALLBACK_MARK)
     return (f'<span class="icon icon-{size}" style="--c1:{c1};--c2:{c2}" aria-hidden="true">'
             f'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" '
             f'stroke-linecap="round" stroke-linejoin="round">{mark}</svg></span>')
@@ -2157,6 +2185,23 @@ def main():
     print(f"Generated {len(written)} pages + sitemap ({count} URLs), robots.txt.")
     for w in written:
         print("  " + w)
+
+    stray = missing_icons()
+    if stray:
+        print(f"\nWARNING: apps with no icon of their own — these render "
+              f"{FALLBACK_SLUG}'s mark:", file=sys.stderr)
+        for a in stray:
+            slug = a["slug"]
+            print(f"  {slug} ({a['name']}) — add _build/icons/{slug}.png "
+                  f"or a MARKS[{slug!r}] entry", file=sys.stderr)
+
+    orphans = orphaned_marks()
+    if orphans:
+        print("\nWARNING: MARKS keys matching no app slug — never drawn:",
+              file=sys.stderr)
+        for slug in orphans:
+            print(f"  {slug!r} — rename it to a slug in apps.json, or delete it",
+                  file=sys.stderr)
 
 
 if __name__ == "__main__":
