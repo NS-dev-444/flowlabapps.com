@@ -37,7 +37,7 @@ detail page, a privacy policy, a support page, a home-page card, footer links an
 entry automatically.
 
 Required fields: `slug`, `name`, `tagline`, `category`, `platforms`, `status`,
-`status_kind` (`live` | `soon` | `dev`), `bundle_ids`, `accent` (two hex colors), `glyph`,
+`status_kind` (`live` | `soon` | `dev`), `bundle_ids`, `accent` (two hex colors),
 `summary`, `long`, `features`, `privacy`, `support`. Optional: `privacy.store_note` for an
 app whose network behaviour needs a word of qualification next to the store declarations.
 

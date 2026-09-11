@@ -31,7 +31,6 @@
         "#7a63ff",
         "#00d1ff"
       ],
-      "glyph": "◐",
       "summary": "PulseFast is a fasting companion. Start and stop a fast with one tap, watch a live ring close in on your goal, and keep every session, note and insight in one place — without a spreadsheet. It handles everyday intermittent fasting and longer extended fasts alike.",
       "long": [
         "Pick a preset — 13, 15, 16, 18, 20, 24, 30, 36, 42, 48, 60 or 72 hours — or set a custom target anywhere from 12 hours to 168 hours (7 days). PulseFast tracks the fasting window and the eating window that follows it, so you never have to do the arithmetic yourself.",
@@ -176,7 +175,6 @@
         "#00d1ff",
         "#7a63ff"
       ],
-      "glyph": "▣",
       "summary": "LucidCapture is a screenshot tool that lives in your menu bar and stays out of your way. Press a key, grab what you need, mark it up, and get on with your work.",
       "long": [
         "Capture a region, a single window or a whole display from a global shortcut — ⌃⇧3, ⌃⇧4 and ⌃⇧5 out of the box, remappable to whatever you prefer. Window captures come out with a proper macOS drop shadow and padding, so they look finished without extra work.",
@@ -307,7 +305,6 @@
         "#4ade80",
         "#00d1ff"
       ],
-      "glyph": "❯",
       "summary": "SyntaxPad is a lightweight, native macOS editor for notes, code, configuration files and Markdown — built entirely on Apple frameworks, with no Electron and no web runtime.",
       "long": [
         "It is not trying to replace Xcode or VS Code. It is the editor you reach for to open a config file, jot a note, read someone else's source, or write Markdown — and it opens instantly, every time.",
@@ -431,7 +428,6 @@
         "#8b5cf6",
         "#22d3ee"
       ],
-      "glyph": "◉",
       "summary": "A fast-session arcade growth game. You are a small black hole loose in Gravity City. Everything you swallow makes you bigger, and everything bigger than you is a threat — until it isn't.",
       "long": [
         "A match runs two minutes across three phases — Scavenge, Expansion and Collapse — and then a thirty-second sudden-death Elimination round where a single point of mass is enough to swallow a rival and nobody who goes down comes back.",
@@ -554,7 +550,6 @@
         "#4fd1c5",
         "#f6ad55"
       ],
-      "glyph": "◧",
       "summary": "Pixcelate lifts the subject out of a photo and hands you a clean transparent PNG. The segmentation model is bundled inside the app and runs on your own device, so there is no upload, no queue and no account — and it works in airplane mode.",
       "long": [
         "Most background removers recognise a fixed list of things — people, cars, a handful of animals — and give up on anything else. Pixcelate uses a salient object model instead, which finds whatever the subject of the photo actually is without needing to name it. A plate of food, a pair of earrings, a houseplant, a signature on paper: all of them cut out the same way.",
@@ -694,7 +689,6 @@
         "#38bdf8",
         "#a78bfa"
       ],
-      "glyph": "🌀",
       "summary": "A 3D arcade tornado-growth game. Drive a funnel through a city, absorb everything you are big enough to lift, and climb a twelve-tier ladder from drink cups to skyscrapers.",
       "long": [
         "What you can absorb is decided by how big an object actually is — measured off its mesh rather than read from a category someone assigned — so two things the same size always behave the same way, and a bigger thing is always harder.",
@@ -803,7 +797,6 @@
         "#fbbf24",
         "#f97316"
       ],
-      "glyph": "▲",
       "summary": "A top-down arcade driving game with two ways to play on the same city: an endless Rush Hour score attack, and a twelve-mission Career.",
       "long": [
         "Rush Hour is one loop with no menus in the middle of it. A shift starts at 45 seconds, and reaching a pickup or completing a drop-off banks time sized to the leg you just drove — so a long haul funds itself and a short hop does not. The run ends when the clock does.",
@@ -913,7 +906,6 @@
         "#f472b6",
         "#a78bfa"
       ],
-      "glyph": "⌂",
       "summary": "A 2.5D dollhouse game for iPhone, iPad and Mac. Customize an avatar, move into a starter apartment, and decorate it room by room with real 3D furniture you place yourself.",
       "long": [
         "Enter Decorate mode, select a piece of furniture, drag it into the room, rotate it, and confirm the placement when it reads green. Change wall and floor finishes, interact with household objects, and work through short tasks that open up more of the house.",
@@ -1027,7 +1019,6 @@
         "#34d399",
         "#0ea5e9"
       ],
-      "glyph": "▤",
       "summary": "An offline, encrypted vault for the documents that matter — passports, licences, insurance, medical records, titles, warranties and contracts. Nothing leaves your device, because there is nowhere for it to go.",
       "long": [
         "Every document is encrypted with its own key, and those keys are wrapped by a master key derived from your password. Unlock with a password, a six-digit PIN, Face ID or Touch ID, with a 160-bit recovery key as a fallback.",
@@ -1167,7 +1158,6 @@
         "#60a5fa",
         "#818cf8"
       ],
-      "glyph": "⚿",
       "summary": "A local-first password manager for macOS, iOS and Android. There is no account, no server and no sync service. Your vault is a single encrypted file on your device, and the only thing that opens it is your master password.",
       "long": [
         "Argon2id at 64 MiB and t=3 derives your key; XChaCha20-Poly1305 encrypts the vault. Envelope encryption means a random vault master key encrypts the body, and each unlock method — password, recovery key, biometric — stores its own wrapped copy, so adding a recovery key never weakens the password path.",
@@ -1297,7 +1287,6 @@
         "#f87171",
         "#fb923c"
       ],
-      "glyph": "⬒",
       "summary": "A remote control app that finds compatible TVs and streaming devices on your Wi-Fi, pairs with them, and loads the right remote layout automatically.",
       "long": [
         "Discovery finds supported devices on your local network, identifies the manufacturer, walks you through whatever pairing the TV requires, and then shows a remote built for that device rather than a generic grid of buttons.",
@@ -1412,7 +1401,6 @@
         "#f59e0b",
         "#7c3aed"
       ],
-      "glyph": "☾",
       "summary": "Matla is a companion for a Muslim's daily worship: a Ramadan fasting countdown for suhoor and iftar, prayer times with reliable reminders, a Qibla compass and an offline Quran. Everything is calculated on your phone. There are no accounts, no ads, no analytics and no servers.",
       "long": [
         "During Ramadan, Matla shows whether you are fasting right now, how long until suhoor ends and how long until iftar, with a countdown on your Lock Screen and Dynamic Island on iOS and on the home screen on both platforms. Reminders for suhoor, Fajr, iftar and each prayer are scheduled on your device.",
