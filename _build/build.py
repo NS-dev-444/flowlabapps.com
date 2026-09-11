@@ -237,6 +237,12 @@ MARKS = {
     "universal-remote": ('<rect x="7" y="3" width="10" height="18" rx="3.2"/>'
                          '<circle cx="12" cy="7.4" r="1.4"/>'
                          '<path d="M9.6 12h4.8M9.6 15.6h4.8" opacity=".6"/>'),
+    # New crescent rising over the horizon — matla' is the rising place of the
+    # moon, and the sighting is what starts Ramadan. The crescent is a circle
+    # of r 7.2 at (11.4, 9.6) cut by one of r 7.8 at (16.4, 5.6); the rule sits
+    # low and wider than the moon so it reads as ground, not as an underline.
+    "matla": ('<path d="M9.1 2.8a7.2 7.2 0 1 0 8.5 10.5A7.8 7.8 0 0 1 9.1 2.8z"/>'
+              '<path d="M3 20.4h18" opacity=".5"/>'),
 }
 
 # What app_icon() draws for an app that has neither artwork nor a mark of its
