@@ -426,6 +426,14 @@ a{color:inherit; text-decoration:none}
   .navlinks{font-size:13px; gap:0}
   .navlinks a{padding:7px 9px}
 }
+/* The row above needs 300px inside the pill and a 320px screen leaves 269, so
+   below 375px the padding and wordmark tighten to keep all three links on it. */
+@media (max-width:374px){
+  .nav{padding:8px 5px 8px 10px; gap:2px}
+  .nav .brand{font-size:14px; gap:7px}
+  .nav .brand .dot{width:16px; height:16px}
+  .navlinks a{padding:7px 5px}
+}
 
 /* --- surfaces ----------------------------------------------------------- */
 .card{
@@ -1133,7 +1141,7 @@ your consent in-app.</p>""")
 <p>Questions about this policy, or about privacy in any {e(COMPANY)} app:</p>
 <ul>
   <li>Email: <a href="mailto:{EMAIL}">{EMAIL}</a></li>
-  <li>Support: <a href="/apps/{app['slug']}/support/">{SITE['domain']}/apps/{app['slug']}/support/</a></li>
+  <li>Support: <a href="/apps/{app['slug']}/support/">{wrappable(SITE['domain'] + '/apps/' + app['slug'] + '/support/')}</a></li>
 </ul>
 <p>We aim to answer within a few business days.</p>""")
 
