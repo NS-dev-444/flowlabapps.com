@@ -16,8 +16,14 @@
         "iOS",
         "Android"
       ],
-      "status": "Store submission prep",
-      "status_kind": "soon",
+      "status": "Available on the App Store · Android coming soon",
+      "status_kind": "live",
+      "stores": [
+        {
+          "name": "App Store",
+          "url": "https://apps.apple.com/app/id6807264699"
+        }
+      ],
       "bundle_ids": [
         "com.pulsefast.app"
       ],
@@ -135,7 +141,7 @@
           ],
           [
             "Which platforms are supported?",
-            "iPhone and Android. iOS additionally supports Live Activities on the Lock Screen."
+            "iPhone, on the App Store now, including Live Activities on the Lock Screen. The Android version is coming to Google Play."
           ]
         ],
         "report": [
@@ -286,10 +292,16 @@
       "platforms": [
         "macOS"
       ],
-      "status": "Store submission prep",
-      "status_kind": "soon",
+      "status": "Available on the Mac App Store",
+      "status_kind": "live",
+      "stores": [
+        {
+          "name": "Mac App Store",
+          "url": "https://apps.apple.com/app/id6809931637"
+        }
+      ],
       "bundle_ids": [
-        "com.flowlab.syntaxpad"
+        "com.flowlabapps.syntaxpad"
       ],
       "accent": [
         "#4ade80",
