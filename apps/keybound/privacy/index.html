@@ -146,8 +146,9 @@ request.</p>
 <p>You remain in full control of the data on your own device:</p>
 <ul>
   <li>Delete individual items from inside the app.</li>
-  <li>Remove the app to delete its local data, subject to your device's own backup and
+  <li>On iPhone and Android, remove the app to delete its local data, subject to your device's own backup and
   restore settings.</li>
+  <li>On a Mac, moving the app to the Trash leaves its data behind. In Settings, turn off <strong>Unlock with Touch ID</strong> first: that removes the key Keybound keeps in your Keychain, which deleting a folder would not. Then quit Keybound and delete <code>~/<wbr>Library/<wbr>Application Support/<wbr>com.<wbr>flowlab.<wbr>aegisvault</code>, which holds the encrypted vault and its settings. Backups you exported are your own files and stay where you put them.</li>
   <li>Revoke any permission at any time from your device's system settings.</li>
 </ul>
 <p>We do not sell personal information and never have. We do not share personal information

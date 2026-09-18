@@ -244,7 +244,8 @@
         ],
         "network": "None, and this is enforced rather than promised: the app ships without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no server for your screenshots to go to.",
         "third_parties": "None. No third-party SDKs, advertising libraries, trackers or analytics frameworks are compiled into the app.",
-        "extra": "LucidCapture does not request access to your camera, microphone, location, contacts, calendars or photo library, and cannot read any file you have not explicitly opened."
+        "extra": "LucidCapture does not request access to your camera, microphone, location, contacts, calendars or photo library, and cannot read any file you have not explicitly opened.",
+        "mac_removal": "Delete captures from the library, then empty the Trash: a deleted capture goes to the Trash rather than vanishing, so it stays recoverable until you do. To clear everything at once, quit LucidCapture and delete its container, `~/Library/Containers/com.flowlabapps.LucidCapture`, which holds the library, its index and your settings. Copies saved with “Also save to folder” are your own files and stay where you put them."
       },
       "support": {
         "faq": [
@@ -375,7 +376,8 @@
         ],
         "network": "None. SyntaxPad makes no network requests — there is no server to contact and no code that contacts one. It does declare the network-client entitlement, but not to reach the network: macOS will not start the system web-rendering component behind the Markdown preview without it. That preview is served under a `default-src 'none'` content security policy, which is what actually prevents a Markdown file loading a remote image, phoning home, or reporting that you opened it. Remote images therefore show their alt text instead — a deliberate trade.",
         "third_parties": "None. No SDKs, no trackers, no analytics.",
-        "extra": "Links you click in a Markdown preview open in your default browser, and only http, https and mailto links are permitted. Once a link opens, that browser's own privacy policy applies."
+        "extra": "Links you click in a Markdown preview open in your default browser, and only http, https and mailto links are permitted. Once a link opens, that browser's own privacy policy applies.",
+        "mac_removal": "Choose **File → Open Recent → Clear Menu** to forget recent files, and **Edit → Snippets → Delete Snippet** to remove saved snippets. To clear everything at once, quit SyntaxPad and delete its container, `~/Library/Containers/com.flowlabapps.syntaxpad`, which holds unsaved scratch tabs, snippets, the recent-file list and your preferences. Documents you saved yourself are your own files and are untouched."
       },
       "support": {
         "faq": [
@@ -1104,7 +1106,8 @@
         "network": "The game does not connect to the internet. There is no account, no cloud save and no online play.",
         "third_parties": "None. No advertising networks, analytics SDKs, crash reporters or third-party trackers are included.",
         "children": "Dream Home Adventures is suitable for children. It collects no data from anyone of any age. It contains no advertising, no in-app purchases, no open chat and no user-generated content shared with other players.",
-        "purchases": "There are no real-money purchases. In-game currency is earned by playing and cannot be bought."
+        "purchases": "There are no real-money purchases. In-game currency is earned by playing and cannot be bought.",
+        "mac_removal": "Before removing the game, open its Settings, complete the adult check and choose **Reset all local progress**. That erases coins, rooms, furniture layouts, tasks, pets and customisation from the Mac. If you have already removed the game, reinstalling it brings the saved progress back, and you can reset it then."
       },
       "support": {
         "faq": [
@@ -1238,7 +1241,8 @@
         ],
         "network": "There is none. The app contains no URLSession, no network connections and no web views that load remote content. It cannot upload your documents, and there is no service to upload them to.",
         "third_parties": "None. The project declares zero external dependencies — no CocoaPods, no Carthage, no remote Swift packages, no analytics and no crash reporting. Only Apple's own frameworks are used.",
-        "extra": "Your master password is never stored anywhere — not on the device and not with us. That means we cannot recover your vault if you lose both your password and your recovery key. That is the trade-off that makes the encryption meaningful."
+        "extra": "Your master password is never stored anywhere — not on the device and not with us. That means we cannot recover your vault if you lose both your password and your recovery key. That is the trade-off that makes the encryption meaningful.",
+        "mac_removal": "Erase the vault inside the app first: on the lock screen choose **Use recovery key…**, then **Lost your recovery key too?**, type ERASE and confirm. That overwrites and deletes the encrypted vault and removes Keyclave's entries from your Keychain, which deleting a folder would not. Then quit Keyclave and delete its container, `~/Library/Containers/com.flowlab.keyclave`, to clear the preferences left behind."
       },
       "support": {
         "faq": [
@@ -1369,7 +1373,8 @@
         "network": "Two connections exist, both under your control. **Breach checking is opt-in**: when you run it, a SHA-1 hash is computed on your device and only the first five hexadecimal characters are sent to api.pwnedpasswords.com, which replies with hundreds of matching prefixes; the comparison happens on your device. The service never receives your password, your full hash, or anything identifying you. **Device sync is peer-to-peer**: your two devices connect directly over your own local network, authenticated by an ephemeral P-256 key exchange and a short code you confirm on both screens. There is no relay and no copy retained anywhere.",
         "third_parties": "Have I Been Pwned (api.pwnedpasswords.com) receives a five-character hash prefix, and only if you choose to run a breach check. Their handling of that request is governed by their own privacy policy. If you never run a breach check, the app never contacts them. There are no other third parties, no analytics libraries and no advertising SDKs.",
         "store_note": "One qualification, for completeness: if you run the optional breach check, five hexadecimal characters of a password's SHA-1 hash are sent to Have I Been Pwned. That prefix matches hundreds of unrelated passwords, cannot identify you or the password it came from, is never seen or stored by us, and is only ever sent when you ask for the check. That is why the declarations above still read **no data collected**. Section 4 describes it in full.",
-        "extra": "Your master password is never stored — not on your device and not anywhere else. We have no server holding your data, no account system and no way to identify you. We could not hand over your vault if we were asked to, because we do not have it."
+        "extra": "Your master password is never stored — not on your device and not anywhere else. We have no server holding your data, no account system and no way to identify you. We could not hand over your vault if we were asked to, because we do not have it.",
+        "mac_removal": "In Settings, turn off **Unlock with Touch ID** first: that removes the key Keybound keeps in your Keychain, which deleting a folder would not. Then quit Keybound and delete `~/Library/Application Support/com.flowlab.aegisvault`, which holds the encrypted vault and its settings. Backups you exported are your own files and stay where you put them."
       },
       "support": {
         "faq": [

@@ -53,10 +53,17 @@ def e(text):
 
 
 def md_inline(text):
-    """Minimal inline markdown: **bold** and `code`."""
+    """Minimal inline markdown: **bold** and `code`.
+
+    Code may break after each / and . in it, so a path such as
+    ~/Library/Containers/<bundle id> wraps on a phone instead of widening
+    the page.
+    """
     text = e(text)
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
-    text = re.sub(r"`(.+?)`", r"<code>\1</code>", text)
+    text = re.sub(r"`(.+?)`",
+                  lambda m: "<code>" + re.sub(r"([/.])(?=.)", r"\1<wbr>", m.group(1)) + "</code>",
+                  text)
     return text
 
 
@@ -341,6 +348,45 @@ def back_to_apps():
 
 def is_game(app):
     return app["category"].lower().startswith("games")
+
+
+# Deleting an app deletes its data on iPhone, iPad and Android. On a Mac it
+# does not: moving an app to the Trash leaves its sandbox container (or, for
+# an unsandboxed app, its Application Support folder) behind, and a Keychain
+# item survives either way. So "delete the app" is only ever said of the
+# mobile platforms, and each Mac app carries its own `privacy.mac_removal`,
+# written from its source — where it keeps its data and which of its own
+# controls clear it.
+DELETED_WITH_APP = {"iOS": "iPhone", "iPadOS": "iPad", "Android": "Android"}
+
+
+def on_mac(app):
+    return "macOS" in app["platforms"]
+
+
+def deleted_with_app_on(app):
+    """'iPhone, iPad and Android' — where removing this app removes its data."""
+    names = [DELETED_WITH_APP[p] for p in app["platforms"] if p in DELETED_WITH_APP]
+    return "".join(names) if len(names) < 2 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def mac_removal(app):
+    """How to erase what the Mac version stored, as HTML.
+
+    An app without verified steps gets wording that is true of any Mac app,
+    and the build reports it — see unverified_mac_removal().
+    """
+    steps = app["privacy"].get("mac_removal")
+    if steps:
+        return md_inline(steps)
+    return ("Use the app's own delete controls before you remove it, then delete the "
+            'folder it keeps its data in, as described on '
+            '<a href="/data-deletion/#mac">Data &amp; Account Deletion</a>.')
+
+
+def unverified_mac_removal():
+    """Mac apps with no source-checked removal steps of their own."""
+    return [a for a in APPS if on_mac(a) and not a["privacy"].get("mac_removal")]
 
 
 # --------------------------------------------------------------------------
@@ -1108,6 +1154,17 @@ displaying it to you inside the app, and it is never shared with a third party o
 <p>{md_inline(p['extra'])}</p>""")
         n += 1
 
+    removal = ""
+    mobile = deleted_with_app_on(app)
+    if mobile:
+        remove = f"On {mobile}, remove" if on_mac(app) else "Remove"
+        removal += f"""
+  <li>{remove} the app to delete its local data, subject to your device's own backup and
+  restore settings.</li>"""
+    if on_mac(app):
+        removal += f"""
+  <li>On a Mac, moving the app to the Trash leaves its data behind. {mac_removal(app)}</li>"""
+
     sections.append(f"""<h2 id="rights">{n}. Your rights and your choices</h2>
 <p>Privacy laws including the GDPR and the CCPA give you rights to access, correct, export
 and delete personal data a company holds about you. {e(COMPANY)} holds no personal data
@@ -1115,9 +1172,7 @@ about {e(app['name'])} users, so there is nothing for us to produce, correct or 
 request.</p>
 <p>You remain in full control of the data on your own device:</p>
 <ul>
-  <li>Delete individual items from inside the app.</li>
-  <li>Remove the app to delete its local data, subject to your device's own backup and
-  restore settings.</li>
+  <li>Delete individual items from inside the app.</li>{removal}
   <li>Revoke any permission at any time from your device's system settings.</li>
 </ul>
 <p>We do not sell personal information and never have. We do not share personal information
@@ -1197,6 +1252,17 @@ def build_app_support(app):
     )
     report = "\n".join(f"      <li>{e(r)}</li>" for r in s["report"])
 
+    mobile = deleted_with_app_on(app)
+    removal = ""
+    if mobile:
+        where = f" on {mobile}" if on_mac(app) else ""
+        removal += f""" To remove everything the app has stored{where}, delete the app
+  from your device."""
+    if on_mac(app):
+        removal += f"""</p>
+  <p>On a Mac, moving the app to the Trash leaves what it stored behind.
+  {mac_removal(app)}"""
+
     body = f"""{app_header(app, 'Support')}
 
 <section class="card">
@@ -1239,8 +1305,7 @@ def build_app_support(app):
   <h2>Privacy and data requests</h2>
   <p>{md_inline(app['privacy']['headline'])}</p>
   <p>Because nothing leaves your device, there is no account to close and no server-side
-  data for us to export or delete. To remove everything the app has stored, delete the app
-  from your device. Full detail is in the
+  data for us to export or delete.{removal} Full detail is in the
   <a href="/apps/{app['slug']}/privacy/">{e(app['name'])} privacy policy</a>.</p>
 </section>"""
 
@@ -1356,8 +1421,10 @@ access, correct, port and delete personal data a company holds about you, and to
 its processing. We hold no personal data about our users, so there is nothing for us to
 produce, correct, port or erase.</p>
 <p>You control the data on your own device: delete items inside an app, revoke a permission
-in system settings, or remove the app to clear its local data. You will never be discriminated
-against for exercising a privacy right.</p>
+in system settings, or remove the app to clear its local data on iPhone, iPad and Android. On
+a Mac, moving an app to the Trash leaves its data behind;
+<a href="/data-deletion/#mac">Data &amp; Account Deletion</a> gives the steps for each app. You
+will never be discriminated against for exercising a privacy right.</p>
 
 <h2 id="transfers">10. International transfers</h2>
 <p>Since no personal data is collected, no personal data is transferred internationally or
@@ -1474,8 +1541,10 @@ def build_support_hub():
     <h2>Privacy and data requests</h2>
     <p>None of our apps collects personal data, and we run no servers holding user
     information. There is no account to close and nothing on our side to export or delete.</p>
-    <p>To remove what an app has stored locally, delete the app from your device. To withdraw
-    a permission, use your device's system settings.</p>
+    <p>On iPhone, iPad and Android, deleting an app removes what it stored locally. On a Mac it
+    does not: moving an app to the Trash leaves its data behind, so use the app's own delete
+    controls, then remove the folder it keeps its data in. To withdraw a permission, use your
+    device's system settings.</p>
     <p>Step-by-step instructions are on the
     <a href="/data-deletion/">Data &amp; Account Deletion</a> page. If you would like it
     confirmed in writing for a compliance process, email us and we will respond.</p>
@@ -1517,8 +1586,10 @@ def build_support_hub():
     and macOS use <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>; on
     Android use the Google Play order history. We cannot issue a refund ourselves.</p></details>
   <details><summary>How do I delete my data?</summary>
-    <p>Delete the app. Its local data goes with it, subject to your device's backup and restore
-    settings. There is nothing on our side to delete.</p></details>
+    <p>On iPhone, iPad and Android, delete the app. Its local data goes with it, subject to
+    your device's backup and restore settings. On a Mac, moving an app to the Trash leaves its
+    data behind; <a href="/data-deletion/#mac">Data &amp; Account Deletion</a> gives the steps
+    for each app. There is nothing on our side to delete.</p></details>
   <details><summary>Can I use an app on more than one device?</summary>
     <p>Yes, within the terms of your App Store or Google Play purchase. Note that most of our
     apps do not sync, so data created on one device stays on that device.</p></details>
@@ -1543,14 +1614,25 @@ def build_support_hub():
 # --------------------------------------------------------------------------
 
 def build_data_deletion():
+    def erase(a):
+        if not on_mac(a):
+            return "Delete the app"
+        mobile = deleted_with_app_on(a)
+        mac = '<a href="#mac">Mac steps below</a>'
+        return f"On {mobile}, delete the app; on a Mac, see the {mac}" if mobile else f"See the {mac}"
+
     rows = "\n".join(
         f"""      <tr>
         <td><a href="/apps/{a['slug']}/">{e(a['name'])}</a></td>
         <td>{e(', '.join(a['platforms']))}</td>
         <td>No account exists</td>
-        <td>Delete the app</td>
+        <td>{erase(a)}</td>
       </tr>"""
         for a in APPS
+    )
+    mac_steps = "\n".join(
+        f"""  <li><b><a href="/apps/{a['slug']}/privacy/">{e(a['name'])}</a></b> — {mac_removal(a)}</li>"""
+        for a in APPS if on_mac(a)
     )
 
     body = f"""<section class="card legal">
@@ -1560,8 +1642,10 @@ def build_data_deletion():
 
   <div class="note">
     <p><b>The short version.</b> None of our apps has an account, and we hold no user data on
-    any server. Deleting the app deletes everything it stored. If you want that confirmed in
-    writing, email <a href="mailto:{EMAIL}">{EMAIL}</a> and we will reply.</p>
+    any server. On iPhone, iPad and Android, deleting the app deletes everything it stored. On a
+    Mac it does not, so <a href="#mac">section 2</a> says what else to remove. If you want any
+    of this confirmed in writing, email <a href="mailto:{EMAIL}">{EMAIL}</a> and we will
+    reply.</p>
   </div>
 
   <div class="toc">
@@ -1581,7 +1665,8 @@ account&rdquo; button: there is no account for it to delete.</p>
 us to delete it at any time — see section 5.</p>
 
 <h2 id="how">2. How to delete what an app has stored</h2>
-<p>Everything our apps save is written to your own device. Removing the app removes it.</p>
+<p>Everything our apps save is written to your own device. On iPhone, iPad and Android,
+removing the app removes it. On a Mac, removing the app is not enough.</p>
 
 <h3>iPhone and iPad</h3>
 <ul>
@@ -1590,12 +1675,20 @@ us to delete it at any time — see section 5.</p>
   <b>Delete App</b>. Note that <b>Offload App</b> deliberately keeps its data — use Delete.</li>
 </ul>
 
-<h3>Mac</h3>
+<h3 id="mac">Mac</h3>
+<p>Moving an app to the Trash removes the app but not its data. macOS leaves what the app
+stored in your Library folder, so it is all still there if you reinstall. To erase it:</p>
 <ul>
-  <li>Move the app from your <b>Applications</b> folder to the Trash and empty it.</li>
-  <li>Sandboxed app data lives in <code>~/Library/Containers/</code> and preferences in
-  <code>~/Library/Preferences/</code>. Removing the app's container folder there clears
-  anything left behind.</li>
+  <li>Before you remove the app, use its own delete or reset controls. Where an app keeps a
+  key in your Keychain, these controls are what remove it; deleting a folder does not.</li>
+  <li>Then quit the app and delete the folder it keeps its data in. A sandboxed app keeps
+  everything in its container, <code>~/Library/Containers/</code> followed by its bundle
+  identifier. In Finder, choose <b>Go → Go to Folder</b> and paste the path; Finder may list
+  a container under the app's name rather than its identifier.</li>
+</ul>
+<p>What that means for each of our Mac apps:</p>
+<ul>
+{mac_steps}
 </ul>
 
 <h3>Android</h3>
@@ -1622,12 +1715,12 @@ yourself, those files are yours and stay where you put them.</p>
 <p style="margin-top:14px">Each app's own privacy policy lists exactly what it writes to your
 device and where.</p>
 
-<h2 id="backups">4. One thing deleting the app does not reach</h2>
-<p>If your device backs itself up — iCloud Backup, Finder or iTunes backup, or Google One
-backup on Android — a copy of an app's data may exist inside a backup you made before deleting
-it. That backup belongs to you and sits in your Apple or Google account, not ours. To remove
-it, manage or delete the backup in your device's own settings. We have no access to it and no
-way to reach it.</p>
+<h2 id="backups">4. Backups, which deleting an app does not reach</h2>
+<p>If your device backs itself up — iCloud Backup, Finder or iTunes backup, Time Machine on a
+Mac, or Google One backup on Android — a copy of an app's data may exist inside a backup you
+made before deleting it. That backup belongs to you and sits in your Apple or Google account or
+on your own backup disk, not with us. To remove it, manage or delete the backup with your
+device's own tools. We have no access to it and no way to reach it.</p>
 
 <h2 id="request">5. Asking us in writing</h2>
 <p>Some employers, schools and compliance processes want a written statement rather than a
@@ -1642,7 +1735,8 @@ hold and you are already the person we are replying to.</p>
     return write("data-deletion/index.html", page(
         f"Data & Account Deletion — {COMPANY}",
         f"How to delete data held by {COMPANY} apps. No app has an account and no data is "
-        "held on our servers; deleting the app erases everything it stored.",
+        "held on our servers. How to erase what each app stored on iPhone, iPad, Android "
+        "and Mac.",
         body,
         canonical="/data-deletion/",
     ))
@@ -1668,6 +1762,13 @@ def build_kids():
       </tr>"""
         for a in games
     )
+    if any(on_mac(g) for g in games):
+        remove_it = """To remove it on iPhone, iPad or Android, delete the app. On a Mac,
+deleting the app leaves the progress behind;
+<a href="/data-deletion/#mac">Data &amp; Account Deletion</a> gives the steps for each game."""
+    else:
+        remove_it = """To remove it, delete the app; see
+<a href="/data-deletion/">Data &amp; Account Deletion</a>."""
 
     body = f"""<section class="card legal">
   <div class="kicker">{e(COMPANY)}</div>
@@ -1748,8 +1849,7 @@ these purposes, the requirement is met by construction rather than by configurat
 
 <h2 id="parents">6. For parents</h2>
 <p>Everything a child creates in one of our games — progress, unlocks, settings — stays on the
-device it was created on. To remove it, delete the app; see
-<a href="/data-deletion/">Data &amp; Account Deletion</a>. To restrict purchases or downloads
+device it was created on. {remove_it} To restrict purchases or downloads
 generally, use Screen Time on iOS and iPadOS, or Google Family Link and Play Store parental
 controls on Android.</p>
 <p>If you have a question about a specific title, email <a href="mailto:{EMAIL}">{EMAIL}</a>.
@@ -2225,6 +2325,14 @@ def main():
         for slug in orphans:
             print(f"  {slug!r} — rename it to a slug in apps.json, or delete it",
                   file=sys.stderr)
+
+    unverified = unverified_mac_removal()
+    if unverified:
+        print("\nWARNING: Mac apps with no privacy.mac_removal — their pages fall back "
+              "to generic removal steps:", file=sys.stderr)
+        for a in unverified:
+            print(f"  {a['slug']} ({a['name']}) — check its source for where the Mac "
+                  f"version keeps its data and which controls clear it", file=sys.stderr)
 
 
 if __name__ == "__main__":
