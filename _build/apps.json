@@ -628,7 +628,8 @@
         ],
         "network": "None, and this is enforced rather than promised: CopyLocker ships sandboxed without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no account, no sync and no server for your clipboard to go to.",
         "third_parties": "None. CopyLocker is built only on Apple's own frameworks and the SQLite library that ships with macOS. No third-party SDKs, advertising libraries, trackers, analytics or crash reporters are compiled into the app.",
-        "extra": "CopyLocker never writes clipboard contents to the system log. By default it skips copies that other apps mark as transient or auto-generated, and it keeps its history out of Time Machine backups so that items you clear do not linger there — you can include it under Settings → Storage. It does not request access to your camera, microphone, location, contacts, calendars or photo library."
+        "extra": "CopyLocker never writes clipboard contents to the system log. By default it skips copies that other apps mark as transient or auto-generated, and it keeps its history out of Time Machine backups so that items you clear do not linger there — you can include it under Settings → Storage. It does not request access to your camera, microphone, location, contacts, calendars or photo library.",
+        "mac_removal": "Choose **Clear History → Clear All…** from the menu bar icon, or **Clear All History…** in Settings → Storage: that deletes every item, pinned ones included, with their images and data files. To clear everything at once, quit CopyLocker and delete its container, `~/Library/Containers/com.flowlabapps.ClipVault` (the identifier keeps the app's earlier name), which also holds your Never Capture From list and your settings."
       },
       "support": {
         "faq": [
