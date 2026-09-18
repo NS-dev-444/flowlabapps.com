@@ -52,6 +52,11 @@ def e(text):
     return html.escape(str(text), quote=False)
 
 
+def break_after_separators(escaped):
+    """Allow line breaks after each / and . in already-escaped text."""
+    return re.sub(r"([/.])(?=.)", r"\1<wbr>", escaped)
+
+
 def md_inline(text):
     """Minimal inline markdown: **bold** and `code`.
 
@@ -62,14 +67,14 @@ def md_inline(text):
     text = e(text)
     text = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", text)
     text = re.sub(r"`(.+?)`",
-                  lambda m: "<code>" + re.sub(r"([/.])(?=.)", r"\1<wbr>", m.group(1)) + "</code>",
+                  lambda m: "<code>" + break_after_separators(m.group(1)) + "</code>",
                   text)
     return text
 
 
 def wrappable(text):
     """Escape a URL or bundle id, allowing line breaks after each / and . in it."""
-    return re.sub(r"([/.])(?=.)", r"\1<wbr>", e(text))
+    return break_after_separators(e(text))
 
 
 def write(relpath, content):
