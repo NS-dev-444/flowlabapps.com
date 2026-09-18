@@ -135,7 +135,7 @@ def page(title, description, body, accent=None, extra_head="", canonical=None):
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="stylesheet" href="/assets/site.css" />
+<link rel="stylesheet" href="/assets/site.css?v={CSS_VERSION}" />
 <style>:root{{--a1:{a1};--a2:{a2}}}</style>
 {extra_head}</head>
 <body>
@@ -766,6 +766,12 @@ footer{margin-top:20px; padding:28px 30px; color:var(--muted); font-size:13.5px;
   .heroshelf a:hover{transform:none}
 }
 """
+
+# Cloudflare keeps /assets/* for hours, at its edge and in browsers, and a
+# deploy does not purge it, so a changed stylesheet at the same URL went on
+# serving the old rules. Pages link it with a hash of its content instead:
+# a change is a new URL, and an unchanged stylesheet stays cached.
+CSS_VERSION = hashlib.sha256(CSS.strip().encode()).hexdigest()[:12]
 
 
 # --------------------------------------------------------------------------
