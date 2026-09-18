@@ -60,6 +60,11 @@ def md_inline(text):
     return text
 
 
+def wrappable(text):
+    """Escape a URL or bundle id, allowing line breaks after each / and . in it."""
+    return re.sub(r"([/.])(?=.)", r"\1<wbr>", e(text))
+
+
 def write(relpath, content):
     """Write a file, rewriting site-root-relative links to page-relative ones.
 
@@ -486,7 +491,7 @@ hr{border:0;border-top:1px solid var(--line);margin:26px 0}
   padding:5px 12px; border-radius:999px; font-size:12.5px; color:var(--muted); margin:0 6px 6px 0;
 }
 .badge{display:inline-flex; align-items:center; gap:6px; padding:4px 11px; border-radius:999px;
-  font-size:11.5px; font-weight:660; letter-spacing:.01em; white-space:nowrap}
+  font-size:11.5px; font-weight:660; letter-spacing:.01em; text-wrap:pretty}
 .badge::before{content:""; width:5px; height:5px; border-radius:50%; background:currentColor}
 .badge-live{background:rgba(52,211,153,.13); color:#5eead4; border:1px solid rgba(52,211,153,.3)}
 .badge-soon{background:rgba(251,191,36,.12); color:#fcd34d; border:1px solid rgba(251,191,36,.28)}
@@ -602,6 +607,9 @@ a.go:hover svg{transform:translateX(3px)}
 .grid.two{grid-template-columns:repeat(2,1fr)}
 @media (max-width:900px){ .grid{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:640px){ .grid,.grid.two{grid-template-columns:1fr} }
+/* Grid items default to min-width:auto, so one long unbreakable string (a URL,
+   a bundle id, a status badge) would widen its whole column past the viewport. */
+.grid > *, .appgrid > *{min-width:0}
 .feat{
   border:1px solid var(--line); border-radius:var(--r-sm); padding:18px;
   background:rgba(255,255,255,.032); transition:background .2s var(--ease), border-color .2s var(--ease);
@@ -625,6 +633,7 @@ td{color:var(--muted)}
 td:first-child{color:var(--text)}
 tr:last-child td{border-bottom:0}
 .spec{min-width:0}
+.spec td{overflow-wrap:anywhere}
 .spec th{width:34%; text-transform:none; letter-spacing:0; font-size:13.5px; background:none; color:var(--faint); font-weight:600}
 
 /* --- callout ------------------------------------------------------------ */
@@ -874,10 +883,10 @@ def build_app_page(app):
     for s in stores:
         rows.append((e(s["name"]),
                      f'<a href="{html.escape(s["url"], quote=True)}">'
-                     f'{e(s["url"].split("://", 1)[-1])}</a>'))
+                     f'{wrappable(s["url"].split("://", 1)[-1])}</a>'))
     if app["bundle_ids"]:
         rows.append(("Bundle identifier",
-                     ", ".join(f"<code>{e(b)}</code>" for b in app["bundle_ids"])))
+                     ", ".join(f"<code>{wrappable(b)}</code>" for b in app["bundle_ids"])))
     rows += [
         ("Account required", "No — there is no sign-up or login"),
         ("Data collected", "None"),
@@ -887,9 +896,9 @@ def build_app_page(app):
         rows.append(("In-app purchases", md_inline(app["privacy"]["purchases"])))
     rows += [
         ("Privacy policy",
-         f'<a href="/apps/{app["slug"]}/privacy/">{SITE["domain"]}/apps/{app["slug"]}/privacy/</a>'),
+         f'<a href="/apps/{app["slug"]}/privacy/">{wrappable(SITE["domain"] + "/apps/" + app["slug"] + "/privacy/")}</a>'),
         ("Support",
-         f'<a href="/apps/{app["slug"]}/support/">{SITE["domain"]}/apps/{app["slug"]}/support/</a>'),
+         f'<a href="/apps/{app["slug"]}/support/">{wrappable(SITE["domain"] + "/apps/" + app["slug"] + "/support/")}</a>'),
     ]
     spec = "\n".join(
         f"      <tr><th scope=\"row\">{k}</th><td>{v}</td></tr>" for k, v in rows
