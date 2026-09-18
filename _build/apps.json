@@ -533,8 +533,8 @@
       }
     },
     {
-      "slug": "clipvault",
-      "name": "ClipVault",
+      "slug": "copylocker",
+      "name": "CopyLocker",
       "tagline": "Private clipboard history for your Mac.",
       "category": "Productivity",
       "platforms": [
@@ -542,14 +542,16 @@
       ],
       "status": "Submission candidate",
       "status_kind": "soon",
-      "bundle_ids": [],
+      "bundle_ids": [
+        "com.flowlabapps.ClipVault"
+      ],
       "accent": [
         "#3b7fff",
         "#6d5ef6"
       ],
-      "summary": "ClipVault is a clipboard manager that lives in your menu bar. Copy as you normally would; when you need something again, press ⌘⇧V, type a few letters and press Return. Your history never leaves your Mac.",
+      "summary": "CopyLocker is a clipboard manager that lives in your menu bar. Copy as you normally would; when you need something again, press ⌘⇧V, type a few letters and press Return. Your history never leaves your Mac.",
       "long": [
-        "ClipVault keeps what you copy — plain and rich text, links, images and references to files — and pastes it back in its original formats. Press ⌘⇧V, or a shortcut of your own, and the history window opens over whatever you are working in. Results narrow as you type, and filters such as type:image, app:Safari and is:pinned get you to the right item faster.",
+        "CopyLocker keeps what you copy — plain and rich text, links, images and references to files — and pastes it back in its original formats. Press ⌘⇧V, or a shortcut of your own, and the history window opens over whatever you are working in. Results narrow as you type, and filters such as type:image, app:Safari and is:pinned get you to the right item faster.",
         "It is built for the keyboard. Arrow keys move, Return pastes, Shift-Return pastes as plain text, ⌘1–⌘9 pick from the top of the list, ⌘P pins and ⌘⌫ deletes. Pinned items are kept however old they get; everything else follows the limits you set, by count and by age.",
         "You decide what it keeps. Pause capture from the menu bar whenever you like, and name apps it must never read from. Optional sensitive-content protection checks each copy in memory, before anything is saved, for one-time codes, card-like numbers, private keys, authentication codes, labelled secrets and password-manager content. It is off by default, every category is your choice, and it is a convenience rather than a guarantee — to be certain an app is never captured, exclude it."
       ],
@@ -581,7 +583,7 @@
       ],
       "privacy": {
         "collects_data": false,
-        "headline": "ClipVault collects nothing. Your clipboard history is stored only on your Mac, and the app ships sandboxed with no network entitlement, so it is technically incapable of making a network connection at all.",
+        "headline": "CopyLocker collects nothing. Your clipboard history is stored only on your Mac, and the app ships sandboxed with no network entitlement, so it is technically incapable of making a network connection at all.",
         "stored": [
           [
             "Your clipboard history: text, rich text, links, images and references to files you copy",
@@ -607,42 +609,42 @@
         "permissions": [
           [
             "Paste from Other Apps",
-            "Reading the clipboard is what a clipboard manager does. On macOS 15.4 and later, if your Mac is set to ask before apps read the clipboard, ClipVault stops reading automatically and explains how to allow it in System Settings → Privacy & Security → Paste from Other Apps."
+            "Reading the clipboard is what a clipboard manager does. On macOS 15.4 and later, if your Mac is set to ask before apps read the clipboard, CopyLocker stops reading automatically and explains how to allow it in System Settings → Privacy & Security → Paste from Other Apps."
           ],
           [
             "Accessibility (optional)",
-            "Used only to send a single ⌘V to the app you are working in, after you choose an item. ClipVault does not use it to read other apps or to monitor your keystrokes. Decline it and ClipVault copies the item instead, and you press ⌘V yourself."
+            "Used only to send a single ⌘V to the app you are working in, after you choose an item. CopyLocker does not use it to read other apps or to monitor your keystrokes. Decline it and CopyLocker copies the item instead, and you press ⌘V yourself."
           ],
           [
             "Launch at login (optional)",
-            "The setup screen offers a “Launch ClipVault at login” checkbox, ticked by default; untick it to decline. Change it later in Settings → General."
+            "The setup screen offers a “Launch CopyLocker at login” checkbox, ticked by default; untick it to decline. Change it later in Settings → General."
           ],
           [
             "Choosing apps to exclude",
             "Adding an app to Never Capture From opens the standard macOS panel, limited to applications and read-only. It is used only to learn which app you picked."
           ]
         ],
-        "network": "None, and this is enforced rather than promised: ClipVault ships sandboxed without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no account, no sync and no server for your clipboard to go to.",
-        "third_parties": "None. ClipVault is built only on Apple's own frameworks and the SQLite library that ships with macOS. No third-party SDKs, advertising libraries, trackers, analytics or crash reporters are compiled into the app.",
-        "extra": "ClipVault never writes clipboard contents to the system log. By default it skips copies that other apps mark as transient or auto-generated, and it keeps its history out of Time Machine backups so that items you clear do not linger there — you can include it under Settings → Storage. It does not request access to your camera, microphone, location, contacts, calendars or photo library."
+        "network": "None, and this is enforced rather than promised: CopyLocker ships sandboxed without the network entitlement, so macOS itself blocks any outgoing or incoming connection whether or not the code attempts one. There is no account, no sync and no server for your clipboard to go to.",
+        "third_parties": "None. CopyLocker is built only on Apple's own frameworks and the SQLite library that ships with macOS. No third-party SDKs, advertising libraries, trackers, analytics or crash reporters are compiled into the app.",
+        "extra": "CopyLocker never writes clipboard contents to the system log. By default it skips copies that other apps mark as transient or auto-generated, and it keeps its history out of Time Machine backups so that items you clear do not linger there — you can include it under Settings → Storage. It does not request access to your camera, microphone, location, contacts, calendars or photo library."
       },
       "support": {
         "faq": [
           [
             "How do I open my clipboard history?",
-            "Press ⌘⇧V, or choose Open Clipboard History from the ClipVault menu bar icon. You can change the shortcut in Settings → Shortcuts."
+            "Press ⌘⇧V, or choose Open Clipboard History from the CopyLocker menu bar icon. You can change the shortcut in Settings → Shortcuts."
           ],
           [
             "Why does macOS ask about Accessibility?",
-            "Only for pasting straight into the app you are working in: ClipVault sends a single ⌘V after you choose an item. Allow it in System Settings → Privacy & Security → Accessibility, or skip it — ClipVault then copies the item and you press ⌘V yourself."
+            "Only for pasting straight into the app you are working in: CopyLocker sends a single ⌘V after you choose an item. Allow it in System Settings → Privacy & Security → Accessibility, or skip it — CopyLocker then copies the item and you press ⌘V yourself."
           ],
           [
-            "Why isn't ClipVault recording what I copy?",
-            "Check that capture isn't paused (the menu bar icon shows Resume Capture when it is) and that the app you copied from isn't under Never Capture From. On macOS 15.4 and later, also allow ClipVault in System Settings → Privacy & Security → Paste from Other Apps. Copies an app marks as temporary are skipped by default, and two copies made within about half a second of each other can register as one."
+            "Why isn't CopyLocker recording what I copy?",
+            "Check that capture isn't paused (the menu bar icon shows Resume Capture when it is) and that the app you copied from isn't under Never Capture From. On macOS 15.4 and later, also allow CopyLocker in System Settings → Privacy & Security → Paste from Other Apps. Copies an app marks as temporary are skipped by default, and two copies made within about half a second of each other can register as one."
           ],
           [
             "Why has ⌘⇧V stopped working as Paste and Match Style?",
-            "Some apps use ⌘⇧V for Paste and Match Style. While ClipVault holds that shortcut those apps won't receive it; pick a different one in Settings → Shortcuts."
+            "Some apps use ⌘⇧V for Paste and Match Style. While CopyLocker holds that shortcut those apps won't receive it; pick a different one in Settings → Shortcuts."
           ],
           [
             "Does my clipboard history leave my Mac?",
@@ -659,8 +661,8 @@
         ],
         "report": [
           "macOS version and Mac model",
-          "ClipVault version",
-          "Whether Accessibility and Paste from Other Apps are allowed for ClipVault",
+          "CopyLocker version",
+          "Whether Accessibility and Paste from Other Apps are allowed for CopyLocker",
           "The app you were copying from or pasting into",
           "What you expected versus what happened",
           "Steps to reproduce"
