@@ -673,6 +673,146 @@
       }
     },
     {
+      "slug": "docora",
+      "name": "Docora",
+      "tagline": "The private PDF editor for your Mac.",
+      "category": "Productivity",
+      "platforms": [
+        "macOS"
+      ],
+      "status": "Submission candidate",
+      "status_kind": "soon",
+      "bundle_ids": [
+        "com.flowlabapps.Docora"
+      ],
+      "accent": [
+        "#6f8cff",
+        "#e9b44c"
+      ],
+      "summary": "Docora reads, marks up, fills in, signs, redacts and organises PDFs on your Mac, and your documents stay there. The app has no network access at all: macOS itself blocks it from making a connection.",
+      "long": [
+        "Docora is a complete PDF editor for documents that are nobody else's business. Scroll smoothly through files thousands of pages long, search and copy text, highlight and comment, fill in forms and sign them, then reorder, rotate, combine or split the pages. There is no account to create and nothing to upload.",
+        "Redaction is done properly. Mark text, an area or every result of a search, and Docora removes the text, pictures and drawings underneath from the file itself rather than drawing a black box over them, then checks the saved copy for the removed text. Remove Hidden Data clears metadata, scripts, attachments, thumbnails and annotation authors, and a password adds AES-256 encryption.",
+        "Scanned pages become searchable with text recognition that runs entirely on your Mac. Docora reads every PDF in a separate, sandboxed process with no file or network access of its own, so a damaged or hostile file has nowhere to go; and if that process ever stops, Docora brings back your unsaved changes."
+      ],
+      "features": [
+        [
+          "Mark up anything",
+          "Highlight, underline, strike out or squiggle text; add notes, text boxes, stamps, shapes, arrows and freehand drawing. Saved as standard PDF annotations that other apps show too."
+        ],
+        [
+          "Forms and signatures",
+          "Fill in text fields, checkboxes and lists. Type, draw or scan your signature once and place it anywhere. These are visual signatures, not certificate-based digital ones."
+        ],
+        [
+          "Redaction that removes",
+          "Content under a redaction mark is deleted from the file, not hidden behind a box, and the saved copy is checked for the removed text."
+        ],
+        [
+          "Searchable scans",
+          "Text recognition runs on your Mac with Apple's Vision framework. Recognised text can then be searched, selected and copied."
+        ],
+        [
+          "Pages and files",
+          "Reorder, rotate, insert, duplicate, crop and delete pages; combine files; extract or split; export pages as images or a document's text."
+        ],
+        [
+          "Private by construction",
+          "No network entitlement, no account, no analytics. PDFs are parsed in a separate sandboxed process that cannot open files or connections of its own."
+        ]
+      ],
+      "privacy": {
+        "collects_data": false,
+        "headline": "Docora collects nothing. Your documents stay where you keep them, and the app ships sandboxed with no network entitlement, so it is technically incapable of making a network connection at all.",
+        "stored": [
+          [
+            "Documents you open, edit and save",
+            "Wherever you choose to keep them",
+            "They are your files; Docora reads and writes only the ones you pick"
+          ],
+          [
+            "A recovery copy of each document with unsaved changes, password-protected if the document is",
+            "The app's sandbox container, readable only by you",
+            "So a crash or power cut does not cost you your work. It is deleted when you save, close, or undo back to the saved version"
+          ],
+          [
+            "A bookmark to the original file of a document with a recovery copy",
+            "The same recovery record",
+            "So a restored document can be saved back where it came from"
+          ],
+          [
+            "Signatures you create: typed, drawn or scanned",
+            "Images in the app's sandbox container, readable only by you",
+            "So you can place them again without recreating them"
+          ],
+          [
+            "Recently opened files",
+            "macOS's recent-documents list for the app",
+            "To fill File → Open Recent"
+          ],
+          [
+            "Preferences (annotation colours, line widths and fonts)",
+            "macOS user defaults on this Mac",
+            "To remember how you like your tools"
+          ]
+        ],
+        "permissions": [
+          [
+            "Files you choose yourself",
+            "Docora runs in the macOS App Sandbox with four entitlements: app sandbox, user-selected file read/write, app-scope bookmarks (to reopen a document after a crash) and printing. It can open and save only files you pick in an Open or Save dialog, drag onto it, or open with it from Finder."
+          ],
+          [
+            "The PDF engine",
+            "PDFs are read and written by LocalPDFEngine, a service inside the app whose only entitlement is App Sandbox. It has no file access of its own (Docora hands it each document you open) and no network access."
+          ]
+        ],
+        "network": "None, and this is enforced rather than promised: neither Docora nor its PDF engine has the network entitlement, so macOS blocks any outgoing or incoming connection whether or not the code attempts one. There is no account, no sync and no server for a document to go to.",
+        "third_parties": "No SDKs, advertising libraries, trackers, analytics or crash reporters. Docora is built on Apple's frameworks and on open-source PDF libraries compiled into the app (PDFium for reading and rendering, qpdf for saving and encryption, and the libraries they use), none of which makes a network connection. Their licences are listed under Docora → Acknowledgements.",
+        "extra": "Text recognition uses Apple's on-device Vision framework; scanned pages are never sent anywhere. If you share crash data with app developers in System Settings, Apple may pass on reports about Docora crashes; they describe the state of the app, not your documents. Like other app data, Docora's container, including saved signatures, is part of your Time Machine backups. Docora does not request access to your camera, microphone, location, contacts, calendars or photo library.",
+        "mac_removal": "Delete saved signatures in **Tools → Signatures…**, and forget recent files with **File → Open Recent → Clear Menu**. Recovery copies go by themselves when you save or close a document, or when you choose Discard after a crash. To clear everything at once, quit Docora and delete its containers, `~/Library/Containers/com.flowlabapps.Docora` and `~/Library/Containers/com.flowlabapps.Docora.Engine`, which hold your signatures, any recovery copies and your preferences. Documents you saved yourself are your own files and are untouched."
+      },
+      "support": {
+        "faq": [
+          [
+            "Is Docora's redaction permanent?",
+            "Yes, once you save. Apply Redactions removes the text, pictures and drawings under the marks from the document itself, not just from view, and Docora checks the saved file for the removed text. Until you save, Undo brings them back, so keep the original if you may need it."
+          ],
+          [
+            "Are Docora's signatures digital signatures?",
+            "No. Docora places an image of your signature (typed, drawn or scanned) on the page, which is what most everyday forms ask for. It does not create certificate-based digital signatures."
+          ],
+          [
+            "Why can't Docora find text in my scanned PDF?",
+            "A scan is a picture of text. Choose Tools → Recognize Text… to make it searchable: recognition runs on your Mac and adds an invisible text layer you can search, select and copy."
+          ],
+          [
+            "Does Docora upload my documents?",
+            "No. Neither the app nor its PDF engine has the network entitlement, so macOS blocks any connection. There is no account and no cloud storage."
+          ],
+          [
+            "What happens if Docora quits unexpectedly?",
+            "While a document has unsaved changes, Docora keeps a recovery copy. The next time you open Docora it offers to restore those documents with your changes, ready to save, or to discard them. If only the PDF engine stops, Docora tells you and can reopen the document from its recovery copy."
+          ],
+          [
+            "Can Docora open password-protected PDFs?",
+            "Yes: enter the password when asked. To add or remove a password, use File → Protect with Password… or File → Remove Password Protection…. New passwords use AES-256 encryption."
+          ],
+          [
+            "Which Macs does Docora run on?",
+            "Macs with Apple silicon, running macOS 14 Sonoma or later."
+          ]
+        ],
+        "report": [
+          "macOS version and Mac model",
+          "Docora version (Docora → About Docora)",
+          "The feature you were using",
+          "Whether it happens with one document or with all of them. Please don't send a confidential document: describe it, or send a copy with nothing sensitive in it",
+          "What you expected versus what happened",
+          "Steps to reproduce"
+        ]
+      }
+    },
+    {
       "slug": "pixcelate",
       "name": "Pixcelate",
       "tagline": "Background removal that never leaves your phone.",
