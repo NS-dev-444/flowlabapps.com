@@ -23,6 +23,10 @@ with open(DATA, encoding="utf-8") as fh:
     CONFIG = json.load(fh)
 
 ICON_SRC = os.path.join(ROOT, "_build", "icons")
+# Screenshots for an app page: _build/screenshots/<slug>/<file>, named in the
+# app's optional "screenshots" list (file, alt). Web-sized copies of the store
+# screenshots; the build copies them to assets/screenshots/<slug>/.
+SHOT_SRC = os.path.join(ROOT, "_build", "screenshots")
 
 # The real App Store / Play icon for each app, downscaled and committed under
 # _build/icons/. Any app without one falls back to its drawn mark below, so a
@@ -577,6 +581,14 @@ hr{border:0;border-top:1px solid var(--line);margin:26px 0}
 .heroshelf a:hover{transform:translateY(-5px) scale(1.05)}
 @media (max-width:600px){ .heroshelf{gap:8px; margin-top:28px; padding-top:24px} }
 
+/* --- app screenshots ---------------------------------------------------- */
+.shots{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:16px}
+.shots figure{margin:0}
+.shots figure:first-child{grid-column:1 / -1}
+.shots img{display:block; width:100%; height:auto; border-radius:14px;
+  border:1px solid var(--line); background:rgba(255,255,255,.03)}
+@media (max-width:620px){ .shots{grid-template-columns:1fr} }
+
 /* --- app gallery -------------------------------------------------------- */
 .filters{display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 4px}
 .filters button{
@@ -937,6 +949,20 @@ def build_app_page(app):
         for i, (t, d) in enumerate(app["features"], 1)
     )
     longs = "\n  ".join(f"<p>{e(p)}</p>" for p in app["long"])
+    shots = "\n".join(
+        f'    <figure><img src="/assets/screenshots/{app["slug"]}/{e(s["file"])}" alt="{e(s["alt"])}" '
+        f'width="1600" height="1000" loading="lazy" decoding="async"></figure>'
+        for s in app.get("screenshots", [])
+    )
+    shots_section = f"""
+<section class="card">
+  <div class="kicker">Screenshots</div>
+  <h2>See it on the Mac</h2>
+  <div class="shots">
+{shots}
+  </div>
+</section>
+""" if shots else ""
 
     stores = app.get("stores", [])
 
@@ -1001,7 +1027,7 @@ def build_app_page(app):
   <h2>{e(app['tagline'])}</h2>
   {longs}
 </section>
-
+{shots_section}
 <section class="card">
   <div class="kicker">Features</div>
   <h2>What it does</h2>
@@ -2214,6 +2240,17 @@ def build_assets():
         for slug, fname in sorted(APP_ART.items()):
             shutil.copy2(os.path.join(ICON_SRC, fname), os.path.join(dest, fname))
             copied.append(f"assets/icons/{fname}")
+
+    shots_dest = os.path.join(ROOT, "assets", "screenshots")
+    shutil.rmtree(shots_dest, ignore_errors=True)
+    for app in APPS:
+        for shot in app.get("screenshots", []):
+            src = os.path.join(SHOT_SRC, app["slug"], shot["file"])
+            if not os.path.isfile(src):
+                sys.exit(f"{app['slug']}: screenshot {shot['file']} is not in _build/screenshots/{app['slug']}/")
+            os.makedirs(os.path.join(shots_dest, app["slug"]), exist_ok=True)
+            shutil.copy2(src, os.path.join(shots_dest, app["slug"], shot["file"]))
+            copied.append(f"assets/screenshots/{app['slug']}/{shot['file']}")
 
     write("favicon.svg", FAVICON)
 

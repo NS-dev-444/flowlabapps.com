@@ -176,6 +176,14 @@ hr{border:0;border-top:1px solid var(--line);margin:26px 0}
 .heroshelf a:hover{transform:translateY(-5px) scale(1.05)}
 @media (max-width:600px){ .heroshelf{gap:8px; margin-top:28px; padding-top:24px} }
 
+/* --- app screenshots ---------------------------------------------------- */
+.shots{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:16px}
+.shots figure{margin:0}
+.shots figure:first-child{grid-column:1 / -1}
+.shots img{display:block; width:100%; height:auto; border-radius:14px;
+  border:1px solid var(--line); background:rgba(255,255,255,.03)}
+@media (max-width:620px){ .shots{grid-template-columns:1fr} }
+
 /* --- app gallery -------------------------------------------------------- */
 .filters{display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 4px}
 .filters button{

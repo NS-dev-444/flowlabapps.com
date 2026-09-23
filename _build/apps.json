@@ -680,7 +680,7 @@
       "platforms": [
         "macOS"
       ],
-      "status": "Submission candidate",
+      "status": "Coming soon to the Mac App Store",
       "status_kind": "soon",
       "bundle_ids": [
         "com.flowlabapps.Docora"
@@ -702,7 +702,7 @@
         ],
         [
           "Forms and signatures",
-          "Fill in text fields, checkboxes and lists. Type, draw or scan your signature once and place it anywhere. These are visual signatures, not certificate-based digital ones."
+          "Fill in text fields, checkboxes and lists. Type, draw or import your signature once and place it anywhere. These are visual signatures, not certificate-based digital ones."
         ],
         [
           "Redaction that removes",
@@ -810,7 +810,29 @@
           "What you expected versus what happened",
           "Steps to reproduce"
         ]
-      }
+      },
+      "screenshots": [
+        {
+          "file": "1-private.jpg",
+          "alt": "Docora showing a proposal document, under the headline: Your PDFs stay on your Mac."
+        },
+        {
+          "file": "2-markup.jpg",
+          "alt": "A page marked up in Docora with a highlight, a note, a box around a chart bar, an arrow and a text comment."
+        },
+        {
+          "file": "3-forms.jpg",
+          "alt": "A client intake form filled in and signed in Docora."
+        },
+        {
+          "file": "4-redact.jpg",
+          "alt": "An employee record in Docora with personal details redacted as black bars."
+        },
+        {
+          "file": "5-ocr.jpg",
+          "alt": "A scanned letter in Docora with the word invoice found by search after text recognition."
+        }
+      ]
     },
     {
       "slug": "pixcelate",
