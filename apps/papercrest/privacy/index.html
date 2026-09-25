@@ -105,7 +105,7 @@ optional can be declined, and the app keeps working without it.</p>
 </ul>
 
 <h2 id="network">4. Network activity</h2>
-<p>None, and this is enforced rather than promised. On iPhone and iPad the app links no networking framework and contains no networking code, and an audit script checks the built binary for both before every upload. On Android the app declares no <strong>INTERNET</strong> permission, so the operating system refuses it a network socket; the build fails if that permission ever appears, and an on-device test tries to open a connection and requires it to fail. There is no account, no sync and no server. Everything works in Airplane Mode.</p>
+<p>None, and this is enforced rather than promised. On iPhone and iPad the app links no networking framework and contains no networking code, and an audit script checks the built binary for both before every upload. On Android the app declares no <strong>INTERNET</strong> permission, so the operating system refuses it a network socket; the build fails if that permission ever appears, and an on-device test tries to open a connection and requires it to fail. There is no account, no sync and no server. Everything works in Airplane Mode. The Privacy Policy link in Settings opens this page in your browser. The browser makes that request, not PaperCrest.</p>
 
 <h2 id="third-parties">5. Third parties</h2>
 <p>None receive anything. The iOS app ships with zero third-party libraries. The Android app uses Google's AndroidX, CameraX and ML Kit text recognition with its model bundled in the app; ML Kit's telemetry components are removed from the manifest and, with no network permission, would have nothing to send through anyway. There are no analytics libraries, crash reporters or advertising SDKs.</p>
