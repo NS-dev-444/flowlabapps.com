@@ -1163,20 +1163,24 @@
       },
       "screenshots": [
         {
-          "file": "1-library.jpg",
-          "alt": "The PaperCrest library over the camera: search, favourites, Trash and folder chips, a scanned receipt, and Import Photo and Import File buttons."
+          "file": "1-documents.jpg",
+          "alt": "The PaperCrest library over the camera: a café receipt, a business card, an invoice and a lease letter, with search, favourites, Trash and folder chips."
         },
         {
-          "file": "2-receipt.jpg",
-          "alt": "A scanned café receipt in PaperCrest, recognised as a receipt at 99%, with its merchant and subtotal extracted and an offer to check the details."
+          "file": "2-business-card.jpg",
+          "alt": "A business card in PaperCrest, recognised as one at 99%, with name, title, company, email, phone and website read into editable fields."
         },
         {
-          "file": "3-settings.jpg",
-          "alt": "PaperCrest's Settings: App Lock with Face ID, hidden previews in the App Switcher, clearing copied sensitive text after 90 seconds, and Clear temporary files."
+          "file": "3-invoice.jpg",
+          "alt": "An invoice in PaperCrest, recognised as one, with its merchant, date, subtotal, tax, total and currency extracted."
         },
         {
-          "file": "4-privacy.jpg",
-          "alt": "PaperCrest's Privacy screen: your documents stay on this device, no account ever, processing happens here, and no analytics and no advertising."
+          "file": "4-search.jpg",
+          "alt": "PaperCrest's search for “October” finding a lease letter and an invoice by the words printed on them, with the match highlighted."
+        },
+        {
+          "file": "5-privacy.jpg",
+          "alt": "PaperCrest's Privacy screen: documents stay on this device, no account ever, processing happens here, no analytics, two permissions, and protected documents are encrypted."
         }
       ]
     },
