@@ -835,8 +835,8 @@
       ]
     },
     {
-      "slug": "verba",
-      "name": "Verba",
+      "slug": "voxena",
+      "name": "Voxena",
       "tagline": "Record, read and listen — all on your phone.",
       "category": "Productivity",
       "platforms": [
@@ -847,18 +847,18 @@
       "status": "Coming soon to the App Store",
       "status_kind": "soon",
       "bundle_ids": [
-        "app.verba.mobile"
+        "com.flowlabapps.Voxena"
       ],
       "accent": [
         "#4338ca",
         "#0891b2"
       ],
-      "summary": "Verba turns speech into text and text into speech without anything leaving your phone. Record a lecture or a memo and watch the words appear as you talk, dictate a note, or import a PDF, Word document or e-book and have it read aloud with the sentence highlighted as it goes.",
+      "summary": "Voxena turns speech into text and text into speech without anything leaving your phone. Record a lecture or a memo and watch the words appear as you talk, dictate a note, or import a PDF, Word document or e-book and have it read aloud with the sentence highlighted as it goes.",
       "long": [
         "Recognition runs on the device, using the speech engine built into iOS or, on Android, a model you download once. Recording keeps going with the screen locked, and a “phone on a table” mode picks up a lecture or a room more evenly than voice processing tuned for one close speaker.",
         "Listen reads any note, transcript or document with the voices installed on your device, highlighting each sentence, and carries on from the Lock Screen. Mixed-language documents switch voices sentence by sentence, right-to-left scripts such as Persian and Arabic read in the right order, and a pronunciation dictionary fixes names a voice gets wrong. Prepare a whole document ahead of time and it plays offline.",
         "Everything lands in one library with folders, tags and full-text search. Tidy removes filler words and adds punctuation without rewording what you said, and the raw text is always kept. Export any item as plain text, Markdown, SRT or WebVTT subtitles, or the original audio, or export the whole library as an archive.",
-        "Verba is not a meeting app: it does not identify speakers, join calls or send anything to a cloud service. There is no account and no subscription. It comes to iPhone and iPad first; the Android version follows on Google Play later."
+        "Voxena is not a meeting app: it does not identify speakers, join calls or send anything to a cloud service. There is no account and no subscription. It comes to iPhone and iPad first; the Android version follows on Google Play later."
       ],
       "features": [
         [
@@ -883,12 +883,12 @@
         ],
         [
           "Private by design",
-          "No account, no analytics and no Verba cloud. An optional app lock uses Face ID, Touch ID, fingerprint or your passcode."
+          "No account, no analytics and no Voxena cloud. An optional app lock uses Face ID, Touch ID, fingerprint or your passcode."
         ]
       ],
       "privacy": {
         "collects_data": false,
-        "headline": "Verba keeps your recordings, notes and documents on your device. There is no account, no analytics and no Verba server, and the app makes no network requests of its own apart from speech-model downloads you start.",
+        "headline": "Voxena keeps your recordings, notes and documents on your device. There is no account, no analytics and no Voxena server, and the app makes no network requests of its own apart from speech-model downloads you start.",
         "stored": [
           [
             "Recordings",
@@ -918,40 +918,40 @@
           [
             "Settings, dictionary and pronunciation rules",
             "On your device",
-            "To remember how you like Verba to work"
+            "To remember how you like Voxena to work"
           ]
         ],
         "permissions": [
           [
             "Microphone",
-            "Only when you tap Record or start dictation. Audio is stored on your device and never uploaded by Verba."
+            "Only when you tap Record or start dictation. Audio is stored on your device and never uploaded by Voxena."
           ],
           [
             "Speech recognition (iPhone and iPad)",
-            "Lets iOS turn your speech into text. Verba requires on-device recognition, so the audio is not sent to Apple's servers."
+            "Lets iOS turn your speech into text. Voxena requires on-device recognition, so the audio is not sent to Apple's servers."
           ],
           [
             "Face ID, Touch ID or fingerprint (optional)",
-            "Only if you turn on Lock Verba. The check happens in the operating system; Verba never receives biometric data."
+            "Only if you turn on Lock Voxena. The check happens in the operating system; Voxena never receives biometric data."
           ],
           [
             "Notifications (Android)",
-            "Android shows a notification while recording or reading aloud continues in the background. Verba sends no other notifications."
+            "Android shows a notification while recording or reading aloud continues in the background. Voxena sends no other notifications."
           ],
           [
             "Background audio",
             "So recording and reading aloud continue with the screen locked."
           ]
         ],
-        "network": "Verba has no backend and sends none of your content anywhere. The only network traffic it can cause is a **speech-model download you start**: on iPhone and iPad, iOS fetches Apple's on-device speech model from Apple; on Android, Verba downloads the model file you choose from the open-source sherpa-onnx releases on GitHub and checks it against a pinned SHA-256 fingerprint. No personal data is sent with either request. On Android, a few text-to-speech engines offer voices that work online; Verba marks them **needs network** and never picks one automatically, and if you choose one yourself, the text being read goes to that engine's service. Opening a licence link from Settings opens your browser.",
+        "network": "Voxena has no backend and sends none of your content anywhere. The only network traffic it can cause is a **speech-model download you start**: on iPhone and iPad, iOS fetches Apple's on-device speech model from Apple; on Android, Voxena downloads the model file you choose from the open-source sherpa-onnx releases on GitHub and checks it against a pinned SHA-256 fingerprint. No personal data is sent with either request. On Android, a few text-to-speech engines offer voices that work online; Voxena marks them **needs network** and never picks one automatically, and if you choose one yourself, the text being read goes to that engine's service. Opening a licence link from Settings opens your browser.",
         "third_parties": "None receive your content. Apple (iOS speech models) and GitHub (Android speech models) serve the model files you ask to download and receive only the ordinary request for that file. There are no analytics libraries, crash reporters or advertising SDKs.",
-        "store_note": "Your library can be included in your phone's own backups (iCloud Backup or a computer backup on iPhone and iPad, Google backup on Android) if you turn that on during setup or in Settings › Privacy. It is off until you choose. Those backups are made by your phone's backup service under its own terms; Verba does not upload them and we never receive them. That is why the declarations above still read **no data collected**.",
-        "extra": "Settings › Privacy lists every feature that could move data off the device, generated from the same declaration as the store labels above. Settings › Delete all data erases every recording, note and document at once, and deleted items stay in Recently Deleted for 30 days unless you empty it sooner. Verba is not a meeting tool: it does not identify speakers, and you are responsible for having permission to record the people you record where the law requires it."
+        "store_note": "Your library can be included in your phone's own backups (iCloud Backup or a computer backup on iPhone and iPad, Google backup on Android) if you turn that on during setup or in Settings › Privacy. It is off until you choose. Those backups are made by your phone's backup service under its own terms; Voxena does not upload them and we never receive them. That is why the declarations above still read **no data collected**.",
+        "extra": "Settings › Privacy lists every feature that could move data off the device, generated from the same declaration as the store labels above. Settings › Delete all data erases every recording, note and document at once, and deleted items stay in Recently Deleted for 30 days unless you empty it sooner. Voxena is not a meeting tool: it does not identify speakers, and you are responsible for having permission to record the people you record where the law requires it."
       },
       "support": {
         "faq": [
           [
-            "Does Verba need an internet connection?",
+            "Does Voxena need an internet connection?",
             "No. Recording, transcription, reading aloud, import and search all work offline. The only download is a speech model you choose to fetch."
           ],
           [
@@ -960,11 +960,11 @@
           ],
           [
             "Which files can I import?",
-            "PDF (including scanned pages on iPhone and iPad), Word (.docx), EPUB without DRM, HTML, plain text, Markdown, and common audio formats. You can also open a file in Verba from another app's share sheet."
+            "PDF (including scanned pages on iPhone and iPad), Word (.docx), EPUB without DRM, HTML, plain text, Markdown, and common audio formats. You can also open a file in Voxena from another app's share sheet."
           ],
           [
             "Why does a voice sound robotic?",
-            "Verba uses the voices installed on your device. On iPhone and iPad, download Enhanced or Premium voices in Settings › Accessibility › Read & Speak › Voices and Verba uses them automatically."
+            "Voxena uses the voices installed on your device. On iPhone and iPad, download Enhanced or Premium voices in Settings › Accessibility › Read & Speak › Voices and Voxena uses them automatically."
           ],
           [
             "Is my library backed up?",
@@ -977,12 +977,34 @@
         ],
         "report": [
           "Device model and OS version",
-          "The Verba version (Settings › About)",
+          "The Voxena version (Settings › About)",
           "What you were doing — recording, importing, reading aloud — and the file type if it was an import",
           "What you expected versus what happened",
           "If you are comfortable sharing it, the diagnostics report from Settings › Diagnostics, which contains no recordings or text"
         ]
-      }
+      },
+      "screenshots": [
+        {
+          "file": "1-library.jpg",
+          "alt": "The Voxena library: Record and Listen buttons, search, filters by type, folder and tag, and a list of recordings, notes and a book."
+        },
+        {
+          "file": "2-transcript.jpg",
+          "alt": "A cell biology lecture transcript in Voxena with timestamps, Tidy switched on and the current sentence highlighted."
+        },
+        {
+          "file": "3-listen.jpg",
+          "alt": "Voxena reading an e-book aloud, with the sentence being spoken highlighted and a player bar at the bottom."
+        },
+        {
+          "file": "4-document.jpg",
+          "alt": "An imported PDF about sleep and memory in Voxena, with its headings and list intact and a Listen button."
+        },
+        {
+          "file": "5-privacy.jpg",
+          "alt": "Voxena's Privacy screen: phone backups not included, and recording, transcription, read aloud, documents and search all on this device."
+        }
+      ]
     },
     {
       "slug": "pixcelate",

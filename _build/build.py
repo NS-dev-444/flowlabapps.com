@@ -14,6 +14,7 @@ import json
 import os
 import re
 import shutil
+import struct
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,6 +28,25 @@ ICON_SRC = os.path.join(ROOT, "_build", "icons")
 # app's optional "screenshots" list (file, alt). Web-sized copies of the store
 # screenshots; the build copies them to assets/screenshots/<slug>/.
 SHOT_SRC = os.path.join(ROOT, "_build", "screenshots")
+
+
+def image_size(path):
+    """(width, height) of a PNG or baseline/progressive JPEG, read from its header."""
+    with open(path, "rb") as f:
+        data = f.read()
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return struct.unpack(">II", data[16:24])
+    i = 2
+    while i + 9 < len(data):
+        if data[i] != 0xFF or data[i + 1] == 0xFF:
+            i += 1
+            continue
+        marker = data[i + 1]
+        if 0xC0 <= marker <= 0xCF and marker not in (0xC4, 0xC8, 0xCC):
+            height, width = struct.unpack(">HH", data[i + 5:i + 9])
+            return width, height
+        i += 2 + struct.unpack(">H", data[i + 2:i + 4])[0]
+    sys.exit(f"{path}: cannot read image size")
 
 # The real App Store / Play icon for each app, downscaled and committed under
 # _build/icons/. Any app without one falls back to its drawn mark below, so a
@@ -588,6 +608,12 @@ hr{border:0;border-top:1px solid var(--line);margin:26px 0}
 .shots img{display:block; width:100%; height:auto; border-radius:14px;
   border:1px solid var(--line); background:rgba(255,255,255,.03)}
 @media (max-width:620px){ .shots{grid-template-columns:1fr} }
+/* portrait phone screenshots: a row of five, then three, then two */
+.shots.phone{grid-template-columns:repeat(5,1fr)}
+.shots.phone figure:first-child{grid-column:auto}
+.shots.phone img{border-radius:18px}
+@media (max-width:920px){ .shots.phone{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:620px){ .shots.phone{grid-template-columns:repeat(2,1fr)} }
 
 /* --- app gallery -------------------------------------------------------- */
 .filters{display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 4px}
@@ -949,16 +975,19 @@ def build_app_page(app):
         for i, (t, d) in enumerate(app["features"], 1)
     )
     longs = "\n  ".join(f"<p>{e(p)}</p>" for p in app["long"])
+    sizes = [image_size(os.path.join(SHOT_SRC, app["slug"], s["file"]))
+             for s in app.get("screenshots", [])]
+    phone = bool(sizes) and all(h > w for w, h in sizes)
     shots = "\n".join(
         f'    <figure><img src="/assets/screenshots/{app["slug"]}/{e(s["file"])}" alt="{e(s["alt"])}" '
-        f'width="1600" height="1000" loading="lazy" decoding="async"></figure>'
-        for s in app.get("screenshots", [])
+        f'width="{w}" height="{h}" loading="lazy" decoding="async"></figure>'
+        for s, (w, h) in zip(app.get("screenshots", []), sizes)
     )
     shots_section = f"""
 <section class="card">
   <div class="kicker">Screenshots</div>
-  <h2>See it on the Mac</h2>
-  <div class="shots">
+  <h2>{"See it on iPhone" if phone else "See it on the Mac"}</h2>
+  <div class="shots{" phone" if phone else ""}">
 {shots}
   </div>
 </section>
@@ -2266,13 +2295,18 @@ def build_assets():
     # LucidFrame was renamed to LucidCapture before launch — the old name
     # belongs to an unrelated iOS app, so App Store Connect would not take it.
     # The old paths were live and are in the sitemap Google already fetched,
-    # so they redirect rather than 404.
+    # so they redirect rather than 404. Verba was renamed to Voxena the same
+    # way, after its /apps/verba/ pages had gone live.
     write("_redirects",
           "/.well-known/security.txt  /security.txt  301\n"
           "/apps/lucidframe/privacy/  /apps/lucidcapture/privacy/  301\n"
           "/apps/lucidframe/support/  /apps/lucidcapture/support/  301\n"
           "/apps/lucidframe/*         /apps/lucidcapture/:splat    301\n"
-          "/apps/lucidframe           /apps/lucidcapture/          301\n")
+          "/apps/lucidframe           /apps/lucidcapture/          301\n"
+          "/apps/verba/privacy/       /apps/voxena/privacy/        301\n"
+          "/apps/verba/support/       /apps/voxena/support/        301\n"
+          "/apps/verba/*              /apps/voxena/:splat          301\n"
+          "/apps/verba                /apps/voxena/                301\n")
 
     # One inline script on the whole site; pin it by hash rather than opening
     # script-src up to 'unsafe-inline'. Inline <style> carries the per-page

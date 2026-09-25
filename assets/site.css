@@ -183,6 +183,12 @@ hr{border:0;border-top:1px solid var(--line);margin:26px 0}
 .shots img{display:block; width:100%; height:auto; border-radius:14px;
   border:1px solid var(--line); background:rgba(255,255,255,.03)}
 @media (max-width:620px){ .shots{grid-template-columns:1fr} }
+/* portrait phone screenshots: a row of five, then three, then two */
+.shots.phone{grid-template-columns:repeat(5,1fr)}
+.shots.phone figure:first-child{grid-column:auto}
+.shots.phone img{border-radius:18px}
+@media (max-width:920px){ .shots.phone{grid-template-columns:repeat(3,1fr)} }
+@media (max-width:620px){ .shots.phone{grid-template-columns:repeat(2,1fr)} }
 
 /* --- app gallery -------------------------------------------------------- */
 .filters{display:flex; gap:6px; flex-wrap:wrap; margin:18px 0 4px}

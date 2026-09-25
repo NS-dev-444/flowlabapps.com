@@ -3,3 +3,7 @@
 /apps/lucidframe/support/  /apps/lucidcapture/support/  301
 /apps/lucidframe/*         /apps/lucidcapture/:splat    301
 /apps/lucidframe           /apps/lucidcapture/          301
+/apps/verba/privacy/       /apps/voxena/privacy/        301
+/apps/verba/support/       /apps/voxena/support/        301
+/apps/verba/*              /apps/voxena/:splat          301
+/apps/verba                /apps/voxena/                301
