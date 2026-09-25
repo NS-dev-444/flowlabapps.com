@@ -258,15 +258,6 @@ MARKS = {
     "black-hole-rush": ('<circle cx="12" cy="12" r="3.9" fill="currentColor" stroke="none"/>'
                         '<ellipse cx="12" cy="12" rx="9" ry="3.9"/>'
                         '<ellipse cx="12" cy="12" rx="9" ry="3.9" transform="rotate(-32 12 12)" opacity=".38"/>'),
-    # Funnel, tapering downward.
-    "twister-rush": ('<ellipse cx="12" cy="5.6" rx="7.2" ry="2.5"/>'
-                     '<ellipse cx="12" cy="12" rx="4.5" ry="1.7" opacity=".7"/>'
-                     '<ellipse cx="12" cy="17.8" rx="2.1" ry="1" opacity=".5"/>'),
-    # Heading arrow.
-    "city-rush": '<path d="M12 3.4 19.2 20 12 16.3 4.8 20z" stroke-linejoin="round"/>',
-    # House.
-    "dream-home-adventures": ('<path d="M3.8 10.4 12 3.8l8.2 6.6v7.9a1.9 1.9 0 0 1-1.9 1.9H5.7a1.9 1.9 0 0 1-1.9-1.9z"/>'
-                              '<path d="M9.6 20.2v-5.1h4.8v5.1" opacity=".6"/>'),
     # Document with a keyhole.
     "keyclave": ('<path d="M6.2 3.6h7.3L18 8.1v12.3H6.2z"/>'
                  '<path d="M13.5 3.6v4.5H18" opacity=".6"/>'
@@ -1475,7 +1466,7 @@ not share personal information for cross-context behavioural advertising, and we
 done so.</p>
 
 <h2 id="children">8. Children</h2>
-<p>Several of our games are suitable for children. Because none of our apps collects any data
+<p>Our games are suitable for children. Because none of our apps collects any data
 from anyone, none of them collects data from children — there is nothing to disclose, share or
 delete. Our games contain no advertising, no in-app purchases, no chat and no user-generated
 content. We comply with COPPA, the Google Play Families policy and the App Store Kids Category
