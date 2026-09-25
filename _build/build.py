@@ -2296,7 +2296,8 @@ def build_assets():
     # belongs to an unrelated iOS app, so App Store Connect would not take it.
     # The old paths were live and are in the sitemap Google already fetched,
     # so they redirect rather than 404. Verba was renamed to Voxena the same
-    # way, after its /apps/verba/ pages had gone live.
+    # way, after its /apps/verba/ pages had gone live, and Private Scanner to
+    # PaperCrest after /apps/private-scanner/ had gone live.
     write("_redirects",
           "/.well-known/security.txt  /security.txt  301\n"
           "/apps/lucidframe/privacy/  /apps/lucidcapture/privacy/  301\n"
@@ -2306,7 +2307,11 @@ def build_assets():
           "/apps/verba/privacy/       /apps/voxena/privacy/        301\n"
           "/apps/verba/support/       /apps/voxena/support/        301\n"
           "/apps/verba/*              /apps/voxena/:splat          301\n"
-          "/apps/verba                /apps/voxena/                301\n")
+          "/apps/verba                /apps/voxena/                301\n"
+          "/apps/private-scanner/privacy/  /apps/papercrest/privacy/  301\n"
+          "/apps/private-scanner/support/  /apps/papercrest/support/  301\n"
+          "/apps/private-scanner/*         /apps/papercrest/:splat    301\n"
+          "/apps/private-scanner           /apps/papercrest/          301\n")
 
     # One inline script on the whole site; pin it by hash rather than opening
     # script-src up to 'unsafe-inline'. Inline <style> carries the per-page

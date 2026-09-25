@@ -1007,30 +1007,31 @@
       ]
     },
     {
-      "slug": "private-scanner",
-      "name": "Private Scanner",
-      "tagline": "Scan documents that never leave your phone.",
+      "slug": "papercrest",
+      "name": "PaperCrest",
+      "tagline": "Scan documents that never leave your device.",
       "category": "Productivity",
       "platforms": [
         "iOS",
+        "iPadOS",
         "Android"
       ],
       "status": "Coming soon to the App Store and Google Play",
       "status_kind": "soon",
       "bundle_ids": [
-        "app.privatescanner.PrivateScanner",
-        "app.privatescanner"
+        "com.flowlabapps.PaperCrest",
+        "com.flowlabapps.papercrest"
       ],
       "accent": [
         "#3d7bf5",
         "#e3b872"
       ],
-      "summary": "Private Scanner scans, straightens, enhances and reads your documents entirely on your iPhone or Android phone. It has no account, no analytics and no way to reach the internet: the iPhone app contains no networking code, and the Android app holds no network permission.",
+      "summary": "PaperCrest scans, straightens, enhances and reads your documents entirely on your iPhone, iPad or Android phone. It has no account, no analytics and no way to reach the internet: the iOS app contains no networking code, and the Android app holds no network permission.",
       "long": [
-        "The app opens on the camera. It finds the page in the frame, captures it when it is steady, and keeps going for as many pages as you need, with guided modes for an ID card (front and back on one sheet) and a passport. Review lets you crop, rotate and enhance each page, choosing Automatic, Document, Black & White, Grayscale, Photo or ID / Card, and you can import photos and PDFs through the system picker instead of scanning.",
-        "After you save, the phone reads the text, works out what kind of document it is from around thirty types (passport, receipt, bank statement, contract, business card and more), and titles it from what the page actually says, never from the date you scanned it. A receipt's merchant, date and total, or a business card's name, phone and email, are picked out as suggestions you can correct, and a business card can go straight to Contacts through the share sheet. Everything is searchable, with folders, tags, favourites and a Trash you can restore from.",
-        "Sensitive values such as card numbers, national ID numbers, passport machine-readable zones and dates of birth are detected on the page and offered for redaction, which destroys those pixels in the copy you share and leaves the original untouched. Protect encrypts a document with AES-256 behind Face ID, Touch ID, your fingerprint or your passcode, and an optional App Lock guards the whole library. Exported PDFs are searchable, carry only the document's title, and nothing about you or your phone.",
-        "Recognition, classification and extraction all run on the device with Apple's Vision framework or Google's bundled ML Kit model; nothing is downloaded and nothing is sent. Version 1.0 is for iPhone and Android phones (an iPad runs it in compatibility mode), reads English text, and has no account and no subscription."
+        "The app opens on the camera. It finds the page in the frame, captures it when it is steady, and keeps going for as many pages as you need, with guided modes for an ID card (front and back on one sheet) and a passport. Review lets you crop, rotate and enhance each page, choosing Automatic, Document, Black & White, Grayscale, Photo or ID / Card, and you can import photos and PDFs through the system picker instead of scanning. On iPad the library sits in a column beside the camera rather than in a sheet over it.",
+        "After you save, your device reads the text, works out what kind of document it is from around thirty types (passport, receipt, bank statement, contract, business card and more), and titles it from what the page actually says, never from the date you scanned it. A receipt's merchant, date and total, or a business card's name, phone and email, are picked out as suggestions you can correct, and a business card can go straight to Contacts through the share sheet. Everything is searchable, with folders, tags, favourites and a Trash you can restore from.",
+        "Sensitive values such as card numbers, national ID numbers, passport machine-readable zones and dates of birth are detected on the page and offered for redaction, which destroys those pixels in the copy you share and leaves the original untouched. Protect encrypts a document with AES-256 behind Face ID, Touch ID, your fingerprint or your passcode, and an optional App Lock guards the whole library. Exported PDFs are searchable, carry only the document's title, and nothing about you or your device.",
+        "Recognition, classification and extraction all run on the device with Apple's Vision framework or Google's bundled ML Kit model; nothing is downloaded and nothing is sent. Version 1.0 runs on iPhone, iPad and Android phones. On iPhone and iPad it reads text in the languages your device prefers; on Android it reads any Latin-script language. There is no account and no subscription."
       ],
       "features": [
         [
@@ -1055,21 +1056,21 @@
         ],
         [
           "Cannot phone home",
-          "No networking code on iPhone and no network permission on Android, checked by the build. No account, no analytics, no ads."
+          "No networking code on iOS and no network permission on Android, checked by the build. No account, no analytics, no ads."
         ]
       ],
       "privacy": {
         "collects_data": false,
-        "headline": "Private Scanner collects nothing and cannot send anything. The iPhone app contains no networking code and the Android app has no network permission, so your scans, their text and everything the app works out about them stay on your phone.",
+        "headline": "PaperCrest collects nothing and cannot send anything. The iOS app contains no networking code and the Android app has no network permission, so your scans, their text and everything the app works out about them stay on your device.",
         "stored": [
           [
             "Scans and imported pages, as captured and as processed",
-            "In the app's private storage on your phone",
+            "In the app's private storage on your device",
             "So you can view, search, export and share them"
           ],
           [
             "Recognised text, document type, title and extracted details, such as a receipt's total or a business card's contact fields",
-            "In the app's database on your phone",
+            "In the app's database on your device",
             "To title, file and search your documents. A protected document keeps these inside its encrypted payload instead"
           ],
           [
@@ -1079,22 +1080,22 @@
           ],
           [
             "Protected documents",
-            "Encrypted on your phone with AES-256-GCM. The key is held in the iOS Keychain or the Android Keystore behind your face, fingerprint or passcode and never leaves the device",
+            "Encrypted on your device with AES-256-GCM. The key is held in the iOS Keychain or the Android Keystore behind your face, fingerprint or passcode and never leaves the device",
             "So a document you protect cannot be read without you, even from a backup"
           ],
           [
             "Folders, tags, favourites and the Trash",
-            "In the app's database on your phone",
+            "In the app's database on your device",
             "To organise your library. Tags are not encrypted, even on a protected document"
           ],
           [
             "Copies made for sharing",
-            "A temporary folder the app empties at its next launch and, on iPhone, excludes from backup",
-            "So the share sheet has a file to hand over. On iPhone, Settings › Clear temporary files removes them sooner"
+            "A temporary folder the app empties at its next launch and, on iPhone and iPad, excludes from backup",
+            "So the share sheet has a file to hand over. On iPhone and iPad, Settings › Clear temporary files removes them sooner"
           ],
           [
             "Settings, such as whether App Lock is on",
-            "On your phone",
+            "On your device",
             "To remember how you like the app to work"
           ]
         ],
@@ -1112,24 +1113,24 @@
             "Imported through the system picker, which runs outside the app and hands over only the items you choose, so no photo-library permission is requested. Sending a business card to Contacts works the same way, through the share sheet: the app asks for no Contacts access."
           ]
         ],
-        "network": "None, and this is enforced rather than promised. On iPhone the app links no networking framework and contains no networking code, and an audit script checks the built binary for both before every upload. On Android the app declares no **INTERNET** permission, so the operating system refuses it a network socket; the build fails if that permission ever appears, and an on-device test tries to open a connection and requires it to fail. There is no account, no sync and no server. Everything works in Airplane Mode.",
-        "third_parties": "None receive anything. The iPhone app ships with zero third-party libraries. The Android app uses Google's AndroidX, CameraX and ML Kit text recognition with its model bundled in the app; ML Kit's telemetry components are removed from the manifest and, with no network permission, would have nothing to send through anyway. There are no analytics libraries, crash reporters or advertising SDKs.",
-        "store_note": "On iPhone, unprotected documents and their text are part of your normal device backup (iCloud Backup or a computer backup) and come back on a new phone. Protected documents do not: their key never leaves the device, so remove protection before you move phones if you want to keep them. On Android, nothing in the app is backed up or transferred by the system. Any backup is made by Apple under your own device settings; we never receive it, which is why the declarations above still read **no data collected**.",
-        "extra": "Recognised text, document types, titles and extracted fields are computed on the phone, by Apple's Vision framework on iPhone and by Google's on-device ML Kit model on Android, and never leave it. Sensitive-data detection is a heuristic: the app stores where a value is and what kind it is, never the value, and it never claims a document is free of sensitive information, only that nothing was detected. A document leaves the app only when you share or export it. Exported PDFs carry the document's title and the creator name “Private Scanner” and nothing else: no author, no location, no device identifier. Exported images carry no metadata at all, not the camera's, and not the location an imported photo came with. Deleting a document moves it to the Trash; Empty Trash removes the app's copies of its files and rewrites the database so nothing lingers. If you lose the face, fingerprint or passcode that guards a protected document, it cannot be recovered; there is no escrow, by design."
+        "network": "None, and this is enforced rather than promised. On iPhone and iPad the app links no networking framework and contains no networking code, and an audit script checks the built binary for both before every upload. On Android the app declares no **INTERNET** permission, so the operating system refuses it a network socket; the build fails if that permission ever appears, and an on-device test tries to open a connection and requires it to fail. There is no account, no sync and no server. Everything works in Airplane Mode.",
+        "third_parties": "None receive anything. The iOS app ships with zero third-party libraries. The Android app uses Google's AndroidX, CameraX and ML Kit text recognition with its model bundled in the app; ML Kit's telemetry components are removed from the manifest and, with no network permission, would have nothing to send through anyway. There are no analytics libraries, crash reporters or advertising SDKs.",
+        "store_note": "On iPhone and iPad, unprotected documents and their text are part of your normal device backup (iCloud Backup or a computer backup) and come back on a new phone. Protected documents do not: their key never leaves the device, so remove protection before you move phones if you want to keep them. On Android, nothing in the app is backed up or transferred by the system. Any backup is made by Apple under your own device settings; we never receive it, which is why the declarations above still read **no data collected**.",
+        "extra": "Recognised text, document types, titles and extracted fields are computed on the device, by Apple's Vision framework on iPhone and iPad, and by Google's on-device ML Kit model on Android, and never leave it. Sensitive-data detection is a heuristic: the app stores where a value is and what kind it is, never the value, and it never claims a document is free of sensitive information, only that nothing was detected. A document leaves the app only when you share or export it. Exported PDFs carry the document's title and the creator name “PaperCrest” and nothing else: no author, no location, no device identifier. Exported images carry no metadata at all, not the camera's, and not the location an imported photo came with. Deleting a document moves it to the Trash; Empty Trash removes the app's copies of its files and rewrites the database so nothing lingers. If you lose the face, fingerprint or passcode that guards a protected document, it cannot be recovered; there is no escrow, by design."
       },
       "support": {
         "faq": [
           [
-            "Does Private Scanner need an internet connection?",
-            "No. Scanning, text recognition, classification, search, redaction, protection and export all work offline, and the app has no way to go online: there is no networking code in the iPhone app and no network permission in the Android app."
+            "Does PaperCrest need an internet connection?",
+            "No. Scanning, text recognition, classification, search, redaction, protection and export all work offline, and the app has no way to go online: there is no networking code in the iOS app and no network permission in the Android app."
           ],
           [
             "Which devices does it run on?",
-            "iPhone with iOS 17 or later, and Android phones on Android 8.0 or later. Version 1.0 is designed for iPhone; an iPad runs it in compatibility mode."
+            "iPhone and iPad with iOS 17 or later, and Android phones on Android 8.0 or later. On iPad the library sits beside the viewfinder rather than over it."
           ],
           [
             "Which languages does it read?",
-            "English, in version 1.0. Other languages are planned."
+            "On iPhone and iPad, the languages your device prefers, from those Apple's Vision framework can recognise, and English is always included. On Android, the bundled ML Kit model reads any language written in the Latin script."
           ],
           [
             "What can I import?",
@@ -1145,7 +1146,7 @@
           ],
           [
             "Will my documents come back on a new phone?",
-            "On iPhone, unprotected documents are part of your normal device backup and restore with it; protected documents do not, so remove protection before you move if you want to keep them. On Android nothing in the app is backed up by the system, so export what you need first."
+            "On iPhone and iPad, unprotected documents are part of your normal device backup and restore with it; protected documents do not, so remove protection before you move if you want to keep them. On Android nothing in the app is backed up by the system, so export what you need first."
           ],
           [
             "Do I need an account?",
@@ -1153,13 +1154,31 @@
           ]
         ],
         "report": [
-          "Phone model and OS version",
-          "The Private Scanner version (Settings)",
+          "Device model and OS version",
+          "The PaperCrest version (Settings)",
           "What you were doing: scanning, importing, exporting, redacting or protecting, and the file type if it was an import",
           "What you expected versus what happened",
           "Please do not attach the document itself unless it contains nothing private. A description of the kind of page is enough"
         ]
-      }
+      },
+      "screenshots": [
+        {
+          "file": "1-library.jpg",
+          "alt": "The PaperCrest library over the camera: search, favourites, Trash and folder chips, a scanned receipt, and Import Photo and Import File buttons."
+        },
+        {
+          "file": "2-receipt.jpg",
+          "alt": "A scanned café receipt in PaperCrest, recognised as a receipt at 99%, with its merchant and subtotal extracted and an offer to check the details."
+        },
+        {
+          "file": "3-settings.jpg",
+          "alt": "PaperCrest's Settings: App Lock with Face ID, hidden previews in the App Switcher, clearing copied sensitive text after 90 seconds, and Clear temporary files."
+        },
+        {
+          "file": "4-privacy.jpg",
+          "alt": "PaperCrest's Privacy screen: your documents stay on this device, no account ever, processing happens here, and no analytics and no advertising."
+        }
+      ]
     },
     {
       "slug": "pixcelate",

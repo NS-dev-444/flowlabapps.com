@@ -7,3 +7,7 @@
 /apps/verba/support/       /apps/voxena/support/        301
 /apps/verba/*              /apps/voxena/:splat          301
 /apps/verba                /apps/voxena/                301
+/apps/private-scanner/privacy/  /apps/papercrest/privacy/  301
+/apps/private-scanner/support/  /apps/papercrest/support/  301
+/apps/private-scanner/*         /apps/papercrest/:splat    301
+/apps/private-scanner           /apps/papercrest/          301
