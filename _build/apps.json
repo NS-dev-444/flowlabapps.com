@@ -837,7 +837,7 @@
     {
       "slug": "voxena",
       "name": "Voxena",
-      "tagline": "Record, read and listen — all on your phone.",
+      "tagline": "Record, read and listen — all on your iPhone or iPad.",
       "category": "Productivity",
       "platforms": [
         "iOS",
@@ -853,7 +853,7 @@
         "#4338ca",
         "#0891b2"
       ],
-      "summary": "Voxena turns speech into text and text into speech without anything leaving your phone. Record a lecture or a memo and watch the words appear as you talk, dictate a note, or import a PDF, Word document or e-book and have it read aloud with the sentence highlighted as it goes.",
+      "summary": "Voxena turns speech into text and text into speech without anything leaving your iPhone or iPad. Record a lecture or a memo and watch the words appear as you talk, dictate a note, or import a PDF, Word document or e-book and have it read aloud with the sentence highlighted as it goes.",
       "long": [
         "Recognition runs on the device, using the speech engine built into iOS or, on Android, a model you download once. Recording keeps going with the screen locked, and a “phone on a table” mode picks up a lecture or a room more evenly than voice processing tuned for one close speaker.",
         "Listen reads any note, transcript or document with the voices installed on your device, highlighting each sentence, and carries on from the Lock Screen. Mixed-language documents switch voices sentence by sentence, right-to-left scripts such as Persian and Arabic read in the right order, and a pronunciation dictionary fixes names a voice gets wrong. Prepare a whole document ahead of time and it plays offline.",
@@ -945,7 +945,7 @@
         ],
         "network": "Voxena has no backend and sends none of your content anywhere. The only network traffic it can cause is a **speech-model download you start**: on iPhone and iPad, iOS fetches Apple's on-device speech model from Apple; on Android, Voxena downloads the model file you choose from the open-source sherpa-onnx releases on GitHub and checks it against a pinned SHA-256 fingerprint. No personal data is sent with either request. On Android, a few text-to-speech engines offer voices that work online; Voxena marks them **needs network** and never picks one automatically, and if you choose one yourself, the text being read goes to that engine's service. Opening a licence link from Settings opens your browser.",
         "third_parties": "None receive your content. Apple (iOS speech models) and GitHub (Android speech models) serve the model files you ask to download and receive only the ordinary request for that file. There are no analytics libraries, crash reporters or advertising SDKs.",
-        "store_note": "Your library can be included in your phone's own backups (iCloud Backup or a computer backup on iPhone and iPad, Google backup on Android) if you turn that on during setup or in Settings › Privacy. It is off until you choose. Those backups are made by your phone's backup service under its own terms; Voxena does not upload them and we never receive them. That is why the declarations above still read **no data collected**.",
+        "store_note": "Your library can be included in your device's own backups (iCloud Backup or a computer backup on iPhone and iPad, Google backup on Android) if you turn that on during setup or in Settings › Privacy. It is off until you choose. Those backups are made by your device's backup service under its own terms; Voxena does not upload them and we never receive them. That is why the declarations above still read **no data collected**.",
         "extra": "Settings › Privacy lists every feature that could move data off the device, generated from the same declaration as the store labels above. Settings › Delete all data erases every recording, note and document at once, and deleted items stay in Recently Deleted for 30 days unless you empty it sooner. Voxena is not a meeting tool: it does not identify speakers, and you are responsible for having permission to record the people you record where the law requires it."
       },
       "support": {
@@ -968,7 +968,7 @@
           ],
           [
             "Is my library backed up?",
-            "Only if you choose to include it in your phone's own backups during setup or in Settings › Privacy. You can also export everything as an archive from Settings › Export everything."
+            "Only if you choose to include it in your device's own backups during setup or in Settings › Privacy. You can also export everything as an archive from Settings › Export everything."
           ],
           [
             "Do I need an account?",
